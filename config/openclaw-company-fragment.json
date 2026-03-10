@@ -1,0 +1,50 @@
+{
+  "agents": {
+    "list": [
+      {
+        "id": "admin-assistant",
+        "name": "行政助理",
+        "workspace": "<REPO_ROOT>/openclaw-agents/company/1-admin-assistant",
+        "agentDir": "~/.openclaw/agents/admin-assistant/agent"
+      },
+      {
+        "id": "ops-assistant",
+        "name": "运营助理",
+        "workspace": "<REPO_ROOT>/openclaw-agents/company/2-ops-assistant",
+        "agentDir": "~/.openclaw/agents/ops-assistant/agent"
+      },
+      {
+        "id": "business-assistant",
+        "name": "商务助理",
+        "workspace": "<REPO_ROOT>/openclaw-agents/company/3-business-assistant",
+        "agentDir": "~/.openclaw/agents/business-assistant/agent"
+      },
+      {
+        "id": "boss-assistant",
+        "name": "老板助理",
+        "workspace": "<REPO_ROOT>/openclaw-agents/company/4-boss-assistant",
+        "agentDir": "~/.openclaw/agents/boss-assistant/agent"
+      },
+      {
+        "id": "boss-wife-assistant",
+        "name": "老板娘助理",
+        "workspace": "<REPO_ROOT>/openclaw-agents/company/5-boss-wife-assistant",
+        "agentDir": "~/.openclaw/agents/boss-wife-assistant/agent"
+      },
+      {
+        "id": "cs-assistant",
+        "name": "客服助理",
+        "workspace": "<REPO_ROOT>/openclaw-agents/company/6-cs-assistant",
+        "agentDir": "~/.openclaw/agents/cs-assistant/agent"
+      },
+      {
+        "id": "cs-specialist-xiaonuan",
+        "name": "客服专员-小暖",
+        "workspace": "<REPO_ROOT>/openclaw-agents/company/7-cs-specialist-xiaonuan",
+        "agentDir": "~/.openclaw/agents/cs-specialist-xiaonuan/agent"
+      }
+    ]
+  },
+  "bindings": [],
+  "tools": {}
+}

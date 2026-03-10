@@ -7,6 +7,7 @@
 | 文件 | 用途 |
 |------|------|
 | `openclaw-agents-fragment.json` | 通用多智能体示例（含 main、pm、design、dev、ops、blog 及 12 个 it 角色）；需将 `<REPO_ROOT>` 替换为实际路径。 |
+| `openclaw-company-fragment.json` | **公司智能体**：行政助理、运营助理、商务助理、老板助理、老板娘助理、客服助理、客服专员-小暖；workspace 指向 `company/1-admin-assistant` 等；合并前将 `<REPO_ROOT>` 替换为实际路径。 |
 | `openclaw-it-fragment.json` | **it 软件开发团队**专用：技术总监（编排者）+ 12 个子角色，单网关内协作。 |
 | `openclaw-scrm-fragment.json` | **SCRM 运营团队**专用：6 阶段（引流、获客、客资、建联、客服、私域）+ 客服 3 子角色（presale/aftersale/tech）；多网关时使用 profile `scrm`，端口 18819，状态目录 `~/.openclaw-scrm`；合并前将路径中的 `~/.openclaw-scrm` 按实际 STATE_DIR 替换。wecom-kf 需按账号/会话细化 bindings 时见 partme-docs 客服技术方案。 |
 | `openclaw-web3-fragment.json` | **Web3 团队**专用：chain-analyst、defi-scout、risk-monitor、portfolio-manager 四 Agent；多网关时使用 profile `web3`，端口 18869，状态目录 `~/.openclaw-web3`；合并前将路径中的 `~/.openclaw-web3` 按实际 STATE_DIR 替换。 |

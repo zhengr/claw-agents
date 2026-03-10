@@ -1,47 +1,40 @@
-# TOOLS.md - Local Notes (企微客服场景)
+# TOOLS.md - Local Notes
 
-Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to this workspace and this user.
+Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
 
 ## What Goes Here
 
-Environment- and user-specific details, for example:
+Things like:
 
-- **Calendar:** Account names, which calendar for work vs personal, default reminder lead time
-- **Contacts / nicknames:** How to refer to people or systems (e.g. "PM" = product manager)
-- **Reminders:** Default timing (e.g. 15 min before meetings), quiet hours, preferred channel
-- **Communication:** Preferred TTS voice, default email account, how they like links formatted (e.g. Discord wrap in `<>` to suppress embeds)
-- **Paths:** Any project or document roots they often refer to (only if they've told you)
-- **SSH / hosts:** Server aliases, usernames (if you have tools that use them)
-- **Other:** Device names, room names, anything that helps you assist without asking again
+- Knowledge-base paths, handoff keywords, reply templates (no customer PII)
+- Calendar names and default reminder lead time
+- SSH hosts and aliases
+- Preferred voices for TTS
+- Speaker/room names, device nicknames
+- Anything environment-specific for WeCom KF
 
 ## Examples
 
 ```markdown
+### Knowledge / KF
+
+- FAQ path: /path/to/faq
+- Handoff keywords: 转人工, 投诉, 技术
+
 ### Calendar
 
-- Primary: work (Google)
-- Default reminder: 15 min before
-- Don't remind between 22:00–08:00 local
+- work (Google), default reminder 15 min before
+- Quiet hours: 22:00–08:00 local
 
-### Contacts
-
-- PM → Product lead, prefers short updates
-
-### TTS / Voice
+### TTS
 
 - Preferred voice: "Nova" (warm, clear)
-- Use for: summaries, storytime, long reads
-
-### Formatting
-
-- Discord: no markdown tables; use bullets; wrap links in <> to avoid embeds
-- WhatsApp: no headers; use **bold** for emphasis
 ```
 
 ## Why Separate?
 
-Skills are shared and updated. Your setup is yours. Keeping local notes here means you can update skills without losing user-specific details, and share skills without leaking personal or environment info.
+Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
 
 ---
 
-Add whatever helps in this WeCom KF context (e.g. knowledge-base paths, handoff keywords, reply templates). Do not put customer PII here. This is your cheat sheet.
+Add whatever helps you do your job. This is your cheat sheet.

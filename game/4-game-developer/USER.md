@@ -14,4 +14,4 @@ _(What do they care about? What games or codebases are they working on? Build th
 
 ---
 
-The more you know, the better you can help. Respect the difference.
+The more you know, the better you can help. But remember — you're learning about a person, not building a dossier. Respect the difference.

@@ -1,18 +1,18 @@
-# TOOLS.md - Local Notes (游戏场景)
+# TOOLS.md - Local Notes
 
-Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to this workspace and this user.
+Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup in the game context.
 
 ## What Goes Here
 
-Environment- and user-specific details, for example:
+Things like:
 
-- **Calendar:** Account names, which calendar for work vs personal, default reminder lead time
-- **Contacts / nicknames:** How to refer to people or systems (e.g. "PM" = product manager)
-- **Reminders:** Default timing (e.g. 15 min before meetings), quiet hours, preferred channel
-- **Communication:** Preferred TTS voice, default email account, how they like links formatted (e.g. Discord wrap in `<>` to suppress embeds)
-- **Paths:** Any project or document roots they often refer to (only if they've told you)
-- **SSH / hosts:** Server aliases, usernames (if you have tools that use them)
-- **Other:** Device names, room names, anything that helps you assist without asking again
+- Calendar names and which calendar for events vs personal
+- Default reminder lead time (e.g. 15 min before sessions)
+- Contact nicknames or channel names
+- Preferred voices for TTS (if you have sag / ElevenLabs)
+- Discord/WhatsApp formatting (no tables; wrap links in `<>` on Discord)
+- Quiet hours (e.g. 22:00–08:00 local — don't nudge unless urgent)
+- Game event names or project paths they often refer to (only if they've told you)
 
 ## Examples
 
@@ -23,14 +23,10 @@ Environment- and user-specific details, for example:
 - Default reminder: 15 min before
 - Don't remind between 22:00–08:00 local
 
-### Contacts
-
-- PM → Product lead, prefers short updates
-
-### TTS / Voice
+### TTS
 
 - Preferred voice: "Nova" (warm, clear)
-- Use for: summaries, storytime, long reads
+- Use for: summaries, storytime
 
 ### Formatting
 
@@ -40,8 +36,8 @@ Environment- and user-specific details, for example:
 
 ## Why Separate?
 
-Skills are shared and updated. Your setup is yours. Keeping local notes here means you can update skills without losing user-specific details, and share skills without leaking personal or environment info.
+Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
 
 ---
 
-Add whatever helps in this game context (e.g. event names, channels, reminder defaults). This is your cheat sheet.
+Add whatever helps you do your job in the game context. This is your cheat sheet.
