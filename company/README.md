@@ -33,6 +33,7 @@ openclaw agents list
 ### 2. 添加公司智能体（7 个）
 
 ```bash
+openclaw agents add main-assistant       --workspace ~/.openclaw/workspace-main-assistant;
 openclaw agents add admin-assistant       --workspace ~/.openclaw/workspace-admin-assistant;
 openclaw agents add ops-assistant         --workspace ~/.openclaw/workspace-ops-assistant;
 openclaw agents add business-assistant   --workspace ~/.openclaw/workspace-business-assistant;
