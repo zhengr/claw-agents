@@ -30,6 +30,59 @@ skillhub install <slug>
 
 其中 `<slug>` 与 ClawHub 技能名一致（如 `self-improving-agent`、`xiaohongshu-mcp` 等）。安装后技能目录名同样需与 openclaw 配置中 `agents.list[].skills` 一致。
 
+### 1.2 OpenClaw 技能安装目录
+
+OpenClaw 的技能（Skills）安装目录取决于当前环境：
+
+| 类型 | 路径 |
+|------|------|
+| **全局技能** | `~/.openclaw/skills/` |
+| **工作区技能** | `<workspace>/.openclaw/skills/` |
+
+示例：若当前工作区为 `workspace-openclaw-assistant`（路径 `/root/.openclaw/workspace-openclaw-assistant`），则该工作区内的技能目录为：
+
+```
+/root/.openclaw/workspace-openclaw-assistant/.openclaw/skills/
+```
+
+**确认本机路径**：可在本机执行以下命令查看实际配置：
+
+```bash
+openclaw status
+```
+
+或查看配置中的技能相关项：
+
+```bash
+cat ~/.openclaw/openclaw.json | grep skills
+```
+
+安装或复制技能时，请放入上述对应目录，且子目录名与配置中 `agents.list[].skills` 一致。
+
+### 1.3 npx skills 与 OpenClaw 技能目录一致
+
+**问题**：OpenClaw 从 [§1.2](#12-openclaw-技能安装目录) 所述目录（全局 `~/.openclaw/skills/` 或工作区 `<workspace>/.openclaw/skills/`）加载技能；`npx skills add` 默认安装到 **`./.agent/skills/`** 或 **`~/.agent/skills/`**，二者不一致，OpenClaw 无法直接使用 npx 安装的技能。
+
+**解决办法（任选其一）：**
+
+1. **优先用 ClawHub / SkillHub 安装**  
+   使用 `clawhub install <slug>` 或 [SkillHub 国内镜像](#11-skillhub-国内镜像可选) 的 `skillhub install <slug>`，会安装到 OpenClaw 使用的技能目录（见 §1.2），无需额外操作。
+
+2. **使用 npx skills 后复制或软链到 OpenClaw 目录**  
+   安装完成后，将技能目录复制或软链到当前环境的技能目录（全局为 `~/.openclaw/skills/`，工作区为 `<workspace>/.openclaw/skills/`），目录名与配置中 `agents.list[].skills` 一致。示例（以 root 用户、全局技能、技能名 `baoyu-cover-image` 为例）：
+
+   ```bash
+   # 若 npx skills 装到了 ~/.agent/skills/
+   SKILL_NAME=baoyu-cover-image
+   OPENCLAW_SKILLS="${OPENCLAW_STATE_DIR:-$HOME/.openclaw}/skills"
+   mkdir -p "$OPENCLAW_SKILLS"
+   cp -r "$HOME/.agent/skills/$SKILL_NAME" "$OPENCLAW_SKILLS/"
+   # 或软链（便于后续用 npx skills 更新）：
+   # ln -sfn "$HOME/.agent/skills/$SKILL_NAME" "$OPENCLAW_SKILLS/$SKILL_NAME"
+   ```
+
+   若为工作区技能，将 `OPENCLAW_SKILLS` 改为工作区路径下的 `.openclaw/skills/`（如 `/root/.openclaw/workspace-openclaw-assistant/.openclaw/skills/`）。若 npx 为项目内安装（`./.agent/skills/`），把上述 `$HOME/.agent/skills/` 改为项目下的 `./.agent/skills/` 即可。
+
 ## 2. Baoyu 全表（jimliu/baoyu-skills）18 项：归类 + 使用场景
 
 来源：[skills.sh/?q=jimliu](https://skills.sh/?q=jimliu)。按功能归类，并给出可使用场景与典型管线。**以下 18 项都不能少**，选型时按管线按需选用，但清单以全量为准。
@@ -108,24 +161,24 @@ flowchart LR
 **完整 18 项（一键复制，一项不落）：**
 
 ```bash
-npx skills add jimliu/baoyu-skills --skill baoyu-image-gen
-npx skills add jimliu/baoyu-skills --skill baoyu-post-to-wechat
-npx skills add jimliu/baoyu-skills --skill baoyu-cover-image
-npx skills add jimliu/baoyu-skills --skill baoyu-xhs-images
-npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator
-npx skills add jimliu/baoyu-skills --skill baoyu-slide-deck
-npx skills add jimliu/baoyu-skills --skill baoyu-post-to-x
-npx skills add jimliu/baoyu-skills --skill release-skills
-npx skills add jimliu/baoyu-skills --skill baoyu-infographic
-npx skills add jimliu/baoyu-skills --skill baoyu-danger-x-to-markdown
-npx skills add jimliu/baoyu-skills --skill baoyu-comic
-npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown
-npx skills add jimliu/baoyu-skills --skill baoyu-danger-gemini-web
-npx skills add jimliu/baoyu-skills --skill baoyu-compress-image
-npx skills add jimliu/baoyu-skills --skill baoyu-markdown-to-html
-npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown
-npx skills add jimliu/baoyu-skills --skill baoyu-translate
-npx skills add jimliu/baoyu-skills --skill baoyu-post-to-weibo
+npx skills add jimliu/baoyu-skills --skill baoyu-image-gen -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-post-to-wechat -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-xhs-images -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-slide-deck -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-post-to-x -y -g;
+npx skills add jimliu/baoyu-skills --skill release-skills -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-danger-x-to-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-danger-gemini-web -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-markdown-to-html -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-post-to-weibo -y -g;
 ```
 
 以下按用途分组，便于按管线只装子集：
@@ -133,38 +186,38 @@ npx skills add jimliu/baoyu-skills --skill baoyu-post-to-weibo
 **通用内容管线常用（爆款拆解 + 二创/写作 + 发布前）：**
 
 ```bash
-npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown
-npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown
-npx skills add jimliu/baoyu-skills --skill baoyu-cover-image
-npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator
-npx skills add jimliu/baoyu-skills --skill baoyu-compress-image
+npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown;
+npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown;
+npx skills add jimliu/baoyu-skills --skill baoyu-cover-image;
+npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator;
+npx skills add jimliu/baoyu-skills --skill baoyu-compress-image;
 ```
 
 **小红书管线补充：**
 
 ```bash
-npx skills add jimliu/baoyu-skills --skill baoyu-xhs-images
+npx skills add jimliu/baoyu-skills --skill baoyu-xhs-images;
 ```
 
 **公众号/多平台发布：**
 
 ```bash
-npx skills add jimliu/baoyu-skills --skill baoyu-post-to-wechat
-npx skills add jimliu/baoyu-skills --skill baoyu-markdown-to-html
-npx skills add jimliu/baoyu-skills --skill baoyu-post-to-x
-npx skills add jimliu/baoyu-skills --skill baoyu-post-to-weibo
+npx skills add jimliu/baoyu-skills --skill baoyu-post-to-wechat;
+npx skills add jimliu/baoyu-skills --skill baoyu-markdown-to-html;
+npx skills add jimliu/baoyu-skills --skill baoyu-post-to-x;
+npx skills add jimliu/baoyu-skills --skill baoyu-post-to-weibo;
 ```
 
 **可选（配图扩展 / 抓取 / 多语言）：**
 
 ```bash
-npx skills add jimliu/baoyu-skills --skill baoyu-image-gen
-npx skills add jimliu/baoyu-skills --skill baoyu-slide-deck
-npx skills add jimliu/baoyu-skills --skill baoyu-infographic
-npx skills add jimliu/baoyu-skills --skill baoyu-comic
-npx skills add jimliu/baoyu-skills --skill baoyu-danger-x-to-markdown
-npx skills add jimliu/baoyu-skills --skill baoyu-danger-gemini-web
-npx skills add jimliu/baoyu-skills --skill baoyu-translate
+npx skills add jimliu/baoyu-skills --skill baoyu-image-gen;
+npx skills add jimliu/baoyu-skills --skill baoyu-slide-deck;
+npx skills add jimliu/baoyu-skills --skill baoyu-infographic;
+npx skills add jimliu/baoyu-skills --skill baoyu-comic;
+npx skills add jimliu/baoyu-skills --skill baoyu-danger-x-to-markdown;
+npx skills add jimliu/baoyu-skills --skill baoyu-danger-gemini-web;
+npx skills add jimliu/baoyu-skills --skill baoyu-translate;
 ```
 
 若 CLI 为 `npx skillsadd`（无空格），格式以 [skills.sh](https://skills.sh/) 文档为准。安装后技能目录名需与 config 中 `skills` 一致。

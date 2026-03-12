@@ -705,7 +705,7 @@ openclaw --profile web3 health --json
 | 工作空间 | `OPENCLAW_WORKSPACE` / `OPENCLAW_PROFILE` | `~/.openclaw/workspace` | 默认工作空间 |
 | 智能体目录 | - | `~/.openclaw/agents/<agentId>/agent` | 智能体状态 |
 | 会话存储 | - | `~/.openclaw/agents/<agentId>/sessions` | 聊天历史 |
-| 全局技能 | - | `~/.openclaw/skills` | 共享技能目录 |
+| 全局技能 | - | `~/.openclaw/skills` | 共享技能目录；工作区技能在 `<workspace>/.openclaw/skills/`。`npx skills` 默认不装在此处，需复制/软链或改用 clawhub/skillhub，见 [SKILLS-MASTER §1.2–1.3](docs/SKILLS-MASTER.md#12-openclaw-技能安装目录) |
 
 ### 目录结构
 

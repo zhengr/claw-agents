@@ -71,13 +71,13 @@
 
 ```bash
 # 步骤 1、2：监控与拆解
-npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown
-npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown
+npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g;
 # 步骤 3a、3b：二创与写作
-npx skills add jimliu/baoyu-skills --skill baoyu-cover-image
-npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator
+npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g;
 # 步骤 4：发布
-npx skills add jimliu/baoyu-skills --skill baoyu-compress-image
+npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g;
 ```
 
 多平台发布（含知乎想法）可安装 [social-push](https://github.com/jihe520/social-push) 类 Skill。安装后技能目录名需与 config 中 `skills` 一致。**勿在 TOOLS.md 存凭证。**

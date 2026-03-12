@@ -74,14 +74,14 @@ clawhub install <slug>
 
 ```bash
 # 步骤 1、2：监控与拆解
-npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown
-npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown
+npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g;
 # 步骤 3a、3b：二创与原创
-npx skills add jimliu/baoyu-skills --skill baoyu-xhs-images
-npx skills add jimliu/baoyu-skills --skill baoyu-cover-image
-npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator
+npx skills add jimliu/baoyu-skills --skill baoyu-xhs-images -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g;
 # 步骤 4：发布
-npx skills add jimliu/baoyu-skills --skill baoyu-compress-image
+npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g;
 ```
 
 若使用 `npx skillsadd`（无空格），格式以 skills.sh 文档为准。安装后技能目录名需与配置中 `skills` 数组一致。
