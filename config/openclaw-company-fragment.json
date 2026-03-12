@@ -4,44 +4,72 @@
       {
         "id": "admin-assistant",
         "name": "行政助理",
-        "workspace": "<REPO_ROOT>/openclaw-agents/company/1-admin-assistant",
+        "workspace": "~/.openclaw/workspace-admin-assistant",
         "agentDir": "~/.openclaw/agents/admin-assistant/agent"
       },
       {
         "id": "ops-assistant",
         "name": "运营助理",
-        "workspace": "<REPO_ROOT>/openclaw-agents/company/2-ops-assistant",
+        "workspace": "~/.openclaw/workspace-ops-assistant",
         "agentDir": "~/.openclaw/agents/ops-assistant/agent"
       },
       {
         "id": "business-assistant",
         "name": "商务助理",
-        "workspace": "<REPO_ROOT>/openclaw-agents/company/3-business-assistant",
+        "workspace": "~/.openclaw/workspace-business-assistant",
         "agentDir": "~/.openclaw/agents/business-assistant/agent"
       },
       {
         "id": "boss-assistant",
         "name": "老板助理",
-        "workspace": "<REPO_ROOT>/openclaw-agents/company/4-boss-assistant",
+        "workspace": "~/.openclaw/workspace-boss-assistant",
         "agentDir": "~/.openclaw/agents/boss-assistant/agent"
       },
       {
         "id": "boss-wife-assistant",
         "name": "老板娘助理",
-        "workspace": "<REPO_ROOT>/openclaw-agents/company/5-boss-wife-assistant",
+        "workspace": "~/.openclaw/workspace-boss-wife-assistant",
         "agentDir": "~/.openclaw/agents/boss-wife-assistant/agent"
       },
       {
         "id": "cs-assistant",
         "name": "客服助理",
-        "workspace": "<REPO_ROOT>/openclaw-agents/company/6-cs-assistant",
+        "workspace": "~/.openclaw/workspace-cs-assistant",
         "agentDir": "~/.openclaw/agents/cs-assistant/agent"
       },
       {
         "id": "cs-specialist-xiaonuan",
         "name": "客服专员-小暖",
-        "workspace": "<REPO_ROOT>/openclaw-agents/company/7-cs-specialist-xiaonuan",
+        "workspace": "~/.openclaw/workspace-cs-specialist-xiaonuan",
         "agentDir": "~/.openclaw/agents/cs-specialist-xiaonuan/agent"
+      },
+      {
+        "id": "xiaohongshu-viral-breakdown",
+        "name": "小红书爆款拆解",
+        "workspace": "~/.openclaw/workspace-xiaohongshu-viral-breakdown",
+        "agentDir": "~/.openclaw/agents/xiaohongshu-viral-breakdown/agent",
+        "skills": ["baoyu-url-to-markdown", "baoyu-format-markdown"]
+      },
+      {
+        "id": "xiaohongshu-rewrite",
+        "name": "小红书二创",
+        "workspace": "~/.openclaw/workspace-xiaohongshu-rewrite",
+        "agentDir": "~/.openclaw/agents/xiaohongshu-rewrite/agent",
+        "skills": ["baoyu-xhs-images", "baoyu-cover-image", "baoyu-article-illustrator"]
+      },
+      {
+        "id": "xiaohongshu-publisher",
+        "name": "小红书自动发布",
+        "workspace": "~/.openclaw/workspace-xiaohongshu-publisher",
+        "agentDir": "~/.openclaw/agents/xiaohongshu-publisher/agent",
+        "skills": ["baoyu-compress-image"]
+      },
+      {
+        "id": "xiaohongshu-data-assistant",
+        "name": "小红书数据助手",
+        "workspace": "~/.openclaw/workspace-xiaohongshu-data-assistant",
+        "agentDir": "~/.openclaw/agents/xiaohongshu-data-assistant/agent",
+        "skills": ["baoyu-format-markdown"]
       }
     ]
   },

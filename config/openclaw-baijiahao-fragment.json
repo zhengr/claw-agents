@@ -1,0 +1,57 @@
+{
+  "agents": {
+    "list": [
+      {
+        "id": "baijiahao-viral-breakdown",
+        "name": "百家号爆款拆解",
+        "workspace": "~/.openclaw/workspace-baijiahao-viral-breakdown",
+        "agentDir": "~/.openclaw/agents/baijiahao-viral-breakdown/agent",
+        "skills": ["baoyu-url-to-markdown", "baoyu-format-markdown"]
+      },
+      {
+        "id": "baijiahao-rewrite",
+        "name": "百家号二创",
+        "workspace": "~/.openclaw/workspace-baijiahao-rewrite",
+        "agentDir": "~/.openclaw/agents/baijiahao-rewrite/agent",
+        "skills": ["baoyu-cover-image", "baoyu-article-illustrator"]
+      },
+      {
+        "id": "baijiahao-publisher",
+        "name": "百家号自动发布",
+        "workspace": "~/.openclaw/workspace-baijiahao-publisher",
+        "agentDir": "~/.openclaw/agents/baijiahao-publisher/agent",
+        "skills": ["baoyu-compress-image"]
+      },
+      {
+        "id": "baijiahao-data-assistant",
+        "name": "百家号数据助手",
+        "workspace": "~/.openclaw/workspace-baijiahao-data-assistant",
+        "agentDir": "~/.openclaw/agents/baijiahao-data-assistant/agent",
+        "skills": ["baoyu-format-markdown"]
+      },
+      {
+        "id": "baijiahao-hot-monitor",
+        "name": "百家号热门监控",
+        "workspace": "~/.openclaw/workspace-baijiahao-hot-monitor",
+        "agentDir": "~/.openclaw/agents/baijiahao-hot-monitor/agent",
+        "skills": ["baoyu-url-to-markdown", "baoyu-format-markdown"]
+      },
+      {
+        "id": "baijiahao-write",
+        "name": "百家号写作",
+        "workspace": "~/.openclaw/workspace-baijiahao-write",
+        "agentDir": "~/.openclaw/agents/baijiahao-write/agent",
+        "skills": ["baoyu-cover-image", "baoyu-article-illustrator"]
+      },
+      {
+        "id": "baijiahao-comment-manager",
+        "name": "百家号评论管理",
+        "workspace": "~/.openclaw/workspace-baijiahao-comment-manager",
+        "agentDir": "~/.openclaw/agents/baijiahao-comment-manager/agent",
+        "skills": []
+      }
+    ]
+  },
+  "bindings": [],
+  "tools": {}
+}

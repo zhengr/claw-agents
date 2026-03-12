@@ -1,0 +1,57 @@
+{
+  "agents": {
+    "list": [
+      {
+        "id": "juejin-hot-monitor",
+        "name": "掘金热门监控",
+        "workspace": "~/.openclaw/workspace-juejin-hot-monitor",
+        "agentDir": "~/.openclaw/agents/juejin-hot-monitor/agent",
+        "skills": ["baoyu-url-to-markdown", "baoyu-format-markdown"]
+      },
+      {
+        "id": "juejin-viral-breakdown",
+        "name": "掘金爆款拆解",
+        "workspace": "~/.openclaw/workspace-juejin-viral-breakdown",
+        "agentDir": "~/.openclaw/agents/juejin-viral-breakdown/agent",
+        "skills": ["baoyu-url-to-markdown", "baoyu-format-markdown"]
+      },
+      {
+        "id": "juejin-rewrite",
+        "name": "掘金二创",
+        "workspace": "~/.openclaw/workspace-juejin-rewrite",
+        "agentDir": "~/.openclaw/agents/juejin-rewrite/agent",
+        "skills": ["baoyu-cover-image", "baoyu-article-illustrator"]
+      },
+      {
+        "id": "juejin-publisher",
+        "name": "掘金自动发布",
+        "workspace": "~/.openclaw/workspace-juejin-publisher",
+        "agentDir": "~/.openclaw/agents/juejin-publisher/agent",
+        "skills": ["baoyu-compress-image"]
+      },
+      {
+        "id": "juejin-data-assistant",
+        "name": "掘金数据助手",
+        "workspace": "~/.openclaw/workspace-juejin-data-assistant",
+        "agentDir": "~/.openclaw/agents/juejin-data-assistant/agent",
+        "skills": ["baoyu-format-markdown"]
+      },
+      {
+        "id": "juejin-write",
+        "name": "掘金写作",
+        "workspace": "~/.openclaw/workspace-juejin-write",
+        "agentDir": "~/.openclaw/agents/juejin-write/agent",
+        "skills": ["baoyu-cover-image", "baoyu-article-illustrator"]
+      },
+      {
+        "id": "juejin-comment-manager",
+        "name": "掘金评论管理",
+        "workspace": "~/.openclaw/workspace-juejin-comment-manager",
+        "agentDir": "~/.openclaw/agents/juejin-comment-manager/agent",
+        "skills": []
+      }
+    ]
+  },
+  "bindings": [],
+  "tools": {}
+}

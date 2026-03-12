@@ -1,0 +1,57 @@
+{
+  "agents": {
+    "list": [
+      {
+        "id": "wechat-video-hot-monitor",
+        "name": "视频号热门监控",
+        "workspace": "~/.openclaw/workspace-wechat-video-hot-monitor",
+        "agentDir": "~/.openclaw/agents/wechat-video-hot-monitor/agent",
+        "skills": ["baoyu-url-to-markdown", "baoyu-format-markdown"]
+      },
+      {
+        "id": "wechat-video-viral-breakdown",
+        "name": "视频号爆款拆解",
+        "workspace": "~/.openclaw/workspace-wechat-video-viral-breakdown",
+        "agentDir": "~/.openclaw/agents/wechat-video-viral-breakdown/agent",
+        "skills": ["baoyu-url-to-markdown", "baoyu-format-markdown"]
+      },
+      {
+        "id": "wechat-video-rewrite",
+        "name": "视频号二创",
+        "workspace": "~/.openclaw/workspace-wechat-video-rewrite",
+        "agentDir": "~/.openclaw/agents/wechat-video-rewrite/agent",
+        "skills": ["baoyu-cover-image", "baoyu-article-illustrator"]
+      },
+      {
+        "id": "wechat-video-publisher",
+        "name": "视频号自动发布",
+        "workspace": "~/.openclaw/workspace-wechat-video-publisher",
+        "agentDir": "~/.openclaw/agents/wechat-video-publisher/agent",
+        "skills": ["baoyu-compress-image"]
+      },
+      {
+        "id": "wechat-video-data-assistant",
+        "name": "视频号数据助手",
+        "workspace": "~/.openclaw/workspace-wechat-video-data-assistant",
+        "agentDir": "~/.openclaw/agents/wechat-video-data-assistant/agent",
+        "skills": ["baoyu-format-markdown"]
+      },
+      {
+        "id": "wechat-video-write",
+        "name": "视频号写作",
+        "workspace": "~/.openclaw/workspace-wechat-video-write",
+        "agentDir": "~/.openclaw/agents/wechat-video-write/agent",
+        "skills": ["baoyu-cover-image", "baoyu-article-illustrator"]
+      },
+      {
+        "id": "wechat-video-comment-manager",
+        "name": "视频号评论管理",
+        "workspace": "~/.openclaw/workspace-wechat-video-comment-manager",
+        "agentDir": "~/.openclaw/agents/wechat-video-comment-manager/agent",
+        "skills": []
+      }
+    ]
+  },
+  "bindings": [],
+  "tools": {}
+}

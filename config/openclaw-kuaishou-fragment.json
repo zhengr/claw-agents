@@ -1,0 +1,57 @@
+{
+  "agents": {
+    "list": [
+      {
+        "id": "kuaishou-hot-monitor",
+        "name": "快手热门监控",
+        "workspace": "~/.openclaw/workspace-kuaishou-hot-monitor",
+        "agentDir": "~/.openclaw/agents/kuaishou-hot-monitor/agent",
+        "skills": ["baoyu-url-to-markdown", "baoyu-format-markdown"]
+      },
+      {
+        "id": "kuaishou-viral-breakdown",
+        "name": "快手爆款拆解",
+        "workspace": "~/.openclaw/workspace-kuaishou-viral-breakdown",
+        "agentDir": "~/.openclaw/agents/kuaishou-viral-breakdown/agent",
+        "skills": ["baoyu-url-to-markdown", "baoyu-format-markdown"]
+      },
+      {
+        "id": "kuaishou-rewrite",
+        "name": "快手二创",
+        "workspace": "~/.openclaw/workspace-kuaishou-rewrite",
+        "agentDir": "~/.openclaw/agents/kuaishou-rewrite/agent",
+        "skills": ["baoyu-cover-image", "baoyu-article-illustrator"]
+      },
+      {
+        "id": "kuaishou-publisher",
+        "name": "快手自动发布",
+        "workspace": "~/.openclaw/workspace-kuaishou-publisher",
+        "agentDir": "~/.openclaw/agents/kuaishou-publisher/agent",
+        "skills": ["baoyu-compress-image"]
+      },
+      {
+        "id": "kuaishou-data-assistant",
+        "name": "快手数据助手",
+        "workspace": "~/.openclaw/workspace-kuaishou-data-assistant",
+        "agentDir": "~/.openclaw/agents/kuaishou-data-assistant/agent",
+        "skills": ["baoyu-format-markdown"]
+      },
+      {
+        "id": "kuaishou-write",
+        "name": "快手写作",
+        "workspace": "~/.openclaw/workspace-kuaishou-write",
+        "agentDir": "~/.openclaw/agents/kuaishou-write/agent",
+        "skills": ["baoyu-cover-image", "baoyu-article-illustrator"]
+      },
+      {
+        "id": "kuaishou-comment-manager",
+        "name": "快手评论管理",
+        "workspace": "~/.openclaw/workspace-kuaishou-comment-manager",
+        "agentDir": "~/.openclaw/agents/kuaishou-comment-manager/agent",
+        "skills": []
+      }
+    ]
+  },
+  "bindings": [],
+  "tools": {}
+}

@@ -1,0 +1,57 @@
+{
+  "agents": {
+    "list": [
+      {
+        "id": "wechat-article-viral-breakdown",
+        "name": "公众号爆款拆解",
+        "workspace": "~/.openclaw/workspace-wechat-article-viral-breakdown",
+        "agentDir": "~/.openclaw/agents/wechat-article-viral-breakdown/agent",
+        "skills": ["wechat-article-extractor", "baoyu-format-markdown"]
+      },
+      {
+        "id": "wechat-article-rewrite",
+        "name": "公众号二创",
+        "workspace": "~/.openclaw/workspace-wechat-article-rewrite",
+        "agentDir": "~/.openclaw/agents/wechat-article-rewrite/agent",
+        "skills": ["baoyu-cover-image", "baoyu-article-illustrator"]
+      },
+      {
+        "id": "wechat-article-publisher",
+        "name": "公众号自动发布",
+        "workspace": "~/.openclaw/workspace-wechat-article-publisher",
+        "agentDir": "~/.openclaw/agents/wechat-article-publisher/agent",
+        "skills": ["wechat-ai-publisher", "baoyu-markdown-to-html", "baoyu-compress-image", "baoyu-post-to-wechat"]
+      },
+      {
+        "id": "wechat-article-data-assistant",
+        "name": "公众号数据助手",
+        "workspace": "~/.openclaw/workspace-wechat-article-data-assistant",
+        "agentDir": "~/.openclaw/agents/wechat-article-data-assistant/agent",
+        "skills": ["baoyu-format-markdown"]
+      },
+      {
+        "id": "wechat-article-hot-monitor",
+        "name": "公众号热门监控",
+        "workspace": "~/.openclaw/workspace-wechat-article-hot-monitor",
+        "agentDir": "~/.openclaw/agents/wechat-article-hot-monitor/agent",
+        "skills": ["baoyu-url-to-markdown", "baoyu-format-markdown"]
+      },
+      {
+        "id": "wechat-article-write",
+        "name": "公众号写作",
+        "workspace": "~/.openclaw/workspace-wechat-article-write",
+        "agentDir": "~/.openclaw/agents/wechat-article-write/agent",
+        "skills": ["baoyu-cover-image", "baoyu-article-illustrator"]
+      },
+      {
+        "id": "wechat-article-comment-manager",
+        "name": "公众号评论管理",
+        "workspace": "~/.openclaw/workspace-wechat-article-comment-manager",
+        "agentDir": "~/.openclaw/agents/wechat-article-comment-manager/agent",
+        "skills": []
+      }
+    ]
+  },
+  "bindings": [],
+  "tools": {}
+}

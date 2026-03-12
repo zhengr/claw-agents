@@ -1,0 +1,57 @@
+{
+  "agents": {
+    "list": [
+      {
+        "id": "weibo-hot-monitor",
+        "name": "微博热门监控",
+        "workspace": "~/.openclaw/workspace-weibo-hot-monitor",
+        "agentDir": "~/.openclaw/agents/weibo-hot-monitor/agent",
+        "skills": ["baoyu-url-to-markdown", "baoyu-format-markdown"]
+      },
+      {
+        "id": "weibo-viral-breakdown",
+        "name": "微博爆款拆解",
+        "workspace": "~/.openclaw/workspace-weibo-viral-breakdown",
+        "agentDir": "~/.openclaw/agents/weibo-viral-breakdown/agent",
+        "skills": ["baoyu-url-to-markdown", "baoyu-format-markdown"]
+      },
+      {
+        "id": "weibo-rewrite",
+        "name": "微博二创",
+        "workspace": "~/.openclaw/workspace-weibo-rewrite",
+        "agentDir": "~/.openclaw/agents/weibo-rewrite/agent",
+        "skills": ["baoyu-cover-image", "baoyu-article-illustrator"]
+      },
+      {
+        "id": "weibo-publisher",
+        "name": "微博自动发布",
+        "workspace": "~/.openclaw/workspace-weibo-publisher",
+        "agentDir": "~/.openclaw/agents/weibo-publisher/agent",
+        "skills": ["baoyu-compress-image"]
+      },
+      {
+        "id": "weibo-data-assistant",
+        "name": "微博数据助手",
+        "workspace": "~/.openclaw/workspace-weibo-data-assistant",
+        "agentDir": "~/.openclaw/agents/weibo-data-assistant/agent",
+        "skills": ["baoyu-format-markdown"]
+      },
+      {
+        "id": "weibo-write",
+        "name": "微博写作",
+        "workspace": "~/.openclaw/workspace-weibo-write",
+        "agentDir": "~/.openclaw/agents/weibo-write/agent",
+        "skills": ["baoyu-cover-image", "baoyu-article-illustrator"]
+      },
+      {
+        "id": "weibo-comment-manager",
+        "name": "微博评论管理",
+        "workspace": "~/.openclaw/workspace-weibo-comment-manager",
+        "agentDir": "~/.openclaw/agents/weibo-comment-manager/agent",
+        "skills": []
+      }
+    ]
+  },
+  "bindings": [],
+  "tools": {}
+}

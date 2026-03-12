@@ -1,0 +1,25 @@
+# skills.sh 掘金相关技能一览
+
+> 来源：[skills.sh/?q=baoyu](https://skills.sh/?q=baoyu)、[skills.sh/?q=juejin](https://skills.sh/?q=juejin)。安装方式：`npx skills add <owner/repo> --skill <技能名>`。与 [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md) 并列。技术内容向，可选用 social-push 等多平台发布。
+
+## Baoyu 系列（jimliu/baoyu-skills）本管线可用
+
+| 技能名 | 本管线适用（agent / 用途） |
+|--------|----------------------------|
+| baoyu-url-to-markdown | hot-monitor、viral-breakdown：抓取链接成文 |
+| baoyu-format-markdown | viral-breakdown、data-assistant：报告格式 |
+| baoyu-cover-image | rewrite、write：封面 |
+| baoyu-article-illustrator | rewrite、write：配图 |
+| baoyu-compress-image | publisher：发布前压缩 |
+
+## 安装方式（skills.sh）
+
+```bash
+npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown
+npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown
+npx skills add jimliu/baoyu-skills --skill baoyu-cover-image
+npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator
+npx skills add jimliu/baoyu-skills --skill baoyu-compress-image
+```
+
+安装后技能目录名需与 config 中 `skills` 一致。**勿在 TOOLS.md 存凭证。**

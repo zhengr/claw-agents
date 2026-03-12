@@ -1,28 +1,35 @@
 # 公司智能体 (Company Agents)
 
-> 面向企业日常办公的助理智能体集合：行政、运营、商务、老板/老板娘助理、客服助理、客服专员-小暖。与 openclaw-agents 其他领域（it / game / wecom-kf）并列，单独目录便于配置与扩展。
+> 面向企业日常办公的助理智能体集合：对内（行政、运营、商务、老板/老板娘助理）与对外（客服助理、客服专员-小暖）。与 openclaw-agents 其他领域（it / game / wecom-kf / xiaohongshu）并列，按 internal / customer 子目录拆分便于配置与扩展。
+
+## 目录结构（按建议拆分）
+
+- **internal/** — 对内支撑：行政、运营、商务、老板/老板娘助理（流程、草稿、不代审批）。
+- **customer/** — 对外客服：客服助理、客服专员-小暖（话术、工单、权限）。
 
 ## 智能体清单
 
 | 序号 | Agent id | 展示名 | 目录 | 职责摘要 |
 |------|----------|--------|------|----------|
-| 1 | admin-assistant | 行政助理 | 1-admin-assistant | 行政事务：考勤、会议、差旅、办公用品、制度查询、接待协调 |
-| 2 | ops-assistant | 运营助理 | 2-ops-assistant | 运营支持：数据整理、活动跟进、内容排期、报表汇总、流程提醒 |
-| 3 | business-assistant | 商务助理 | 3-business-assistant | 商务支持：客户/合作方跟进、合同与会议安排、商务差旅、汇报材料起草 |
-| 4 | boss-assistant | 老板助理 | 4-boss-assistant | 老板专属：日程与要事提醒、汇报汇总、决策材料准备、跨部门协调入口 |
-| 5 | boss-wife-assistant | 老板娘助理 | 5-boss-wife-assistant | 老板娘专属：老板与老板娘为搭档共同奋斗；支持她在公司中的日程、业务条线汇报与材料、对外与接待、与老板助理协同 |
-| 6 | cs-assistant | 客服助理 | 6-cs-assistant | **对内**：辅助客服人员提升能力；话术检索与建议、公司业务与行业知识（话术/业务/行业信息后续提供） |
-| 7 | cs-specialist-xiaonuan | 客服专员-小暖 | 7-cs-specialist-xiaonuan | **对外**：智能客服「小暖」；根据行业内容、业务话术、公司业务服务客户，语气温暖贴心 |
+| 1 | admin-assistant | 行政助理 | internal/1-admin-assistant | 行政事务：考勤、会议、差旅、办公用品、制度查询、接待协调 |
+| 2 | ops-assistant | 运营助理 | internal/2-ops-assistant | 运营支持：数据整理、活动跟进、内容排期、报表汇总、流程提醒 |
+| 3 | business-assistant | 商务助理 | internal/3-business-assistant | 商务支持：客户/合作方跟进、合同与会议安排、商务差旅、汇报材料起草 |
+| 4 | boss-assistant | 老板助理 | internal/4-boss-assistant | 老板专属：日程与要事提醒、汇报汇总、决策材料准备、跨部门协调入口 |
+| 5 | boss-wife-assistant | 老板娘助理 | internal/5-boss-wife-assistant | 老板娘专属：老板与老板娘为搭档共同奋斗；支持她在公司中的日程、业务条线汇报与材料、对外与接待、与老板助理协同 |
+| 6 | cs-assistant | 客服助理 | customer/6-cs-assistant | **对内**：辅助客服人员提升能力；话术检索与建议、公司业务与行业知识（话术/业务/行业信息后续提供） |
+| 7 | cs-specialist-xiaonuan | 客服专员-小暖 | customer/7-cs-specialist-xiaonuan | **对外**：智能客服「小暖」；根据行业内容、业务话术、公司业务服务客户，语气温暖贴心 |
+
+**说明：** 小红书七件套已独立为 `content-ops/xiaohongshu/` 管线，见 `config/openclaw-xiaohongshu-fragment.json`。本片段（openclaw-company-fragment.json）中若仍含部分 xiaohongshu 条目，可与 xiaohongshu 片段二选一或统一 workspace 指向 `content-ops/xiaohongshu/` 目录。
 
 ## 配置说明
 
-- **Workspace**：各智能体 workspace 指向本目录下对应子目录（如 `<REPO_ROOT>/openclaw-agents/company/1-admin-assistant`），或部署时复制/链接到 `~/.openclaw/workspace-<agent-id>`。
+- **Workspace**：各智能体 workspace 指向本目录下对应子目录（如 `<REPO_ROOT>/openclaw-agents/company/internal/1-admin-assistant`、`company/customer/6-cs-assistant`），或部署时复制/链接到 `~/.openclaw/workspace-<agent-id>`。
 - **Config 片段**：见仓库根目录 `config/openclaw-company-fragment.json`，可合并进主 openclaw 配置；使用前将 `<REPO_ROOT>` 替换为 openclaw-agents 实际路径。
-- **路由**：按渠道或用户身份将会话绑定到对应 agent id（如老板用 boss-assistant，行政事务用 admin-assistant）。
+- **路由**：按渠道或用户身份将会话绑定到对应 agent id（如老板用 boss-assistant，行政事务用 admin-assistant；客服渠道绑 cs-assistant / cs-specialist-xiaonuan）。
 
 ## 初始化命令
 
-以下命令在 OpenClaw 配置已就绪的前提下执行；`--workspace` 使用本地路径（如 `~/.openclaw/workspace-<agent-id>`），需先将本仓库 `company/<N-xxx>` 复制或链接到对应 workspace 目录。
+以下命令在 OpenClaw 配置已就绪的前提下执行；`--workspace` 使用本地路径（如 `~/.openclaw/workspace-<agent-id>`），需先将本仓库 `company/internal/<N-xxx>` 或 `company/customer/<N-xxx>` 复制或链接到对应 workspace 目录。
 
 ### 1. 查看当前智能体列表
 
@@ -33,7 +40,6 @@ openclaw agents list
 ### 2. 添加公司智能体（7 个）
 
 ```bash
-openclaw agents add main-assistant       --workspace ~/.openclaw/workspace-main-assistant;
 openclaw agents add admin-assistant       --workspace ~/.openclaw/workspace-admin-assistant;
 openclaw agents add ops-assistant         --workspace ~/.openclaw/workspace-ops-assistant;
 openclaw agents add business-assistant   --workspace ~/.openclaw/workspace-business-assistant;

@@ -1,0 +1,57 @@
+{
+  "agents": {
+    "list": [
+      {
+        "id": "zhihu-viral-breakdown",
+        "name": "知乎爆款拆解",
+        "workspace": "~/.openclaw/workspace-zhihu-viral-breakdown",
+        "agentDir": "~/.openclaw/agents/zhihu-viral-breakdown/agent",
+        "skills": ["baoyu-url-to-markdown", "baoyu-format-markdown"]
+      },
+      {
+        "id": "zhihu-rewrite",
+        "name": "知乎二创",
+        "workspace": "~/.openclaw/workspace-zhihu-rewrite",
+        "agentDir": "~/.openclaw/agents/zhihu-rewrite/agent",
+        "skills": ["baoyu-cover-image", "baoyu-article-illustrator"]
+      },
+      {
+        "id": "zhihu-publisher",
+        "name": "知乎自动发布",
+        "workspace": "~/.openclaw/workspace-zhihu-publisher",
+        "agentDir": "~/.openclaw/agents/zhihu-publisher/agent",
+        "skills": ["baoyu-compress-image"]
+      },
+      {
+        "id": "zhihu-data-assistant",
+        "name": "知乎数据助手",
+        "workspace": "~/.openclaw/workspace-zhihu-data-assistant",
+        "agentDir": "~/.openclaw/agents/zhihu-data-assistant/agent",
+        "skills": ["baoyu-format-markdown"]
+      },
+      {
+        "id": "zhihu-hot-monitor",
+        "name": "知乎热门监控",
+        "workspace": "~/.openclaw/workspace-zhihu-hot-monitor",
+        "agentDir": "~/.openclaw/agents/zhihu-hot-monitor/agent",
+        "skills": ["baoyu-url-to-markdown", "baoyu-format-markdown"]
+      },
+      {
+        "id": "zhihu-write",
+        "name": "知乎写作",
+        "workspace": "~/.openclaw/workspace-zhihu-write",
+        "agentDir": "~/.openclaw/agents/zhihu-write/agent",
+        "skills": ["baoyu-cover-image", "baoyu-article-illustrator"]
+      },
+      {
+        "id": "zhihu-comment-manager",
+        "name": "知乎评论管理",
+        "workspace": "~/.openclaw/workspace-zhihu-comment-manager",
+        "agentDir": "~/.openclaw/agents/zhihu-comment-manager/agent",
+        "skills": []
+      }
+    ]
+  },
+  "bindings": [],
+  "tools": {}
+}

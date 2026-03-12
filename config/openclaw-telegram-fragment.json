@@ -1,0 +1,29 @@
+{
+  "agents": {
+    "list": [
+      {
+        "id": "telegram-bot-developer",
+        "name": "Telegram 机器人开发",
+        "workspace": "~/.openclaw/workspace-telegram-bot-developer",
+        "agentDir": "~/.openclaw/agents/telegram-bot-developer/agent",
+        "skills": ["telegram-bot-builder"]
+      },
+      {
+        "id": "telegram-community",
+        "name": "Telegram 社区运营",
+        "workspace": "~/.openclaw/workspace-telegram-community",
+        "agentDir": "~/.openclaw/agents/telegram-community/agent",
+        "skills": ["telegram-bot-builder"]
+      },
+      {
+        "id": "telegram-support",
+        "name": "Telegram 客服",
+        "workspace": "~/.openclaw/workspace-telegram-support",
+        "agentDir": "~/.openclaw/agents/telegram-support/agent",
+        "skills": ["telegram-bot-builder"]
+      }
+    ]
+  },
+  "bindings": [],
+  "tools": {}
+}

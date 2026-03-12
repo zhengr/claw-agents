@@ -1,0 +1,57 @@
+{
+  "agents": {
+    "list": [
+      {
+        "id": "bilibili-hot-monitor",
+        "name": "B站热门监控",
+        "workspace": "~/.openclaw/workspace-bilibili-hot-monitor",
+        "agentDir": "~/.openclaw/agents/bilibili-hot-monitor/agent",
+        "skills": ["bilibili-hot-monitor", "bilibili-update-viewer"]
+      },
+      {
+        "id": "bilibili-content-helper",
+        "name": "B站内容创作助手",
+        "workspace": "~/.openclaw/workspace-bilibili-content-helper",
+        "agentDir": "~/.openclaw/agents/bilibili-content-helper/agent",
+        "skills": ["bilibili-helper", "bilibili-subtitle-download-skill"]
+      },
+      {
+        "id": "bilibili-video-publisher",
+        "name": "B站视频发布",
+        "workspace": "~/.openclaw/workspace-bilibili-video-publisher",
+        "agentDir": "~/.openclaw/agents/bilibili-video-publisher/agent",
+        "skills": ["bilibili-video-publish", "bilibili-upload"]
+      },
+      {
+        "id": "bilibili-data-assistant",
+        "name": "B站数据助手",
+        "workspace": "~/.openclaw/workspace-bilibili-data-assistant",
+        "agentDir": "~/.openclaw/agents/bilibili-data-assistant/agent",
+        "skills": ["bilibili-analytics"]
+      },
+      {
+        "id": "bilibili-viral-breakdown",
+        "name": "B站爆款拆解",
+        "workspace": "~/.openclaw/workspace-bilibili-viral-breakdown",
+        "agentDir": "~/.openclaw/agents/bilibili-viral-breakdown/agent",
+        "skills": ["baoyu-format-markdown"]
+      },
+      {
+        "id": "bilibili-write",
+        "name": "B站写作",
+        "workspace": "~/.openclaw/workspace-bilibili-write",
+        "agentDir": "~/.openclaw/agents/bilibili-write/agent",
+        "skills": ["baoyu-cover-image", "baoyu-article-illustrator"]
+      },
+      {
+        "id": "bilibili-comment-manager",
+        "name": "B站评论管理",
+        "workspace": "~/.openclaw/workspace-bilibili-comment-manager",
+        "agentDir": "~/.openclaw/agents/bilibili-comment-manager/agent",
+        "skills": []
+      }
+    ]
+  },
+  "bindings": [],
+  "tools": {}
+}

@@ -1,0 +1,57 @@
+{
+  "agents": {
+    "list": [
+      {
+        "id": "douyin-hot-monitor",
+        "name": "抖音热门监控",
+        "workspace": "~/.openclaw/workspace-douyin-hot-monitor",
+        "agentDir": "~/.openclaw/agents/douyin-hot-monitor/agent",
+        "skills": ["baoyu-url-to-markdown", "baoyu-format-markdown"]
+      },
+      {
+        "id": "douyin-viral-breakdown",
+        "name": "抖音爆款拆解",
+        "workspace": "~/.openclaw/workspace-douyin-viral-breakdown",
+        "agentDir": "~/.openclaw/agents/douyin-viral-breakdown/agent",
+        "skills": ["baoyu-url-to-markdown", "baoyu-format-markdown"]
+      },
+      {
+        "id": "douyin-rewrite",
+        "name": "抖音二创",
+        "workspace": "~/.openclaw/workspace-douyin-rewrite",
+        "agentDir": "~/.openclaw/agents/douyin-rewrite/agent",
+        "skills": ["baoyu-cover-image", "baoyu-article-illustrator"]
+      },
+      {
+        "id": "douyin-publisher",
+        "name": "抖音自动发布",
+        "workspace": "~/.openclaw/workspace-douyin-publisher",
+        "agentDir": "~/.openclaw/agents/douyin-publisher/agent",
+        "skills": ["baoyu-compress-image"]
+      },
+      {
+        "id": "douyin-data-assistant",
+        "name": "抖音数据助手",
+        "workspace": "~/.openclaw/workspace-douyin-data-assistant",
+        "agentDir": "~/.openclaw/agents/douyin-data-assistant/agent",
+        "skills": ["baoyu-format-markdown"]
+      },
+      {
+        "id": "douyin-write",
+        "name": "抖音写作",
+        "workspace": "~/.openclaw/workspace-douyin-write",
+        "agentDir": "~/.openclaw/agents/douyin-write/agent",
+        "skills": ["baoyu-cover-image", "baoyu-article-illustrator"]
+      },
+      {
+        "id": "douyin-comment-manager",
+        "name": "抖音评论管理",
+        "workspace": "~/.openclaw/workspace-douyin-comment-manager",
+        "agentDir": "~/.openclaw/agents/douyin-comment-manager/agent",
+        "skills": []
+      }
+    ]
+  },
+  "bindings": [],
+  "tools": {}
+}

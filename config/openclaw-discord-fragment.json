@@ -1,0 +1,29 @@
+{
+  "agents": {
+    "list": [
+      {
+        "id": "discord-mod",
+        "name": "Discord 审核",
+        "workspace": "~/.openclaw/workspace-discord-mod",
+        "agentDir": "~/.openclaw/agents/discord-mod/agent",
+        "skills": ["discord"]
+      },
+      {
+        "id": "discord-community",
+        "name": "Discord 社区运营",
+        "workspace": "~/.openclaw/workspace-discord-community",
+        "agentDir": "~/.openclaw/agents/discord-community/agent",
+        "skills": ["discord"]
+      },
+      {
+        "id": "discord-support",
+        "name": "Discord 客服",
+        "workspace": "~/.openclaw/workspace-discord-support",
+        "agentDir": "~/.openclaw/agents/discord-support/agent",
+        "skills": ["discord"]
+      }
+    ]
+  },
+  "bindings": [],
+  "tools": {}
+}

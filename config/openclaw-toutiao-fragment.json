@@ -1,0 +1,57 @@
+{
+  "agents": {
+    "list": [
+      {
+        "id": "toutiao-hot-monitor",
+        "name": "头条号热门监控",
+        "workspace": "~/.openclaw/workspace-toutiao-hot-monitor",
+        "agentDir": "~/.openclaw/agents/toutiao-hot-monitor/agent",
+        "skills": ["baoyu-url-to-markdown", "baoyu-format-markdown"]
+      },
+      {
+        "id": "toutiao-viral-breakdown",
+        "name": "头条号爆款拆解",
+        "workspace": "~/.openclaw/workspace-toutiao-viral-breakdown",
+        "agentDir": "~/.openclaw/agents/toutiao-viral-breakdown/agent",
+        "skills": ["baoyu-url-to-markdown", "baoyu-format-markdown"]
+      },
+      {
+        "id": "toutiao-rewrite",
+        "name": "头条号二创",
+        "workspace": "~/.openclaw/workspace-toutiao-rewrite",
+        "agentDir": "~/.openclaw/agents/toutiao-rewrite/agent",
+        "skills": ["baoyu-cover-image", "baoyu-article-illustrator"]
+      },
+      {
+        "id": "toutiao-publisher",
+        "name": "头条号自动发布",
+        "workspace": "~/.openclaw/workspace-toutiao-publisher",
+        "agentDir": "~/.openclaw/agents/toutiao-publisher/agent",
+        "skills": ["baoyu-compress-image"]
+      },
+      {
+        "id": "toutiao-data-assistant",
+        "name": "头条号数据助手",
+        "workspace": "~/.openclaw/workspace-toutiao-data-assistant",
+        "agentDir": "~/.openclaw/agents/toutiao-data-assistant/agent",
+        "skills": ["baoyu-format-markdown"]
+      },
+      {
+        "id": "toutiao-write",
+        "name": "头条号写作",
+        "workspace": "~/.openclaw/workspace-toutiao-write",
+        "agentDir": "~/.openclaw/agents/toutiao-write/agent",
+        "skills": ["baoyu-cover-image", "baoyu-article-illustrator"]
+      },
+      {
+        "id": "toutiao-comment-manager",
+        "name": "头条号评论管理",
+        "workspace": "~/.openclaw/workspace-toutiao-comment-manager",
+        "agentDir": "~/.openclaw/agents/toutiao-comment-manager/agent",
+        "skills": []
+      }
+    ]
+  },
+  "bindings": [],
+  "tools": {}
+}
