@@ -33,29 +33,50 @@
 | 6    | zhihu-write            | 知乎写作       | 6-zhihu-write                 | 强调原创：用户主图+热点/爆款做原创想法/回答/文章，产出草稿供发布与数据助手 |
 | 7    | zhihu-comment-manager  | 知乎评论管理   | 7-zhihu-comment-manager       | 评论采集、起草回复、情感分析；回复需审批/门禁后发布 |
 
-## 预设技能（ClawHub 若有则为主，skills.sh 取最优）
+## 智能工作执行链路
 
-**技能一览**见 [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md)、[SKILLS-SH-SKILLS.md](./SKILLS-SH-SKILLS.md)。各智能体在 `config/openclaw-zhihu-fragment.json` 中已绑定技能；合并后 OpenClaw 按 `agents.list[].skills` 加载。
+七件套按以下链路协同执行；可按时序触发（如每日）或按需触发单环节。
 
-| Agent id               | 默认技能列表（示例） | 用途说明 |
-|------------------------|----------------------|----------|
-| zhihu-viral-breakdown  | baoyu-url-to-markdown, baoyu-format-markdown | 抓取 URL 成文、规范拆解输出 |
-| zhihu-rewrite          | baoyu-cover-image, baoyu-article-illustrator | 封面与长文配图 |
-| zhihu-publisher        | social-push（或知乎发布类 Skill）、baoyu-compress-image | 想法/回答发布、图片压缩 |
-| zhihu-data-assistant   | baoyu-format-markdown | 数据报告格式规范 |
-| zhihu-hot-monitor      | baoyu-url-to-markdown, baoyu-format-markdown | 抓取热点链接、规范日报格式 |
-| zhihu-write            | baoyu-cover-image, baoyu-article-illustrator | 原创内容配图与封面 |
-| zhihu-comment-manager  | （按需从 ClawHub/skills.sh 选评论采集与回复技能） | 评论拉取、回复草稿、情感摘要 |
+| 步骤 | 环节 | 智能体 | 输入 | 输出 | 说明 |
+|------|------|--------|------|------|------|
+| 1 | 热门监控 | zhihu-hot-monitor | 关键词/品类/时间范围 | 日报或按需摘要（热点、爆款列表） | 入口；可为定时或人工触发 |
+| 2 | 爆款拆解 | zhihu-viral-breakdown | 日报/摘要中的爆款链接或列表 | 拆解框架（标题、钩子、结构、主题） | 消费监控产出，供二创与数据侧使用 |
+| 3a | 二创 | zhihu-rewrite | 拆解框架 + 主题 | 草稿（文案 + 封面 + 配图） | 基于拆解做差异化二创，不发布 |
+| 3b | 写作 | zhihu-write | 用户选题 + 热点/爆款洞察 | 草稿（文案 + 封面 + 配图） | 独立于拆解的原创内容生产 |
+| 4 | 自动发布 | zhihu-publisher | 已审核草稿 | 发布结果日志（链接、时间、状态） | 仅发布已通过审核内容；发布前压缩图片 |
+| 5 | 数据助手 | zhihu-data-assistant | 发布日志 + 互动数据 | 可执行反馈（关键词/拆解维度/优先主题） | 交叉验证效果，反馈至爆款拆解与监控 |
+| 6 | 评论管理 | zhihu-comment-manager | 文章/账号评论源 | 回复草稿 + 情感摘要 | 回复须审批/门禁后由人工或流程发布 |
 
-### 安装方式（按来源区分）
+**闭环：** 数据助手的反馈驱动爆款拆解调整搜索与拆解标准，热门监控可据此调整关键词与范围，形成「监控 → 拆解 → 内容 → 发布 → 数据 → 反馈」闭环。
 
-**来源：skills.sh** — 知乎专项与 Baoyu 见 [SKILLS-SH-SKILLS.md](./SKILLS-SH-SKILLS.md)。
+**并行与触发：** 3a 二创与 3b 写作可并行；评论管理可与数据助手并行。执行顺序 1 → 2 → (3a 或 3b) → 4 → 5/6；步骤 5、6 可持续运行或按周期执行。
+
+## 预设技能（按执行链路顺序）
+
+**技能一览**见 [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md)、[SKILLS-SH-SKILLS.md](./SKILLS-SH-SKILLS.md)。以下按 **智能工作执行链路** 顺序列出（1→2→3a→3b→4→5→6）。
+
+| 步骤 | Agent id               | 默认技能列表（示例） | 用途说明 |
+|------|------------------------|----------------------|----------|
+| 1 | zhihu-hot-monitor      | baoyu-url-to-markdown, baoyu-format-markdown | 抓取热点链接、规范日报格式 |
+| 2 | zhihu-viral-breakdown  | baoyu-url-to-markdown, baoyu-format-markdown | 抓取 URL 成文、规范拆解输出 |
+| 3a | zhihu-rewrite          | baoyu-cover-image, baoyu-article-illustrator | 封面与长文配图 |
+| 3b | zhihu-write            | baoyu-cover-image, baoyu-article-illustrator | 原创内容配图与封面 |
+| 4 | zhihu-publisher        | social-push（或知乎发布类 Skill）、baoyu-compress-image | 想法/回答发布、图片压缩 |
+| 5 | zhihu-data-assistant   | baoyu-format-markdown | 数据报告格式规范 |
+| 6 | zhihu-comment-manager  | （按需从 ClawHub/skills.sh 选评论采集与回复技能） | 评论拉取、回复草稿、情感摘要 |
+
+### 安装方式（按来源区分，建议按链路顺序安装）
+
+**来源：skills.sh** — 知乎专项与 Baoyu 见 [SKILLS-SH-SKILLS.md](./SKILLS-SH-SKILLS.md)。按执行链路顺序安装示例：
 
 ```bash
+# 步骤 1、2：监控与拆解
 npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown
 npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown
+# 步骤 3a、3b：二创与写作
 npx skills add jimliu/baoyu-skills --skill baoyu-cover-image
 npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator
+# 步骤 4：发布
 npx skills add jimliu/baoyu-skills --skill baoyu-compress-image
 ```
 
@@ -67,16 +88,42 @@ npx skills add jimliu/baoyu-skills --skill baoyu-compress-image
 - **Config 片段：** `config/openclaw-zhihu-fragment.json`，合并进主 openclaw 配置即可。
 - **路由：** 通过 bindings 将对应渠道或会话路由到各 agent id。
 
-## 初始化命令示例
+## 初始化命令（按执行链路顺序）
+
+### 添加七件套
 
 ```bash
+openclaw agents add zhihu-hot-monitor       --workspace ~/.openclaw/workspace-zhihu-hot-monitor;
 openclaw agents add zhihu-viral-breakdown   --workspace ~/.openclaw/workspace-zhihu-viral-breakdown;
 openclaw agents add zhihu-rewrite           --workspace ~/.openclaw/workspace-zhihu-rewrite;
-openclaw agents add zhihu-publisher         --workspace ~/.openclaw/workspace-zhihu-publisher;
-openclaw agents add zhihu-data-assistant    --workspace ~/.openclaw/workspace-zhihu-data-assistant;
-openclaw agents add zhihu-hot-monitor       --workspace ~/.openclaw/workspace-zhihu-hot-monitor;
 openclaw agents add zhihu-write             --workspace ~/.openclaw/workspace-zhihu-write;
-openclaw agents add zhihu-comment-manager   --workspace ~/.openclaw/workspace-zhihu-comment-manager;
+openclaw agents add zhihu-publisher        --workspace ~/.openclaw/workspace-zhihu-publisher;
+openclaw agents add zhihu-data-assistant   --workspace ~/.openclaw/workspace-zhihu-data-assistant;
+openclaw agents add zhihu-comment-manager  --workspace ~/.openclaw/workspace-zhihu-comment-manager;
+```
+
+### 按渠道绑定（示例：wecom）
+
+```bash
+openclaw agents bind --agent zhihu-hot-monitor       --bind wecom:zhihu-hot-monitor;
+openclaw agents bind --agent zhihu-viral-breakdown   --bind wecom:zhihu-viral-breakdown;
+openclaw agents bind --agent zhihu-rewrite           --bind wecom:zhihu-rewrite;
+openclaw agents bind --agent zhihu-write            --bind wecom:zhihu-write;
+openclaw agents bind --agent zhihu-publisher         --bind wecom:zhihu-publisher;
+openclaw agents bind --agent zhihu-data-assistant    --bind wecom:zhihu-data-assistant;
+openclaw agents bind --agent zhihu-comment-manager   --bind wecom:zhihu-comment-manager;
+```
+
+### 删除七件套（需先解除绑定）
+
+```bash
+openclaw agents remove zhihu-hot-monitor;
+openclaw agents remove zhihu-viral-breakdown;
+openclaw agents remove zhihu-rewrite;
+openclaw agents remove zhihu-write;
+openclaw agents remove zhihu-publisher;
+openclaw agents remove zhihu-data-assistant;
+openclaw agents remove zhihu-comment-manager;
 ```
 
 ## 文件结构（每智能体）

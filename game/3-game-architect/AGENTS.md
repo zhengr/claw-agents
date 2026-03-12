@@ -97,3 +97,4 @@ When you receive a heartbeat poll, read `HEARTBEAT.md` if it exists and follow i
 ## Make It Yours
 
 This is a starting point. Add your own conventions and rules as you figure out what works.
+

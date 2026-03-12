@@ -23,36 +23,58 @@
 
 **管线关系：** 热门监控 → 日报/摘要 → 爆款拆解 → 拆解框架 → 内容助手/写作 → 草稿 → 视频发布 → 发布日志 → 数据助手 + 评论管理 → 反馈至热门监控与爆款拆解。
 
-## 预设技能（ClawHub 为主，skills.sh 取最优）
+## 智能工作执行链路
 
-**ClawHub 技能一览**见 [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md)，**skills.sh 技能一览**见 [SKILLS-SH-SKILLS.md](./SKILLS-SH-SKILLS.md)。各智能体在配置片段中已绑定推荐技能。合并 `config/openclaw-bilibili-fragment.json` 后，OpenClaw 按 `agents.list[].skills` 加载；需先将技能安装到 OpenClaw 可加载的 skills 目录，**安装后目录名与 config 中 `skills` 一致**。
+B 站七件套按以下链路协同执行（与图文平台顺序略有不同：先监控与内容生产，再拆解与写作补充）。
 
-| Agent id                  | 默认技能列表（ClawHub） | 用途说明 |
-|---------------------------|-------------------------|----------|
-| bilibili-hot-monitor      | bilibili-hot-monitor, bilibili-update-viewer | 热门日报、UP 主更新检查 |
-| bilibili-content-helper   | bilibili-helper, bilibili-subtitle-download-skill | 标题/标签/简介、字幕总结 |
-| bilibili-video-publisher  | bilibili-video-publish, bilibili-upload | 创作者平台发布、CLI 投稿 |
-| bilibili-data-assistant   | bilibili-analytics | 搜索与数据分析、统计报告 |
-| bilibili-viral-breakdown  | （ClawHub bilibili 或 baoyu-format-markdown） | 爆款视频拆解、框架输出 |
-| bilibili-write            | baoyu-cover-image, baoyu-article-illustrator（或 bilibili-helper） | 原创脚本与配图方向 |
-| bilibili-comment-manager  | （按需从 ClawHub/skills.sh 选评论采集与回复技能） | 评论/弹幕拉取、回复草稿、情感摘要 |
+| 步骤 | 环节 | 智能体 | 输入 | 输出 | 说明 |
+|------|------|--------|------|------|------|
+| 1 | 热门监控 | bilibili-hot-monitor | 分区/关键词/时间范围 | 日报或按需摘要（热门视频、UP 更新） | 入口；可为定时或人工触发 |
+| 2 | 内容创作助手 | bilibili-content-helper | 日报/选题 + 已有草稿 | 标题/标签/简介优化、字幕总结、脚本辅助 | 消费监控产出，产出草稿供发布 |
+| 3 | 视频发布 | bilibili-video-publisher | 已审核草稿 | 发布结果日志（链接、时间、状态） | 创作者平台或 CLI 投稿；仅发布已通过内容 |
+| 4 | 数据助手 | bilibili-data-assistant | 发布日志 + 播放/互动数据 | 可执行反馈（热门趋势、优化方向） | 交叉验证效果，反馈至热门监控与内容助手 |
+| 5 | 爆款拆解 | bilibili-viral-breakdown | 监控/调研得到的热门视频 | 拆解框架（标题、钩子、结构、主题） | 供内容助手与写作参考 |
+| 6 | 写作 | bilibili-write | 用户选题 + 热点/爆款洞察 | 原创视频脚本与配图方向、草稿 | 独立于内容助手的原创生产 |
+| 7 | 评论管理 | bilibili-comment-manager | 视频/账号评论与弹幕 | 回复草稿 + 情感/弹幕摘要 | 回复须审批/门禁后发布 |
 
-### 安装方式（按来源区分）
+**闭环：** 数据助手的反馈驱动热门监控与内容创作助手调整范围与策略，爆款拆解为内容助手与写作提供可复用框架，形成「监控 → 内容/发布 → 数据 → 拆解/写作 → 内容」闭环。
 
-**来源：ClawHub（为主）** — 安装后目录名与 config 中 `skills` 一致。
+**并行与触发：** 爆款拆解与写作可与内容助手并行消费监控产出；评论管理可与数据助手并行。执行顺序建议 1 → 2 → 3 → 4，5/6 可并行或按需触发，7 可持续或按周期执行。
+
+## 预设技能（按执行链路顺序）
+
+**ClawHub 技能一览**见 [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md)，**skills.sh 技能一览**见 [SKILLS-SH-SKILLS.md](./SKILLS-SH-SKILLS.md)。以下按 **智能工作执行链路** 顺序列出（1→2→3→4→5→6→7）。
+
+| 步骤 | Agent id                  | 默认技能列表（ClawHub） | 用途说明 |
+|------|---------------------------|-------------------------|----------|
+| 1 | bilibili-hot-monitor      | bilibili-hot-monitor, bilibili-update-viewer | 热门日报、UP 主更新检查 |
+| 2 | bilibili-content-helper   | bilibili-helper, bilibili-subtitle-download-skill | 标题/标签/简介、字幕总结 |
+| 3 | bilibili-video-publisher  | bilibili-video-publish, bilibili-upload | 创作者平台发布、CLI 投稿 |
+| 4 | bilibili-data-assistant   | bilibili-analytics | 搜索与数据分析、统计报告 |
+| 5 | bilibili-viral-breakdown  | （ClawHub bilibili 或 baoyu-format-markdown） | 爆款视频拆解、框架输出 |
+| 6 | bilibili-write            | baoyu-cover-image, baoyu-article-illustrator（或 bilibili-helper） | 原创脚本与配图方向 |
+| 7 | bilibili-comment-manager  | （按需从 ClawHub/skills.sh 选评论采集与回复技能） | 评论/弹幕拉取、回复草稿、情感摘要 |
+
+### 安装方式（按来源区分，建议按链路顺序安装）
+
+**来源：ClawHub（为主）** — 安装后目录名与 config 中 `skills` 一致。按执行链路顺序示例：
 
 ```bash
 clawhub search bilibili
+# 步骤 1：热门监控
 clawhub install bilibili-hot-monitor
 clawhub install bilibili-update-viewer
+# 步骤 2：内容创作助手
 clawhub install bilibili-helper
 clawhub install bilibili-subtitle-download-skill
+# 步骤 3：视频发布
 clawhub install bilibili-video-publish
 clawhub install bilibili-upload
+# 步骤 4：数据助手
 clawhub install bilibili-analytics
 ```
 
-**来源：skills.sh（取最优）** — 完整列表见 [SKILLS-SH-SKILLS.md](./SKILLS-SH-SKILLS.md)。可选 Baoyu 技能（配图/排版/多平台发帖等）见该文档中 Baoyu 系列。
+**来源：skills.sh（取最优）** — 完整列表见 [SKILLS-SH-SKILLS.md](./SKILLS-SH-SKILLS.md)。可选 Baoyu 技能（配图/排版等）见该文档中 Baoyu 系列。
 
 ```bash
 npx skills add hamsterider-m/bilibili-subtitle --skill bilibili-subtitle
@@ -69,7 +91,9 @@ npx skills add davincievans/bilibili-subtitle-download-skill --skill bilibili-su
 - **Config 片段**：见仓库 `config/openclaw-bilibili-fragment.json`，可合并进主 openclaw 配置；将 `<REPO_ROOT>` 替换为实际路径。
 - **路由**：按渠道或用户身份将会话绑定到对应 agent id。
 
-## 初始化命令示例
+## 初始化命令（按执行链路顺序）
+
+### 添加七件套
 
 ```bash
 openclaw agents add bilibili-hot-monitor        --workspace ~/.openclaw/workspace-bilibili-hot-monitor;
@@ -79,14 +103,30 @@ openclaw agents add bilibili-data-assistant     --workspace ~/.openclaw/workspac
 openclaw agents add bilibili-viral-breakdown    --workspace ~/.openclaw/workspace-bilibili-viral-breakdown;
 openclaw agents add bilibili-write              --workspace ~/.openclaw/workspace-bilibili-write;
 openclaw agents add bilibili-comment-manager    --workspace ~/.openclaw/workspace-bilibili-comment-manager;
+```
 
+### 按渠道绑定（示例：wecom）
+
+```bash
 openclaw agents bind --agent bilibili-hot-monitor        --bind wecom:bilibili-hot-monitor;
 openclaw agents bind --agent bilibili-content-helper     --bind wecom:bilibili-content-helper;
-openclaw agents bind --agent bilibili-video-publisher    --bind wecom:bilibili-video-publisher;
-openclaw agents bind --agent bilibili-data-assistant     --bind wecom:bilibili-data-assistant;
-openclaw agents bind --agent bilibili-viral-breakdown    --bind wecom:bilibili-viral-breakdown;
-openclaw agents bind --agent bilibili-write              --bind wecom:bilibili-write;
-openclaw agents bind --agent bilibili-comment-manager    --bind wecom:bilibili-comment-manager;
+openclaw agents bind --agent bilibili-video-publisher     --bind wecom:bilibili-video-publisher;
+openclaw agents bind --agent bilibili-data-assistant      --bind wecom:bilibili-data-assistant;
+openclaw agents bind --agent bilibili-viral-breakdown     --bind wecom:bilibili-viral-breakdown;
+openclaw agents bind --agent bilibili-write               --bind wecom:bilibili-write;
+openclaw agents bind --agent bilibili-comment-manager     --bind wecom:bilibili-comment-manager;
+```
+
+### 删除七件套（需先解除绑定）
+
+```bash
+openclaw agents remove bilibili-hot-monitor;
+openclaw agents remove bilibili-content-helper;
+openclaw agents remove bilibili-video-publisher;
+openclaw agents remove bilibili-data-assistant;
+openclaw agents remove bilibili-viral-breakdown;
+openclaw agents remove bilibili-write;
+openclaw agents remove bilibili-comment-manager;
 ```
 
 ## 文件结构（每智能体）

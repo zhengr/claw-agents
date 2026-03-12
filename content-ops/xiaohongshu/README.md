@@ -29,21 +29,39 @@
 
 **管线关系：** 热门监控 → 日报/摘要 → 爆款拆解 → 拆解框架 → 二创/原创 → 草稿+配图 → 自动发布 → 发布日志 → 数据助手 + 评论管理 → 反馈至爆款拆解与热门监控。
 
+## 智能工作执行链路
+
+七件套按以下链路协同执行；可按时序触发（如每日）或按需触发单环节。
+
+| 步骤 | 环节 | 智能体 | 输入 | 输出 | 说明 |
+|------|------|--------|------|------|------|
+| 1 | 热门监控 | xiaohongshu-hot-monitor | 关键词/品类/时间范围 | 日报或按需摘要（热点、爆款列表） | 入口；可为定时或人工触发 |
+| 2 | 爆款拆解 | xiaohongshu-viral-breakdown | 日报/摘要中的爆款链接或列表 | 拆解框架（标题、钩子、结构、主题） | 消费监控产出，供二创与数据侧使用 |
+| 3a | 二创 | xiaohongshu-rewrite | 拆解框架 + 主题 | 草稿（文案 + 封面 + 配图） | 基于拆解做差异化二创，不发布 |
+| 3b | 原创 | xiaohongshu-write | 用户选题 + 热点/爆款洞察 | 草稿（文案 + 封面 + 配图） | 独立于拆解的原创内容生产 |
+| 4 | 自动发布 | xiaohongshu-publisher | 已审核草稿 | 发布结果日志（链接、时间、状态） | 仅发布已通过审核内容；发布前压缩图片 |
+| 5 | 数据助手 | xiaohongshu-data-assistant | 发布日志 + 互动数据 | 可执行反馈（关键词/拆解维度/优先主题） | 交叉验证效果，反馈至爆款拆解与监控 |
+| 6 | 评论管理 | xiaohongshu-comment-manager | 文章/账号评论源 | 回复草稿 + 情感摘要 | 回复须审批/门禁后由人工或流程发布 |
+
+**闭环：** 数据助手的反馈驱动爆款拆解调整搜索与拆解标准，热门监控可据此调整关键词与范围，形成「监控 → 拆解 → 内容 → 发布 → 数据 → 反馈」闭环。
+
+**并行与触发：** 3a 二创与 3b 原创可并行；评论管理可与数据助手并行。执行顺序 1 → 2 → (3a 或 3b) → 4 → 5/6；步骤 5、6 可持续运行或按周期执行。
+
 ## 预设技能（ClawHub 优先，skills.sh 后补）
 
-各 agent 的 `skills` 可在 [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md) 与 [SKILLS-SH-SKILLS.md](./SKILLS-SH-SKILLS.md) 中按职责选用。以下为 **skills.sh 后补** 默认方案（Baoyu 系列）：
+各 agent 的 `skills` 可在 [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md) 与 [SKILLS-SH-SKILLS.md](./SKILLS-SH-SKILLS.md) 中按职责选用。以下按 **智能工作执行链路** 顺序列出（1→2→3a→3b→4→5→6）：
 
-| Agent id                      | 默认技能列表（skills.sh 后补） | 用途说明 |
-|-------------------------------|--------------------------------|----------|
-| xiaohongshu-viral-breakdown   | baoyu-url-to-markdown, baoyu-format-markdown | 抓取 URL 成文、规范拆解输出 |
-| xiaohongshu-rewrite           | baoyu-xhs-images, baoyu-cover-image, baoyu-article-illustrator | 小红书配图与封面 |
-| xiaohongshu-publisher         | baoyu-compress-image | 发布前图片压缩 |
-| xiaohongshu-data-assistant    | baoyu-format-markdown | 数据小结/报告格式 |
-| xiaohongshu-hot-monitor       | baoyu-url-to-markdown, baoyu-format-markdown | 抓取热点链接、规范日报格式 |
-| xiaohongshu-write             | baoyu-xhs-images, baoyu-cover-image, baoyu-article-illustrator | 原创内容配图与封面 |
-| xiaohongshu-comment-manager   | （按需从 ClawHub/skills.sh 选评论采集与回复技能） | 评论拉取、回复草稿、情感摘要 |
+| 步骤 | Agent id                      | 默认技能列表（skills.sh 后补） | 用途说明 |
+|------|-------------------------------|--------------------------------|----------|
+| 1 | xiaohongshu-hot-monitor       | baoyu-url-to-markdown, baoyu-format-markdown | 抓取热点链接、规范日报格式 |
+| 2 | xiaohongshu-viral-breakdown   | baoyu-url-to-markdown, baoyu-format-markdown | 抓取 URL 成文、规范拆解输出 |
+| 3a | xiaohongshu-rewrite           | baoyu-xhs-images, baoyu-cover-image, baoyu-article-illustrator | 小红书配图与封面 |
+| 3b | xiaohongshu-write             | baoyu-xhs-images, baoyu-cover-image, baoyu-article-illustrator | 原创内容配图与封面 |
+| 4 | xiaohongshu-publisher         | baoyu-compress-image | 发布前图片压缩 |
+| 5 | xiaohongshu-data-assistant    | baoyu-format-markdown | 数据小结/报告格式 |
+| 6 | xiaohongshu-comment-manager   | （按需从 ClawHub/skills.sh 选评论采集与回复技能） | 评论拉取、回复草稿、情感摘要 |
 
-### 安装方式（按来源区分）
+### 安装方式（按来源区分，建议按链路顺序安装）
 
 **来源：ClawHub** — 安装后目录名与 config 中 `skills` 一致。
 
@@ -52,14 +70,17 @@ clawhub search xiaohongshu
 clawhub install <slug>
 ```
 
-**来源：skills.sh** — 小红书专项见 [SKILLS-SH-SKILLS.md](./SKILLS-SH-SKILLS.md)；Baoyu 后补示例：
+**来源：skills.sh** — 小红书专项见 [SKILLS-SH-SKILLS.md](./SKILLS-SH-SKILLS.md)；Baoyu 后补按 **执行链路对应智能体** 顺序安装（先 1 监控/2 拆解，再 3a 二创/3b 原创，再 4 发布、5 数据、6 评论）：
 
 ```bash
+# 步骤 1、2：监控与拆解
 npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown
 npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown
+# 步骤 3a、3b：二创与原创
 npx skills add jimliu/baoyu-skills --skill baoyu-xhs-images
 npx skills add jimliu/baoyu-skills --skill baoyu-cover-image
 npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator
+# 步骤 4：发布
 npx skills add jimliu/baoyu-skills --skill baoyu-compress-image
 ```
 
@@ -81,15 +102,15 @@ npx skills add jimliu/baoyu-skills --skill baoyu-compress-image
 openclaw agents list
 ```
 
-### 2. 添加小红书七件套（7 个）
+### 2. 添加小红书七件套（7 个，按执行链路顺序）
 
 ```bash
-openclaw agents add xiaohongshu-viral-breakdown   --workspace ~/.openclaw/workspace-xiaohongshu-viral-breakdown;
-openclaw agents add xiaohongshu-rewrite           --workspace ~/.openclaw/workspace-xiaohongshu-rewrite;
-openclaw agents add xiaohongshu-publisher         --workspace ~/.openclaw/workspace-xiaohongshu-publisher;
-openclaw agents add xiaohongshu-data-assistant    --workspace ~/.openclaw/workspace-xiaohongshu-data-assistant;
 openclaw agents add xiaohongshu-hot-monitor       --workspace ~/.openclaw/workspace-xiaohongshu-hot-monitor;
-openclaw agents add xiaohongshu-write             --workspace ~/.openclaw/workspace-xiaohongshu-write;
+openclaw agents add xiaohongshu-viral-breakdown   --workspace ~/.openclaw/workspace-xiaohongshu-viral-breakdown;
+openclaw agents add xiaohongshu-rewrite          --workspace ~/.openclaw/workspace-xiaohongshu-rewrite;
+openclaw agents add xiaohongshu-write            --workspace ~/.openclaw/workspace-xiaohongshu-write;
+openclaw agents add xiaohongshu-publisher        --workspace ~/.openclaw/workspace-xiaohongshu-publisher;
+openclaw agents add xiaohongshu-data-assistant    --workspace ~/.openclaw/workspace-xiaohongshu-data-assistant;
 openclaw agents add xiaohongshu-comment-manager   --workspace ~/.openclaw/workspace-xiaohongshu-comment-manager;
 ```
 
@@ -99,31 +120,31 @@ openclaw agents add xiaohongshu-comment-manager   --workspace ~/.openclaw/worksp
 openclaw agents bindings
 ```
 
-### 4. 按渠道绑定智能体（示例：企微 wecom）
+### 4. 按渠道绑定智能体（示例：企微 wecom，按执行链路顺序）
 
 将渠道会话路由到对应 agent；其他渠道将 `wecom` 替换为 `feishu`、`telegram`、`webchat` 等即可。
 
 ```bash
+openclaw agents bind --agent xiaohongshu-hot-monitor       --bind wecom:xiaohongshu-hot-monitor;
 openclaw agents bind --agent xiaohongshu-viral-breakdown   --bind wecom:xiaohongshu-viral-breakdown;
 openclaw agents bind --agent xiaohongshu-rewrite           --bind wecom:xiaohongshu-rewrite;
-openclaw agents bind --agent xiaohongshu-publisher        --bind wecom:xiaohongshu-publisher;
-openclaw agents bind --agent xiaohongshu-data-assistant    --bind wecom:xiaohongshu-data-assistant;
-openclaw agents bind --agent xiaohongshu-hot-monitor       --bind wecom:xiaohongshu-hot-monitor;
 openclaw agents bind --agent xiaohongshu-write             --bind wecom:xiaohongshu-write;
+openclaw agents bind --agent xiaohongshu-publisher         --bind wecom:xiaohongshu-publisher;
+openclaw agents bind --agent xiaohongshu-data-assistant    --bind wecom:xiaohongshu-data-assistant;
 openclaw agents bind --agent xiaohongshu-comment-manager   --bind wecom:xiaohongshu-comment-manager;
 ```
 
-### 5. 删除小红书七件套（7 个）
+### 5. 删除小红书七件套（7 个，按执行链路顺序）
 
 从 OpenClaw 中移除上述 7 个 agent（需先解除各 agent 的渠道绑定，若有）。
 
 ```bash
+openclaw agents remove xiaohongshu-hot-monitor;
 openclaw agents remove xiaohongshu-viral-breakdown;
 openclaw agents remove xiaohongshu-rewrite;
+openclaw agents remove xiaohongshu-write;
 openclaw agents remove xiaohongshu-publisher;
 openclaw agents remove xiaohongshu-data-assistant;
-openclaw agents remove xiaohongshu-hot-monitor;
-openclaw agents remove xiaohongshu-write;
 openclaw agents remove xiaohongshu-comment-manager;
 ```
 
