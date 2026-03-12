@@ -87,6 +87,25 @@
 
 *同一技能名可能对应不同仓库（如 wechat-article-extractor、wechat-article-writer、wechat-publisher、baoyu-post-to-wechat），安装时以所选仓库为准，安装后目录名需与 config 中 `skills` 一致。*
 
+### 各技能安装与卸载命令示例
+
+通用形式：**安装** `npx skills add <仓库> --skill <技能名>`；**卸载** `npx skills remove <技能名>`（技能名与安装后目录名一致）。以下为部分技能示例：
+
+| 技能名 | 仓库 | 安装 | 卸载 |
+|--------|------|------|------|
+| baoyu-post-to-wechat | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill baoyu-post-to-wechat` | `npx skills remove baoyu-post-to-wechat` |
+| wechat-article-writer | iamzhihuix/happy-claude-skills | `npx skills add iamzhihuix/happy-claude-skills --skill wechat-article-writer` | `npx skills remove wechat-article-writer` |
+| wechat-article-publisher | iamzifei/wechat-article-publisher-skill | `npx skills add iamzifei/wechat-article-publisher-skill --skill wechat-article-publisher` | `npx skills remove wechat-article-publisher` |
+| wechat-article-extractor | freestylefly/wechat-article-extractor-skill | `npx skills add freestylefly/wechat-article-extractor-skill --skill wechat-article-extractor` | `npx skills remove wechat-article-extractor` |
+| wechat-article-search | wuchubuzai2018/expert-skills-hub | `npx skills add wuchubuzai2018/expert-skills-hub --skill wechat-article-search` | `npx skills remove wechat-article-search` |
+| wechat-article-formatter | solar-luna/fully-automatic-article-generation-skill | `npx skills add solar-luna/fully-automatic-article-generation-skill --skill wechat-article-formatter` | `npx skills remove wechat-article-formatter` |
+| wechat-ai-publisher | bbwdadfg/wechat-ai-publisher | `npx skills add bbwdadfg/wechat-ai-publisher --skill wechat-ai-publisher` | `npx skills remove wechat-ai-publisher` |
+| md2wechat | geekjourneyx/md2wechat-skill | `npx skills add geekjourneyx/md2wechat-skill --skill md2wechat` | `npx skills remove md2wechat` |
+| wechat-article-fetcher | ppx123-web/claude-config | `npx skills add ppx123-web/claude-config --skill wechat-article-fetcher` | `npx skills remove wechat-article-fetcher` |
+| wechat-draft-publisher | solar-luna/fully-automatic-article-generation-skill | `npx skills add solar-luna/fully-automatic-article-generation-skill --skill wechat-draft-publisher` | `npx skills remove wechat-draft-publisher` |
+
+Baoyu 系列（jimliu/baoyu-skills）各技能：安装 `npx skills add jimliu/baoyu-skills --skill <技能名>`，卸载 `npx skills remove <技能名>`。技能名见下方 Baoyu 表（如 baoyu-post-to-wechat、baoyu-format-markdown、baoyu-cover-image 等）。
+
 ## Baoyu 系列（jimliu/baoyu-skills）
 
 > 来源：[skills.sh/?q=baoyu](https://skills.sh/?q=baoyu)，仓库 **jimliu/baoyu-skills**。下表为 17 个技能及本管线（公众号四件套）适用 agent 与用途。

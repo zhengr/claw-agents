@@ -49,3 +49,7 @@
 ### 卸载
 - **命令**：`clawhub uninstall <slug>`
 - 或手动删除 ClawHub 技能目录下对应技能文件夹（目录名一般为 slug）。
+
+### 各技能安装与卸载命令
+
+上表「技能总表」中每个 Slug：**安装** `clawhub install <slug>`，**卸载** `clawhub uninstall <slug>`。示例：`clawhub install douyin-hot-trend` / `clawhub uninstall douyin-hot-trend`；其余将 `<slug>` 替换为表中对应 Slug 即可。

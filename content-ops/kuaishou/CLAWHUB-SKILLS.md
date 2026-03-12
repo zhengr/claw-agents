@@ -22,3 +22,7 @@
 ### 卸载
 - **命令**：`clawhub uninstall <slug>`
 - 或手动删除 ClawHub 技能目录下对应技能文件夹（目录名一般为 slug）。
+
+### 各技能安装与卸载命令
+
+技能总表有具体 Slug 后，每个技能：**安装** `clawhub install <slug>`，**卸载** `clawhub uninstall <slug>`。示例：`clawhub install kuaishou-xxx` / `clawhub uninstall kuaishou-xxx`。

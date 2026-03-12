@@ -91,6 +91,10 @@ B 站视频搜索与数据分析：抓取指定关键词搜索结果、生成统
 - **命令**：`clawhub uninstall <slug>`
 - 或手动删除 ClawHub 技能目录下对应技能文件夹（目录名一般为 slug）。
 
+### 各技能安装与卸载命令
+
+上表「技能总表」中每个 Slug：**安装** `clawhub install <slug>`，**卸载** `clawhub uninstall <slug>`。示例：`clawhub install bilibili-hot-monitor` / `clawhub uninstall bilibili-hot-monitor`；其余将 `<slug>` 替换为表中对应 Slug 即可。
+
 ---
 
 *文档根据 [ClawHub bilibili 搜索](https://clawhub.ai/skills?sort=downloads&q=bilibili) 公开信息整理，具体以官网为准。*

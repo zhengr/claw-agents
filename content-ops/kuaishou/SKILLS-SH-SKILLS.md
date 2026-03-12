@@ -24,6 +24,10 @@ npx skills add jimliu/baoyu-skills --skill baoyu-compress-image
 
 安装后技能目录名需与 config 中 `skills` 一致。**勿在 TOOLS.md 存凭证。** 抓取与发布须遵守快手开放平台与 ToS。
 
+### 各技能安装与卸载命令示例
+
+Baoyu 系列：**安装** `npx skills add jimliu/baoyu-skills --skill <技能名>`，**卸载** `npx skills remove <技能名>`（技能名见上方 Baoyu 表）。
+
 ### 更新
 - 重新执行 `npx skills add <owner/repo> --skill <技能名>` 覆盖安装即可；或以 skills.sh CLI 文档为准。
 

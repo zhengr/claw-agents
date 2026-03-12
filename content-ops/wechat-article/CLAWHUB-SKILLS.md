@@ -12,6 +12,8 @@
 | **作者** | wuchubuzai2018 |
 | **链接** | [ClawHub](https://clawhub.ai/skills/wechat-article-search) |
 | **下载** | 3.8k · ★ 13 · 2 versions |
+| **安装** | `clawhub install wechat-article-search` |
+| **卸载** | `clawhub uninstall wechat-article-search` |
 
 **功能**：搜索微信公众号文章。通过微信搜索获取文章列表，覆盖科技/AI、社会热点、财经、教育、职场等各类中文资讯；可按关键词检索并返回标题、概要、发布时间、来源公众号与链接。当用户需要查找微信公众号文章、整理参考资料或快速获取文章信息时使用此技能。
 
@@ -25,6 +27,8 @@
 | **作者** | guohongbin-git |
 | **链接** | [ClawHub](https://clawhub.ai/skills/wechat-mp-cn) |
 | **下载** | 2.9k · ★ 17 · 1 version |
+| **安装** | `clawhub install wechat-mp-cn` |
+| **卸载** | `clawhub uninstall wechat-mp-cn` |
 
 **功能**：微信公众号监控 — 文章监控、阅读量追踪、舆情分析（WeChat Official Account）。
 
@@ -38,6 +42,8 @@
 | **作者** | Mr-Q526 |
 | **链接** | [ClawHub](https://clawhub.ai/skills/wechat-toolkit) |
 | **下载** | 1k · ★ 6 · 2 versions |
+| **安装** | `clawhub install wechat-toolkit` |
+| **卸载** | `clawhub uninstall wechat-toolkit` |
 
 **功能**：微信公众号一站式工具包 — 集成文章搜索、文章下载、AI 洗稿改写、公众号发布四大功能。当用户需要搜索/下载/改写/发布微信公众号文章时使用。
 
@@ -51,6 +57,8 @@
 | **作者** | bjdzliu |
 | **链接** | [ClawHub](https://clawhub.ai/skills/wechat-auto-reply) |
 | **下载** | 966 · ★ 4 · 2 versions |
+| **安装** | `clawhub install wechat-auto-reply` |
+| **卸载** | `clawhub uninstall wechat-auto-reply` |
 
 **功能**：半自动回复微信联系人消息（置信度 >85% 自动发送，否则确认），或主动发送指定内容。使用方式：`wechat-auto-reply "联系人名称"` 或 `wechat-auto-reply "联系人名称" "消息内容"`。
 
@@ -64,6 +72,8 @@
 | **作者** | jqlong17 |
 | **链接** | [ClawHub](https://clawhub.ai/skills/download-tools) |
 | **下载** | 879 · ★ 0 · 1 version |
+| **安装** | `clawhub install download-tools` |
+| **卸载** | `clawhub uninstall download-tools` |
 
 **功能**：CLI 下载工具，支持 YouTube 与 WeChat 内容下载。
 
@@ -77,6 +87,8 @@
 | **作者** | dragon015 |
 | **链接** | [ClawHub](https://clawhub.ai/skills/wechat-mcp) |
 | **下载** | 763 · ★ 1 · 1 version |
+| **安装** | `clawhub install wechat-mcp` |
+| **卸载** | `clawhub uninstall wechat-mcp` |
 
 **功能**：Windows 电脑端微信消息监控与发送 MCP，实现在微信上给指定联系人发送消息。
 
@@ -90,6 +102,8 @@
 | **作者** | ai-chen2050 |
 | **链接** | [ClawHub](https://clawhub.ai/skills/wechat-public-cli) |
 | **下载** | 468 · ★ 2 · 4 versions |
+| **安装** | `clawhub install wechat-public-cli` |
+| **卸载** | `clawhub uninstall wechat-public-cli` |
 
 **功能**：通过本地 CLI 发布与下载微信公众号平台内容及百家号文章。
 
@@ -103,6 +117,8 @@
 | **作者** | noir-hedgehog |
 | **链接** | [ClawHub](https://clawhub.ai/skills/wechat-sender) |
 | **下载** | 458 · ★ 0 · 2 versions |
+| **安装** | `clawhub install wechat-sender` |
+| **卸载** | `clawhub uninstall wechat-sender` |
 
 **功能**：微信消息自动发送。使用 peekaboo 操作窗口，结合 Agent-Eye 获取实时屏幕截图进行视觉理解。触发条件：用户提到「发微信」「给 xxx 发消息」「微信自动发送」等。
 
@@ -116,6 +132,8 @@
 | **作者** | clk1st |
 | **链接** | [ClawHub](https://clawhub.ai/skills/wechat-send) |
 | **下载** | 398 · ★ 0 · 1 version |
+| **安装** | `clawhub install wechat-send` |
+| **卸载** | `clawhub uninstall wechat-send` |
 
 **功能**：在 macOS 微信桌面版中通过 AppleScript 和 JXA 控制 UI 自动发送文本消息。注意：非 OpenClaw 的微信聊天通道。
 
@@ -129,6 +147,8 @@
 | **作者** | dragon015 |
 | **链接** | [ClawHub](https://clawhub.ai/skills/dragon-wechat-mcp) |
 | **下载** | 370 · ★ 2 · 1 version |
+| **安装** | `clawhub install dragon-wechat-mcp` |
+| **卸载** | `clawhub uninstall dragon-wechat-mcp` |
 
 **功能**：Windows 电脑端微信消息监控与发送 MCP，实现在微信上给指定联系人发送消息。
 
@@ -142,6 +162,8 @@
 | **作者** | zionfusu |
 | **链接** | [ClawHub](https://clawhub.ai/skills/wechat-auto-reply-assistant) |
 | **下载** | 335 · ★ 0 · 1 version |
+| **安装** | `clawhub install wechat-auto-reply-assistant` |
+| **卸载** | `clawhub uninstall wechat-auto-reply-assistant` |
 
 **功能**：为微信消息生成礼貌、贴合上下文的回复建议，适用于个人聊天、客服与 AI 回复规划。
 
@@ -155,6 +177,8 @@
 | **作者** | imwyvern |
 | **链接** | [ClawHub](https://clawhub.ai/skills/wechat-reader) |
 | **下载** | 258 · ★ 0 · 1 version |
+| **安装** | `clawhub install wechat-reader` |
+| **卸载** | `clawhub uninstall wechat-reader` |
 
 **功能**：阅读微信公众号（公众号）文章。当用户分享 mp.weixin.qq.com 链接、要求阅读/总结微信文章，或提到公众号/… 时激活。
 
@@ -168,6 +192,8 @@
 | **作者** | Johnnyxu820 |
 | **链接** | [ClawHub](https://clawhub.ai/skills/wechat-video-publish) |
 | **下载** | 232 · ★ 3 · 1 version |
+| **安装** | `clawhub install wechat-video-publish` |
+| **卸载** | `clawhub uninstall wechat-video-publish` |
 
 **功能**：腾讯视频号发布。使用浏览器自动化在视频号号平台发布视频。当用户说「发布视频到视频号」「发视频号」时使用此技能。
 
@@ -181,6 +207,8 @@
 | **作者** | smallccwc |
 | **链接** | [ClawHub](https://clawhub.ai/skills/wechat-qq-sender) |
 | **下载** | 212 · ★ 2 · 8 versions |
+| **安装** | `clawhub install wechat-qq-sender` |
+| **卸载** | `clawhub uninstall wechat-qq-sender` |
 
 **功能**：Windows 平台微信和 QQ 自动发消息工具。支持搜索联系人、发送消息、截图 OCR 分析、智能回复建议（需用户确认后发送）。
 
@@ -194,6 +222,8 @@
 | **作者** | jllyzzd2023 |
 | **链接** | [ClawHub](https://clawhub.ai/skills/scrapling-web-fetch) |
 | **下载** | 123 · ★ 0 · 3 versions |
+| **安装** | `clawhub install scrapling-web-fetch` |
+| **卸载** | `clawhub uninstall scrapling-web-fetch` |
 
 **功能**：使用 Scrapling + html2text 获取现代网页正文，支持微信公众号文章抓取与尾部噪音清洗，减少无用信息与 token 消耗；适合博客、新闻、公告及许多普通 fetch 不稳定、存在反爬或动态渲染的网页。
 
@@ -207,6 +237,8 @@
 | **作者** | aw11100 |
 | **链接** | [ClawHub](https://clawhub.ai/skills/wechat-operate) |
 | **下载** | 110 · ★ 0 · 1 version |
+| **安装** | `clawhub install wechat-operate` |
+| **卸载** | `clawhub uninstall wechat-operate` |
 
 **功能**：通过微信查询好友或群聊，确认目标后发送文本、图片或文件消息，实现社交管理与消息发送。
 
@@ -220,6 +252,8 @@
 | **作者** | LeoCryptoFlow |
 | **链接** | [ClawHub](https://clawhub.ai/skills/chenlang) |
 | **下载** | 104 · ★ 0 · 1 version |
+| **安装** | `clawhub install chenlang` |
+| **卸载** | `clawhub uninstall chenlang` |
 
 **功能**：微信（WeChat）全面介绍。提供微信的发展历史、功能模块、版本变化、生态体系、商业化等内容的查询。适用于：了解微信发展历程；熟悉微信各项功能；了解微信生态和商业模式；掌握微信运营技巧。
 
@@ -233,6 +267,8 @@
 | **作者** | aw11100 |
 | **链接** | [ClawHub](https://clawhub.ai/skills/wechatmessaging) |
 | **下载** | 94 · ★ 0 · 1 version |
+| **安装** | `clawhub install wechatmessaging` |
+| **卸载** | `clawhub uninstall wechatmessaging` |
 
 **功能**：通过微信查询好友并确认后，向指定好友发送文本消息，支持多好友选择和发送确认流程。
 
@@ -246,6 +282,8 @@
 | **作者** | jllyzzd2023 |
 | **链接** | [ClawHub](https://clawhub.ai/skills/clean-web-fetch) |
 | **下载** | 89 · ★ 0 · 1 version |
+| **安装** | `clawhub install clean-web-fetch` |
+| **卸载** | `clawhub uninstall clean-web-fetch` |
 
 **功能**：获取干净、可读的现代网页正文，支持微信公众号文章抓取与尾部噪音清洗，减少无用信息与 token 消耗；适合新闻、博客、公告及许多普通 fetch 不稳定、存在反爬或动态渲染的网页。
 
@@ -259,6 +297,8 @@
 | **作者** | zuo-wentao |
 | **链接** | [ClawHub](https://clawhub.ai/skills/wechat-html-publisher) |
 | **下载** | 75 · ★ 0 · 2 versions |
+| **安装** | `clawhub install wechat-html-publisher` |
+| **卸载** | `clawhub uninstall wechat-html-publisher` |
 
 **功能**：直接上传 HTML 富文本到微信公众号草稿箱。支持完整 HTML 格式，无需 Markdown 转换。
 
@@ -272,6 +312,8 @@
 | **作者** | reedchan7 |
 | **链接** | [ClawHub](https://clawhub.ai/skills/wxmp-reader) |
 | **下载** | 68 · ★ 0 · 1 version |
+| **安装** | `clawhub install wxmp-reader` |
+| **卸载** | `clawhub uninstall wxmp-reader` |
 
 **功能**：按 URL 阅读并总结微信公众号文章。可绕过微信反爬获取完整正文、标题、作者、日期等。
 
@@ -285,6 +327,8 @@
 | **作者** | zhenglong2015 |
 | **链接** | [ClawHub](https://clawhub.ai/skills/wechat-article-publisher) |
 | **下载** | 68 · ★ 0 · 1 version |
+| **安装** | `clawhub install wechat-article-publisher` |
+| **卸载** | `clawhub uninstall wechat-article-publisher` |
 
 **功能**：从 Markdown 文件或网页链接提取文章并发布到微信公众号。适用于需要「自动创建草稿/提交发布」、统一微信样式（standard/viral）和批量复用发布流程的场景。
 
@@ -298,6 +342,8 @@
 | **作者** | chenhao11235813 |
 | **链接** | [ClawHub](https://clawhub.ai/skills/wechat-article-explainer) |
 | **下载** | 45 · ★ 0 · 2 versions |
+| **安装** | `clawhub install wechat-article-explainer` |
+| **卸载** | `clawhub uninstall wechat-article-explainer` |
 
 **功能**：微信公众号文章通俗内容解释技能。当用户需要总结或解释微信公众号链接或 URL 时使用。根据用户提供的链接或 URL 读取内容，用通俗语言解释。
 
@@ -311,6 +357,8 @@
 | **作者** | yangchao228 |
 | **链接** | [ClawHub](https://clawhub.ai/skills/wx-md-article) |
 | **下载** | 45 · ★ 0 · 1 version |
+| **安装** | `clawhub install wx-md-article` |
+| **卸载** | `clawhub uninstall wx-md-article` |
 
 **功能**：从 Markdown 自动生成微信公众号文章并上传到草稿箱，支持简洁、专业的版式与配色规则。
 
@@ -324,6 +372,8 @@
 | **作者** | web3aivc |
 | **链接** | [ClawHub](https://clawhub.ai/skills/wechat-style-publisher) |
 | **下载** | 0 · ★ 0 · 1 version |
+| **安装** | `clawhub install wechat-style-publisher` |
+| **卸载** | `clawhub uninstall wechat-style-publisher` |
 
 **功能**：支持多账号微信公众号发布，提供自定义文章主题、文章开头/结尾模板。当用户需要将带样式的文章发布到一个或多个微信公众号时使用此工具。
 

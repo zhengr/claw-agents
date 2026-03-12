@@ -134,6 +134,14 @@ npx skillsadd <owner/repo>/<skill-folder>
 
 安装后技能目录名需与 openclaw 配置中 `agents.list[].skills` 一致。
 
+### 各技能安装与卸载命令示例
+
+| 技能名 | 仓库 | 安装 | 卸载 |
+|--------|------|------|------|
+| telegram-bot-builder | sickn33/antigravity-awesome-skills | `npx skills add sickn33/antigravity-awesome-skills --skill telegram-bot-builder` | `npx skills remove telegram-bot-builder` |
+| telegram | skillhq/telegram | `npx skills add skillhq/telegram --skill telegram` | `npx skills remove telegram` |
+| baoyu-* | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill <技能名>` | `npx skills remove <技能名>` |
+
 ### 更新
 - 重新执行 `npx skills add <owner/repo> --skill <技能名>` 覆盖安装即可；或以 skills.sh CLI 文档为准。
 

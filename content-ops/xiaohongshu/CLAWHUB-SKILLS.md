@@ -135,6 +135,17 @@
 - **命令**：`clawhub uninstall <slug>`
 - 或手动删除 ClawHub 技能目录下对应技能文件夹（目录名一般为 slug）。
 
+### 各技能安装与卸载命令
+
+上表「技能总表」中每个 Slug 的安装与卸载命令格式如下（将 `<slug>` 替换为表中 Slug 列取值）：
+
+| Slug | 安装 | 卸载 |
+|------|------|------|
+| xiaohongshu-mcp | `clawhub install xiaohongshu-mcp` | `clawhub uninstall xiaohongshu-mcp` |
+| xiaohongshutools | `clawhub install xiaohongshutools` | `clawhub uninstall xiaohongshutools` |
+| xiaohongshu-publish | `clawhub install xiaohongshu-publish` | `clawhub uninstall xiaohongshu-publish` |
+| … | 其余技能将 `<slug>` 替换为技能总表对应 Slug 即可 | 同上 |
+
 ---
 
 *文档根据 [ClawHub xiaohongshu 搜索](https://clawhub.ai/skills?sort=downloads&q=xiaohongshu) 公开信息整理，具体以官网为准。*

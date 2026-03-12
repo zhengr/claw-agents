@@ -105,6 +105,17 @@ npx skillsadd <owner/repo>/<skill-folder>
 
 安装后技能目录名需与 openclaw 配置中 `agents.list[].skills` 一致。
 
+### 各技能安装与卸载命令示例
+
+| 技能名 | 仓库 | 安装 | 卸载 |
+|--------|------|------|------|
+| xiaohongshu | zhjiang22/openclaw-xhs | `npx skills add zhjiang22/openclaw-xhs --skill xiaohongshu` | `npx skills remove xiaohongshu` |
+| xiaohongshu-note-analyzer | softbread/xiaohongshu-doctor | `npx skills add softbread/xiaohongshu-doctor --skill xiaohongshu-note-analyzer` | `npx skills remove xiaohongshu-note-analyzer` |
+| write-xiaohongshu | adjfks/corner-skills | `npx skills add adjfks/corner-skills --skill write-xiaohongshu` | `npx skills remove write-xiaohongshu` |
+| xiaohongshu-ops | xiangyu-cas/xiaohongshu-ops-skill | `npx skills add xiangyu-cas/xiaohongshu-ops-skill --skill xiaohongshu-ops` | `npx skills remove xiaohongshu-ops` |
+| xiaohongshu-search-summarizer | piekill/xiaohongshu-summarizer-skill | `npx skills add piekill/xiaohongshu-summarizer-skill --skill xiaohongshu-search-summarizer` | `npx skills remove xiaohongshu-search-summarizer` |
+| baoyu-*（任选） | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill <技能名>` | `npx skills remove <技能名>` |
+
 ### 更新
 - 重新执行 `npx skills add <owner/repo> --skill <技能名>` 覆盖安装即可；或以 skills.sh CLI 文档为准。
 

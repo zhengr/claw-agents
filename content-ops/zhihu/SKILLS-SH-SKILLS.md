@@ -32,6 +32,15 @@ npx skills add jimliu/baoyu-skills --skill baoyu-compress-image
 
 多平台发布（含知乎想法）：可安装 [social-push](https://github.com/jihe520/social-push) 或同类 Skill。安装后技能目录名需与 config 中 `skills` 一致。
 
+### 各技能安装与卸载命令示例
+
+| 技能名 | 安装 | 卸载 |
+|--------|------|------|
+| baoyu-url-to-markdown | `npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown` | `npx skills remove baoyu-url-to-markdown` |
+| baoyu-format-markdown | `npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown` | `npx skills remove baoyu-format-markdown` |
+| baoyu-cover-image | `npx skills add jimliu/baoyu-skills --skill baoyu-cover-image` | `npx skills remove baoyu-cover-image` |
+| 其他 Baoyu | `npx skills add jimliu/baoyu-skills --skill <技能名>` | `npx skills remove <技能名>` |
+
 ### 更新
 - 重新执行 `npx skills add <owner/repo> --skill <技能名>` 覆盖安装即可；或以 skills.sh CLI 文档为准。
 
