@@ -25,13 +25,13 @@
 
 | 序号 | Agent id               | 展示名         | 目录                           | 职责摘要 |
 |------|------------------------|----------------|--------------------------------|----------|
-| 1    | zhihu-viral-breakdown  | 知乎爆款拆解   | 1-zhihu-viral-breakdown        | 搜索知乎热点与爆款，产出结构化拆解框架 |
-| 2    | zhihu-rewrite          | 知乎二创       | 2-zhihu-rewrite                | 根据拆解框架与主题创作新文案与配图 |
-| 3    | zhihu-publisher        | 知乎自动发布   | 3-zhihu-publisher              | 将已通过草稿发布到知乎并记录结果 |
-| 4    | zhihu-data-assistant   | 知乎数据助手   | 4-zhihu-data-assistant         | 解析数据、交叉验证效果、反馈给爆款拆解 |
-| 5    | zhihu-hot-monitor      | 知乎热门监控   | 5-zhihu-hot-monitor           | 每日/按需搜索知乎热点与爆款，产出日报或摘要供拆解与数据助手 |
-| 6    | zhihu-write            | 知乎写作       | 6-zhihu-write                 | 强调原创：用户主图+热点/爆款做原创想法/回答/文章，产出草稿供发布与数据助手 |
-| 7    | zhihu-comment-manager  | 知乎评论管理   | 7-zhihu-comment-manager       | 评论采集、起草回复、情感分析；回复需审批/门禁后发布 |
+| 1    | zhihu-hot-monitor      | 知乎热门监控   | 1-zhihu-hot-monitor            | 每日/按需搜索知乎热点与爆款，产出日报或摘要供拆解与数据助手 |
+| 2    | zhihu-viral-breakdown  | 知乎爆款拆解   | 2-zhihu-viral-breakdown        | 搜索知乎热点与爆款，产出结构化拆解框架 |
+| 3    | zhihu-rewrite          | 知乎二创       | 3-zhihu-rewrite                | 根据拆解框架与主题创作新文案与配图 |
+| 4    | zhihu-write            | 知乎写作       | 4-zhihu-write                  | 强调原创：用户主图+热点/爆款做原创想法/回答/文章，产出草稿供发布与数据助手 |
+| 5    | zhihu-publisher        | 知乎自动发布   | 5-zhihu-publisher              | 将已通过草稿发布到知乎并记录结果 |
+| 6    | zhihu-data-assistant   | 知乎数据助手   | 6-zhihu-data-assistant         | 解析数据、交叉验证效果、反馈给爆款拆解 |
+| 7    | zhihu-comment-manager  | 知乎评论管理   | 7-zhihu-comment-manager        | 评论采集、起草回复、情感分析；回复需审批/门禁后发布 |
 
 ## 智能工作执行链路
 

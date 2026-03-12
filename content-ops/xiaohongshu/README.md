@@ -19,12 +19,12 @@
 
 | 序号 | Agent id                      | 展示名           | 目录                               | 职责摘要 |
 |------|-------------------------------|------------------|------------------------------------|----------|
-| 1    | xiaohongshu-viral-breakdown   | 小红书爆款拆解   | 1-xiaohongshu-viral-breakdown      | 自动搜索平台行业热点与爆款，产出结构化拆解框架 |
-| 2    | xiaohongshu-rewrite           | 小红书二创       | 2-xiaohongshu-rewrite              | 根据拆解框架与主题创作新文案与配图方向 |
-| 3    | xiaohongshu-publisher         | 小红书自动发布   | 3-xiaohongshu-publisher            | 将已通过草稿发布到小红书并记录结果 |
-| 4    | xiaohongshu-data-assistant    | 小红书数据助手   | 4-xiaohongshu-data-assistant       | 解析数据、交叉验证效果、反馈爆款拆解 |
-| 5    | xiaohongshu-hot-monitor       | 小红书热门监控   | 5-xiaohongshu-hot-monitor          | 每日/按需搜索行业热点与爆款，产出日报或摘要供拆解与数据助手 |
-| 6    | xiaohongshu-write             | 小红书原创       | 6-xiaohongshu-write                | 强调原创：用户主图+热点/爆款做原创内容，产出草稿供发布与数据助手 |
+| 1    | xiaohongshu-hot-monitor       | 小红书热门监控   | 1-xiaohongshu-hot-monitor          | 每日/按需搜索行业热点与爆款，产出日报或摘要供拆解与数据助手 |
+| 2    | xiaohongshu-viral-breakdown   | 小红书爆款拆解   | 2-xiaohongshu-viral-breakdown      | 自动搜索平台行业热点与爆款，产出结构化拆解框架 |
+| 3    | xiaohongshu-rewrite           | 小红书二创       | 3-xiaohongshu-rewrite              | 根据拆解框架与主题创作新文案与配图方向 |
+| 4    | xiaohongshu-write             | 小红书原创       | 4-xiaohongshu-write                | 强调原创：用户主图+热点/爆款做原创内容，产出草稿供发布与数据助手 |
+| 5    | xiaohongshu-publisher         | 小红书自动发布   | 5-xiaohongshu-publisher            | 将已通过草稿发布到小红书并记录结果 |
+| 6    | xiaohongshu-data-assistant    | 小红书数据助手   | 6-xiaohongshu-data-assistant       | 解析数据、交叉验证效果、反馈爆款拆解 |
 | 7    | xiaohongshu-comment-manager   | 小红书评论管理   | 7-xiaohongshu-comment-manager      | 评论采集、起草回复、情感分析；回复需审批/门禁后发布 |
 
 **管线关系：** 热门监控 → 日报/摘要 → 爆款拆解 → 拆解框架 → 二创/原创 → 草稿+配图 → 自动发布 → 发布日志 → 数据助手 + 评论管理 → 反馈至爆款拆解与热门监控。
