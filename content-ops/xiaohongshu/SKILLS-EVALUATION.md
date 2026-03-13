@@ -16,8 +16,8 @@
 | 4 | xiaohongshu-mcp-skill | 搜索、发布图文/视频、点赞/评论/收藏 | 发布、搜索、互动 | 3.527 | PalmPalm7 | 828 |
 | 5 | xiaohongshu-mcp-skills | 登录、发布图文/视频、搜索、详情、点赞收藏评论、内容策划 | 发布、搜索、详情、评论 | 3.420 | xmznini | 775 |
 | 6 | xiaohongshu-api | 帖子、评论、用户数据 API（TikHub） | 数据助手、帖子/评论/用户 | 3.412 | BOMBFUOCK | 389 |
-| 7 | xiaohongshu-content | 爆款标题、内容模板、hashtag 策略、发布时间优化 | 二创、写作、爆款策略 | 3.349 | isaacloi1995-dot | 423 |
-| 8 | xiaohongshu-founder-growth-writer | 草稿/创始人洞察/英文稿→平台化帖子 | 写作、草稿转帖子 | 3.338 | ATWatcher | 344 |
+| 7 | xiaohongshu-content | 爆款标题、内容模板、hashtag 策略、发布时间优化 | 二创、原创、爆款策略 | 3.349 | isaacloi1995-dot | 423 |
+| 8 | xiaohongshu-founder-growth-writer | 草稿/创始人洞察/英文稿→平台化帖子 | 原创、草稿转帖子 | 3.338 | ATWatcher | 344 |
 | 9 | xiaohongshu-assistant-operator | 指定创作者内容创作、发布、营销与互动自动化 | 发布、运营、互动 | 3.316 | a950701zz | 350 |
 | 10 | xiaohongshu-search-summarizer | 关键词搜索→Top N 帖子→综合总结 | 爆款拆解、搜索与总结 | 3.275 | piekill | 116 |
 
@@ -53,7 +53,7 @@
 | 3 | 发布到小红书 | xiaohongshu-mcp (3.633) | xiaohongshu-mcp-skill、xiaohongshu-mcp-skills、xiaohongshu-assistant-operator 选一 |
 | 4 | 搜索/趋势/分析 | xiaohongshu-mcp, xiaohongshu-cn (3.584) | xiaohongshu-deep-research, xiaohongshu-search-summarizer 按环节选 |
 | 5 | 深度调研/拆解 | xiaohongshu-deep-research (3.568), xiaohongshu-search-summarizer (3.275) | — |
-| 6 | 内容/写作策略 | xiaohongshu-content (3.349), xiaohongshu-founder-growth-writer (3.338) | — |
+| 6 | 内容/原创策略 | xiaohongshu-content (3.349), xiaohongshu-founder-growth-writer (3.338) | — |
 | 7 | 数据 API | xiaohongshu-api (3.412) | — |
 | 8 | 图片压缩 | baoyu-compress-image | — |
 | 9 | 评论回复建议 | xiaohongshu-mcp-skills 或 xiaohongshu-reply-assistant | — |
@@ -69,7 +69,7 @@
 | 1 | xiaohongshu-hot-monitor | baoyu-url-to-markdown, baoyu-format-markdown；xiaohongshu-mcp, xiaohongshu-cn | skills.sh；ClawHub | 抓取+日报；ClawHub 趋势（按评分优选） |
 | 2 | xiaohongshu-viral-breakdown | baoyu-format-markdown；xiaohongshu-mcp, xiaohongshu-cn, xiaohongshu-deep-research, xiaohongshu-search-summarizer | skills.sh；ClawHub | 拆解格式+搜索/调研/总结（按评分优选） |
 | 3a | xiaohongshu-rewrite | baoyu-xhs-images, baoyu-cover-image, baoyu-article-illustrator；可选 xiaohongshu-content | skills.sh；ClawHub | 配图为主；可选内容策略 |
-| 3b | xiaohongshu-write | 同上；可选 xiaohongshu-founder-growth-writer | skills.sh；ClawHub | 同 rewrite；可选成长向写作 |
+| 3b | xiaohongshu-write | 同上；可选 xiaohongshu-founder-growth-writer | skills.sh；ClawHub | 同 rewrite；可选成长向原创 |
 | 4 | xiaohongshu-publisher | baoyu-compress-image；xiaohongshu-mcp（或 mcp-skill/mcp-skills/assistant-operator 选一） | skills.sh；ClawHub | 压缩+发布（同质只装一个） |
 | 5 | xiaohongshu-data-assistant | baoyu-format-markdown；xiaohongshu-cn, xiaohongshu-mcp, xiaohongshu-deep-research, xiaohongshu-api, xiaohongshu-search-summarizer | skills.sh；ClawHub | 报告格式+数据分析（按评分优选） |
 | 6 | xiaohongshu-comment-manager | xiaohongshu-mcp 或 xiaohongshu-mcp-skills；xiaohongshu-reply-assistant 按需 | ClawHub | 评论/回复（同质选一） |
@@ -100,7 +100,7 @@ curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/ins
 
 ### 7.1 补充能力与技能映射
 
-下表列出**在七件套必备之外、可按需选装的扩展能力**：每种能力对应一种业务场景（用途说明）、推荐安装的技能、来源及使用备注。装齐七件套后，若需要标题预筛、算法优化、写作辅导、视频分析、审核复盘、多语言或信息图等，可从本表按序号选装。
+下表列出**在七件套必备之外、可按需选装的扩展能力**：每种能力对应一种业务场景（用途说明）、推荐安装的技能、来源及使用备注。装齐七件套后，若需要标题预筛、算法优化、原创辅导、视频分析、审核复盘、多语言或信息图等，可从本表按序号选装。
 
 | 序号 | 补充能力 | 用途说明 | 推荐技能 | 来源 | 备注 |
 |------|----------|----------|----------|------|------|
@@ -108,7 +108,7 @@ curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/ins
 | 2 | 标题与首图优化 | 优化标题、内容、标签、首图文案，提高曝光与互动 | xiaohongshu-algorithm-optimizer、xhs-writing-coach（标题/正文/标签/封面文案） | ClawHub | 二创/原创产出前可调用 |
 | 3 | 爆款 / 视频筛选 | 按细分领域筛选新鲜/爆款视频，带有效 xsec_token 的 URL | xhs-video-finder | ClawHub | 热门监控、爆款拆解补充 |
 | 4 | 选题与热点筛选 | 话题研究、趋势、头部内容洞察，产出可执行选题列表 | xiaohongshu-deep-research、xiaohongshu-cn | ClawHub | 已在七件套中，完整栈保留 |
-| 5 | 写作与互动辅导 | 笔记写作辅导、标题/正文/标签/评论引导/封面文案、互动提升 | xhs-writing-coach | ClawHub | 二创/原创、评论管理补充 |
+| 5 | 原创与互动辅导 | 笔记原创辅导、标题/正文/标签/评论引导/封面文案、互动提升 | xhs-writing-coach | ClawHub | 二创/原创、评论管理补充 |
 | 6 | 多语言与翻译 | 多语言内容、翻译适配 | baoyu-translate | skills.sh | 按需 |
 | 7 | 信息图 / 漫画风配图 | 信息图、漫画风帖子配图，丰富二创形式 | baoyu-infographic、baoyu-comic | skills.sh | 与 baoyu-xhs-images 等并存 |
 | 8 | 审核与复盘流程 | Review-first：选题→草稿→飞书审核→发布→复盘 | openclaw-xiaohongshu-ops、clawnote | ClawHub | 发布前人工/流程审核 |
@@ -132,7 +132,7 @@ curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/ins
 
 | 序号 | 补充能力 | 技能 | 来源 |
 |------|----------|------|------|
-| 1 | 标题筛选/优化、写作辅导 | xiaohongshu-content、xiaohongshu-algorithm-optimizer、xhs-writing-coach | ClawHub |
+| 1 | 标题筛选/优化、原创辅导 | xiaohongshu-content、xiaohongshu-algorithm-optimizer、xhs-writing-coach | ClawHub |
 | 2 | 爆款/视频筛选 | xhs-video-finder | ClawHub |
 | 3 | 审核与复盘 | openclaw-xiaohongshu-ops 或 clawnote | ClawHub |
 | 4 | 视频下载与分析 | xhs-video-downloader、xhs-video-analyzer | ClawHub |
@@ -172,7 +172,7 @@ clawhub install xhs-publisher --workdir ~/.openclaw;
 clawhub install xhsredbook --workdir ~/.openclaw;
 clawhub install xiaohongshu-operate --workdir ~/.openclaw;
 
-# ClawHub — 内容/二创/写作（viral 同质只取 viral-content）
+# ClawHub — 内容/二创/原创（viral 同质只取 viral-content）
 clawhub install xiaohongshu-content --workdir ~/.openclaw;
 clawhub install xiaohongshu-founder-growth-writer --workdir ~/.openclaw;
 clawhub install xhs-content-creator --workdir ~/.openclaw;
@@ -234,86 +234,86 @@ npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g;
 
 ```bash
 # ClawHub — 监控/搜索/抓取/趋势
-clawhub uninstall xiaohongshu-mcp
-clawhub uninstall xiaohongshu-cn
-clawhub uninstall xiaohongshutools
-clawhub uninstall xiaohongshu-deep-research
-clawhub uninstall xiaohongshu-search-summarizer
-clawhub uninstall xiaohongshu-skill
-clawhub uninstall xiaohongshu-api
-clawhub uninstall xhs-research-daily
+clawhub uninstall xiaohongshu-mcp;
+clawhub uninstall xiaohongshu-cn;
+clawhub uninstall xiaohongshutools;
+clawhub uninstall xiaohongshu-deep-research;
+clawhub uninstall xiaohongshu-search-summarizer;
+clawhub uninstall xiaohongshu-skill;
+clawhub uninstall xiaohongshu-api;
+clawhub uninstall xhs-research-daily;
 
 # ClawHub — 发布
-clawhub uninstall xiaohongshu-publish
-clawhub uninstall xiaohongshu-publisher
-clawhub uninstall xiaohongshu-post
-clawhub uninstall redbook-browser-ops
-clawhub uninstall xiaohongshu-mcporter-publish
-clawhub uninstall xiaohongshu-video-publish
-clawhub uninstall auto-publisher
-clawhub uninstall dragon-xiaohongshu
-clawhub uninstall xiaohongshu-publish-skill
-clawhub uninstall xiaohongshu-publish-wangzh
-clawhub uninstall xhs-publisher
-clawhub uninstall xhsredbook
-clawhub uninstall xiaohongshu-operate
+clawhub uninstall xiaohongshu-publish;
+clawhub uninstall xiaohongshu-publisher;
+clawhub uninstall xiaohongshu-post;
+clawhub uninstall redbook-browser-ops;
+clawhub uninstall xiaohongshu-mcporter-publish;
+clawhub uninstall xiaohongshu-video-publish;
+clawhub uninstall auto-publisher;
+clawhub uninstall dragon-xiaohongshu;
+clawhub uninstall xiaohongshu-publish-skill;
+clawhub uninstall xiaohongshu-publish-wangzh;
+clawhub uninstall xhs-publisher;
+clawhub uninstall xhsredbook;
+clawhub uninstall xiaohongshu-operate;
 
-# ClawHub — 内容/二创/写作
-clawhub uninstall xiaohongshu-content
-clawhub uninstall xiaohongshu-founder-growth-writer
-clawhub uninstall xhs-content-creator
-clawhub uninstall xiaohongshu-viral-content
-clawhub uninstall xhs-writing-coach
-clawhub uninstall xiaohongshu-article-generator
-clawhub uninstall xiaohongshu-algorithm-optimizer
-clawhub uninstall xiaohongshu-ai-money-guide
+# ClawHub — 内容/二创/原创
+clawhub uninstall xiaohongshu-content;
+clawhub uninstall xiaohongshu-founder-growth-writer;
+clawhub uninstall xhs-content-creator;
+clawhub uninstall xiaohongshu-viral-content;
+clawhub uninstall xhs-writing-coach;
+clawhub uninstall xiaohongshu-article-generator;
+clawhub uninstall xiaohongshu-algorithm-optimizer;
+clawhub uninstall xiaohongshu-ai-money-guide;
 
 # ClawHub — 评论/互动
-clawhub uninstall xiaohongshu-reply-assistant
-clawhub uninstall rednote-mac
-clawhub uninstall xiaohongshu-comment
-clawhub uninstall xiaohongshu-first-line
+clawhub uninstall xiaohongshu-reply-assistant;
+clawhub uninstall rednote-mac;
+clawhub uninstall xiaohongshu-comment;
+clawhub uninstall xiaohongshu-first-line;
 
 # ClawHub — 视频
-clawhub uninstall xhs-video-finder
-clawhub uninstall xhs-video-downloader
-clawhub uninstall xhs-video-analyzer
+clawhub uninstall xhs-video-finder;
+clawhub uninstall xhs-video-downloader;
+clawhub uninstall xhs-video-analyzer;
 
 # ClawHub — 运营
-clawhub uninstall openclaw-xiaohongshu-ops
-clawhub uninstall zeelin-xiaohongshu-autopost
+clawhub uninstall openclaw-xiaohongshu-ops;
+clawhub uninstall zeelin-xiaohongshu-autopost;
 
 # ClawHub — 登录/运维
-clawhub uninstall xiaohongshu-login
-clawhub uninstall xiaohongshu-mcp-patch
-clawhub uninstall jackwener-xhs-cli
+clawhub uninstall xiaohongshu-login;
+clawhub uninstall xiaohongshu-mcp-patch;
+clawhub uninstall jackwener-xhs-cli;
 
 # ClawHub — 图文/信息图
-clawhub uninstall xiaohongshu-generator
-clawhub uninstall xhs-md2pic
-clawhub uninstall xiaohongshu-post-gen
-clawhub uninstall xiaohongshu-auto-publish
+clawhub uninstall xiaohongshu-generator;
+clawhub uninstall xhs-md2pic;
+clawhub uninstall xiaohongshu-post-gen;
+clawhub uninstall xiaohongshu-auto-publish;
 
 # ClawHub — 跨平台/迁移
-clawhub uninstall restaurant-crosscheck
-clawhub uninstall kb-social-publisher
-clawhub uninstall wechat-to-xiaohongshu
-clawhub uninstall social-copy-generator
-clawhub uninstall content-repurpose-studio
+clawhub uninstall restaurant-crosscheck;
+clawhub uninstall kb-social-publisher;
+clawhub uninstall wechat-to-xiaohongshu;
+clawhub uninstall social-copy-generator;
+clawhub uninstall content-repurpose-studio;
 
 # ClawHub — 其它
-clawhub uninstall xhs-comic-creator
+clawhub uninstall xhs-comic-creator;
 
 # skills.sh
-npx skills remove baoyu-url-to-markdown
-npx skills remove baoyu-format-markdown
-npx skills remove baoyu-xhs-images
-npx skills remove baoyu-cover-image
-npx skills remove baoyu-article-illustrator
-npx skills remove baoyu-compress-image
-npx skills remove baoyu-translate
-npx skills remove baoyu-infographic
-npx skills remove baoyu-comic
+npx skills remove baoyu-url-to-markdown;
+npx skills remove baoyu-format-markdown;
+npx skills remove baoyu-xhs-images;
+npx skills remove baoyu-cover-image;
+npx skills remove baoyu-article-illustrator;
+npx skills remove baoyu-compress-image;
+npx skills remove baoyu-translate;
+npx skills remove baoyu-infographic;
+npx skills remove baoyu-comic;
 ```
 
 同质能力只装一个高评分技能；补充技能按需启用。安装后目录名需与 config 中 `skills` 一致。勿在 TOOLS.md 存凭证。

@@ -65,7 +65,7 @@ curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/ins
 |------|----------|------|
 | 热门监控 | baoyu-url-to-markdown, baoyu-format-markdown | skills.sh |
 | 爆款拆解 | baoyu-url-to-markdown, baoyu-format-markdown | skills.sh |
-| 二创/写作 | baoyu-cover-image, baoyu-article-illustrator | skills.sh |
+| 二创/原创 | baoyu-cover-image, baoyu-article-illustrator | skills.sh |
 | 自动发布 | baoyu-compress-image；发布需浏览器/开放平台 | skills.sh |
 | 数据助手 | baoyu-format-markdown | skills.sh |
 | 评论管理 | 按需选评论采集与回复技能 | ClawHub/skills.sh |

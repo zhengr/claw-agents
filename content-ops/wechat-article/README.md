@@ -1,12 +1,12 @@
 # 公众号文章生产管线 (WeChat Article Agents)
 
-> 基于 [ClawHub wechat 技能](https://clawhub.ai/skills?sort=downloads&q=wechat) 与 [skills.sh wechat](https://skills.sh/?q=wechat)（**以 ClawHub 为主，两源取最优**），为**微信公众号文章**提供统一内容管线七件套：热门监控、爆款拆解、二创、写作、自动发布、数据助手、评论管理。与 openclaw-agents 其他领域（company / discord / telegram 等）并列。
+> 基于 [ClawHub wechat 技能](https://clawhub.ai/skills?sort=downloads&q=wechat) 与 [skills.sh wechat](https://skills.sh/?q=wechat)（**以 ClawHub 为主，两源取最优**），为**微信公众号文章**提供统一内容管线七件套：热门监控、爆款拆解、二创、原创、自动发布、数据助手、评论管理。与 openclaw-agents 其他领域（company / discord / telegram 等）并列。
 
 ## 技能选型
 
 | 序号 | 来源 | 搜索链接 | 技能一览文档 | 安装命令 |
 |------|------|----------|--------------|----------|
-| 1 | **ClawHub（为主）** | [clawhub.ai/skills?q=wechat](https://clawhub.ai/skills?sort=downloads&q=wechat) | [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md) | `clawhub install <slug>` |
+| 1 | **ClawHub（为主）** | [clawhub.ai/skills?q=wechat](https://clawhub.ai/skills?sort=downloads&q=wechat) | [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md) | `clawhub install <slug> --workdir ~/.openclaw;` |
 | 2 | **skills.sh（取最优）** | [skills.sh/?q=wechat](https://skills.sh/?q=wechat) | [SKILLS-SH-SKILLS.md](./SKILLS-SH-SKILLS.md) | `npx skills add <owner/repo> --skill <名>` |
 
 ## 技能评估结论（摘录）
@@ -43,12 +43,12 @@
 1. **热门监控**：每日/按需搜索公众号/微信生态行业热点与爆款文章，产出日报或摘要，供爆款拆解与数据助手使用。
 2. **爆款拆解**：自动搜索平台关于行业热点和爆款文章，产出结构化拆解框架（标题/钩子/结构/主题等），供二创与数据助手使用。
 3. **二创**：根据拆解框架和结合主题进行新文案和配图（封面 + 文中插图），产出草稿供发布与数据助手使用。
-4. **写作**：强调原创；用户主图+热点/爆款做原创文章，产出草稿供发布与数据助手。
+4. **原创**：强调原创；用户主图+热点/爆款做原创文章，产出草稿供发布与数据助手。
 5. **自动发布**：将已通过的草稿发布到微信公众号（文章/贴图），并记录发布结果供数据助手分析。
 6. **数据助手**：解析文案数据、主题方向，交叉验证效果，将可执行结论反馈给爆款拆解，用于修正和提升（形成闭环）。
 7. **评论管理**：评论采集、起草回复、情感分析；回复需审批/门禁后发布。
 
-**管线关系：** 热门监控 → 日报/摘要 → 爆款拆解 → 拆解框架 → 二创/写作 → 草稿+配图 → 自动发布 → 发布日志 → 数据助手 + 评论管理 → 反馈至爆款拆解与热门监控。
+**管线关系：** 热门监控 → 日报/摘要 → 爆款拆解 → 拆解框架 → 二创/原创 → 草稿+配图 → 自动发布 → 发布日志 → 数据助手 + 评论管理 → 反馈至爆款拆解与热门监控。
 
 ## 智能体清单
 
@@ -57,7 +57,7 @@
 | 1    | wechat-article-hot-monitor      | 公众号热门监控   | 1-wechat-article-hot-monitor      | 每日/按需搜索公众号/微信生态热点与爆款，产出日报或摘要供拆解与数据助手 |
 | 2    | wechat-article-viral-breakdown | 公众号爆款拆解   | 2-wechat-article-viral-breakdown  | 自动搜索行业热点与爆款文章，产出结构化拆解框架 |
 | 3    | wechat-article-rewrite          | 公众号二创       | 3-wechat-article-rewrite          | 根据拆解框架与主题创作新文案与封面/文中插图 |
-| 4    | wechat-article-write            | 公众号写作       | 4-wechat-article-write            | 强调原创：用户主图+热点/爆款做原创文章，产出草稿供发布与数据助手 |
+| 4    | wechat-article-write            | 公众号原创       | 4-wechat-article-write            | 强调原创：用户主图+热点/爆款做原创文章，产出草稿供发布与数据助手 |
 | 5    | wechat-article-publisher        | 公众号自动发布   | 5-wechat-article-publisher        | 将已通过草稿发布到公众号并记录结果 |
 | 6    | wechat-article-data-assistant   | 公众号数据助手   | 6-wechat-article-data-assistant   | 解析数据、交叉验证效果、可执行反馈给爆款拆解 |
 | 7    | wechat-article-comment-manager  | 公众号评论管理   | 7-wechat-article-comment-manager  | 评论采集、起草回复、情感分析；回复需审批/门禁后发布 |
@@ -71,14 +71,14 @@
 | 1 | 热门监控 | wechat-article-hot-monitor | 关键词/品类/时间范围 | 日报或按需摘要（热点、爆款列表） | 入口；可为定时或人工触发 |
 | 2 | 爆款拆解 | wechat-article-viral-breakdown | 日报/摘要中的爆款链接或列表 | 拆解框架（标题、钩子、结构、主题） | 消费监控产出，供二创与数据侧使用 |
 | 3a | 二创 | wechat-article-rewrite | 拆解框架 + 主题 | 草稿（文案 + 封面 + 配图） | 基于拆解做差异化二创，不发布 |
-| 3b | 写作 | wechat-article-write | 用户选题 + 热点/爆款洞察 | 草稿（文案 + 封面 + 配图） | 独立于拆解的原创内容生产 |
+| 3b | 原创 | wechat-article-write | 用户选题 + 热点/爆款洞察 | 草稿（文案 + 封面 + 配图） | 独立于拆解的原创内容生产 |
 | 4 | 自动发布 | wechat-article-publisher | 已审核草稿 | 发布结果日志（链接、时间、状态） | 仅发布已通过审核内容；发布前压缩图片 |
 | 5 | 数据助手 | wechat-article-data-assistant | 发布日志 + 互动数据 | 可执行反馈（关键词/拆解维度/优先主题） | 交叉验证效果，反馈至爆款拆解与监控 |
 | 6 | 评论管理 | wechat-article-comment-manager | 文章/账号评论源 | 回复草稿 + 情感摘要 | 回复须审批/门禁后由人工或流程发布 |
 
 **闭环：** 数据助手的反馈驱动爆款拆解调整搜索与拆解标准，热门监控可据此调整关键词与范围，形成「监控 → 拆解 → 内容 → 发布 → 数据 → 反馈」闭环。
 
-**并行与触发：** 3a 二创与 3b 写作可并行；评论管理可与数据助手并行。执行顺序 1 → 2 → (3a 或 3b) → 4 → 5/6；步骤 5、6 可持续运行或按周期执行。
+**并行与触发：** 3a 二创与 3b 原创可并行；评论管理可与数据助手并行。执行顺序 1 → 2 → (3a 或 3b) → 4 → 5/6；步骤 5、6 可持续运行或按周期执行。
 
 ## 预设技能（按评估结论，去重取最优）
 

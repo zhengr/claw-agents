@@ -36,10 +36,10 @@ npx skills add jimliu/baoyu-skills --skill baoyu-compress-image
 
 | 技能名 | 安装 | 卸载 |
 |--------|------|------|
-| baoyu-url-to-markdown | `npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown` | `npx skills remove baoyu-url-to-markdown` |
-| baoyu-format-markdown | `npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown` | `npx skills remove baoyu-format-markdown` |
-| baoyu-cover-image | `npx skills add jimliu/baoyu-skills --skill baoyu-cover-image` | `npx skills remove baoyu-cover-image` |
-| 其他 Baoyu | `npx skills add jimliu/baoyu-skills --skill <技能名>` | `npx skills remove <技能名>` |
+| baoyu-url-to-markdown | `npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g;` | `npx skills remove baoyu-url-to-markdown;` |
+| baoyu-format-markdown | `npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g;` | `npx skills remove baoyu-format-markdown;` |
+| baoyu-cover-image | `npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g;` | `npx skills remove baoyu-cover-image;` |
+| 其他 Baoyu | `npx skills add jimliu/baoyu-skills --skill <技能名> -y -g;` | `npx skills remove <技能名>;` |
 
 ## 与七件套对应建议
 
@@ -58,7 +58,7 @@ npx skills add jimliu/baoyu-skills --skill baoyu-compress-image
 - 重新执行 `npx skills add <owner/repo> --skill <技能名>` 覆盖安装即可；或以 skills.sh CLI 文档为准。
 
 ### 卸载
-- **命令**：`npx skills remove <技能名>`（技能名与安装后目录名一致）
+- **命令**：`npx skills remove <技能名>;`（技能名与安装后目录名一致）
 - 或手动删除：项目安装为 `./.skills/<技能名>`，全局安装为 `~/.skills/<技能名>`。
 
 ## 与知乎四件套的对应建议（skills.sh）

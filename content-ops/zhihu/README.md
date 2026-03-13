@@ -1,13 +1,14 @@
 # 知乎内容管线 (Zhihu Agents)
 
-> 基于 [ANALYSIS-渠道与流程对齐 OctoFlow](../../ANALYSIS-渠道与流程对齐OctoFlow.md) 建议，为**知乎**提供与 wechat-article / xiaohongshu 同构的内容管线七件套：热门监控、爆款拆解、二创、写作、自动发布、数据助手、评论管理。读（抓取）采用通用 Playwright/Firecrawl，写（发布）采用 social-push 想法发布或浏览器自动化。
+> 基于 [ANALYSIS-渠道与流程对齐 OctoFlow](../../ANALYSIS-渠道与流程对齐OctoFlow.md) 建议，为**知乎**提供与 wechat-article / xiaohongshu 同构的内容管线七件套：热门监控、爆款拆解、二创、原创、自动发布、数据助手、评论管理。读（抓取）采用通用 Playwright/Firecrawl，写（发布）采用 social-push 想法发布或浏览器自动化。
 
 ## 技能选型
 
 | 序号 | 来源 | 搜索链接 | 技能一览文档 | 安装命令 |
 |------|------|----------|--------------|----------|
-| 1 | **ClawHub（为主）** | [clawhub.ai/skills?q=zhihu](https://clawhub.ai/skills?sort=downloads&q=zhihu) | [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md) | `clawhub install <slug>` |
-| 2 | **skills.sh（取最优）** | [skills.sh/?q=zhihu](https://skills.sh/?q=zhihu)、[skills.sh/?q=baoyu](https://skills.sh/?q=baoyu) | [SKILLS-SH-SKILLS.md](./SKILLS-SH-SKILLS.md) | `npx skills add <owner/repo> --skill <名>` |
+| 1 | **ClawHub（为主）** | [clawhub.ai/skills?q=zhihu](https://clawhub.ai/skills?sort=downloads&q=zhihu) | [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md) | `clawhub install <slug> --workdir ~/.openclaw;` |
+| 2 | **SkillHub（国内推荐）** | SkillHub 搜索「知乎」 | [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md) | `skillhub install <slug>`（需先安装 SkillHub CLI） |
+| 3 | **skills.sh（取最优）** | [skills.sh/?q=zhihu](https://skills.sh/?q=zhihu)、[skills.sh/?q=baoyu](https://skills.sh/?q=baoyu) | [SKILLS-SH-SKILLS.md](./SKILLS-SH-SKILLS.md) | `npx skills add <owner/repo> --skill <名> -y -g;` |
 
 ## 技能评估结论（摘录）
 
@@ -36,12 +37,12 @@
 1. **热门监控**：每日/按需搜索知乎行业热点与爆款想法/回答/文章，产出日报或摘要，供爆款拆解与数据助手使用。
 2. **爆款拆解**：自动搜索知乎行业热点与爆款想法/回答/文章，产出结构化拆解框架（标题/钩子/结构/主题等），供二创与数据助手使用。
 3. **二创**：根据拆解框架与主题进行新文案与配图（封面 + 文中图），产出草稿供发布与数据助手使用。
-4. **写作**：强调原创；用户主图+热点/爆款做原创想法/回答/文章，产出草稿供发布与数据助手。
+4. **原创**：强调原创；用户主图+热点/爆款做原创想法/回答/文章，产出草稿供发布与数据助手。
 5. **自动发布**：将已通过草稿发布到知乎（想法/回答/文章），并记录发布结果供数据助手分析。
 6. **数据助手**：解析数据、主题与效果交叉验证，将可执行结论反馈给爆款拆解（形成闭环）。
 7. **评论管理**：评论采集、起草回复、情感分析；回复需审批/门禁后发布。
 
-**管线关系：** 热门监控 → 日报/摘要 → 爆款拆解 → 拆解框架 → 二创/写作 → 草稿+配图 → 自动发布 → 发布日志 → 数据助手 + 评论管理 → 反馈至爆款拆解与热门监控。
+**管线关系：** 热门监控 → 日报/摘要 → 爆款拆解 → 拆解框架 → 二创/原创 → 草稿+配图 → 自动发布 → 发布日志 → 数据助手 + 评论管理 → 反馈至爆款拆解与热门监控。
 
 ## 智能体清单
 
@@ -50,7 +51,7 @@
 | 1    | zhihu-hot-monitor      | 知乎热门监控   | 1-zhihu-hot-monitor            | 每日/按需搜索知乎热点与爆款，产出日报或摘要供拆解与数据助手 |
 | 2    | zhihu-viral-breakdown  | 知乎爆款拆解   | 2-zhihu-viral-breakdown        | 搜索知乎热点与爆款，产出结构化拆解框架 |
 | 3    | zhihu-rewrite          | 知乎二创       | 3-zhihu-rewrite                | 根据拆解框架与主题创作新文案与配图 |
-| 4    | zhihu-write            | 知乎写作       | 4-zhihu-write                  | 强调原创：用户主图+热点/爆款做原创想法/回答/文章，产出草稿供发布与数据助手 |
+| 4    | zhihu-write            | 知乎原创       | 4-zhihu-write                  | 强调原创：用户主图+热点/爆款做原创想法/回答/文章，产出草稿供发布与数据助手 |
 | 5    | zhihu-publisher        | 知乎自动发布   | 5-zhihu-publisher              | 将已通过草稿发布到知乎并记录结果 |
 | 6    | zhihu-data-assistant   | 知乎数据助手   | 6-zhihu-data-assistant         | 解析数据、交叉验证效果、反馈给爆款拆解 |
 | 7    | zhihu-comment-manager  | 知乎评论管理   | 7-zhihu-comment-manager        | 评论采集、起草回复、情感分析；回复需审批/门禁后发布 |
@@ -64,14 +65,14 @@
 | 1 | 热门监控 | zhihu-hot-monitor | 关键词/品类/时间范围 | 日报或按需摘要（热点、爆款列表） | 入口；可为定时或人工触发 |
 | 2 | 爆款拆解 | zhihu-viral-breakdown | 日报/摘要中的爆款链接或列表 | 拆解框架（标题、钩子、结构、主题） | 消费监控产出，供二创与数据侧使用 |
 | 3a | 二创 | zhihu-rewrite | 拆解框架 + 主题 | 草稿（文案 + 封面 + 配图） | 基于拆解做差异化二创，不发布 |
-| 3b | 写作 | zhihu-write | 用户选题 + 热点/爆款洞察 | 草稿（文案 + 封面 + 配图） | 独立于拆解的原创内容生产 |
+| 3b | 原创 | zhihu-write | 用户选题 + 热点/爆款洞察 | 草稿（文案 + 封面 + 配图） | 独立于拆解的原创内容生产 |
 | 4 | 自动发布 | zhihu-publisher | 已审核草稿 | 发布结果日志（链接、时间、状态） | 仅发布已通过审核内容；发布前压缩图片 |
 | 5 | 数据助手 | zhihu-data-assistant | 发布日志 + 互动数据 | 可执行反馈（关键词/拆解维度/优先主题） | 交叉验证效果，反馈至爆款拆解与监控 |
 | 6 | 评论管理 | zhihu-comment-manager | 文章/账号评论源 | 回复草稿 + 情感摘要 | 回复须审批/门禁后由人工或流程发布 |
 
 **闭环：** 数据助手的反馈驱动爆款拆解调整搜索与拆解标准，热门监控可据此调整关键词与范围，形成「监控 → 拆解 → 内容 → 发布 → 数据 → 反馈」闭环。
 
-**并行与触发：** 3a 二创与 3b 写作可并行；评论管理可与数据助手并行。执行顺序 1 → 2 → (3a 或 3b) → 4 → 5/6；步骤 5、6 可持续运行或按周期执行。
+**并行与触发：** 3a 二创与 3b 原创可并行；评论管理可与数据助手并行。执行顺序 1 → 2 → (3a 或 3b) → 4 → 5/6；步骤 5、6 可持续运行或按周期执行。
 
 ## 预设技能（按评估结论，去重取最优）
 
@@ -79,13 +80,13 @@
 
 | 步骤 | Agent id               | 推荐技能 | 来源 | 说明 |
 |------|------------------------|----------|------|------|
-| 1 | zhihu-hot-monitor      | baoyu-url-to-markdown, baoyu-format-markdown | skills.sh | 抓取+日报格式 |
-| 2 | zhihu-viral-breakdown  | baoyu-url-to-markdown, baoyu-format-markdown | skills.sh | 抓取成文+拆解格式 |
+| 1 | zhihu-hot-monitor      | zhihu-hot-cn；zhihu-assistant-skill；baoyu-url-to-markdown, baoyu-format-markdown | ClawHub/SkillHub；skills.sh | 热榜监控+热榜抓取/回答草稿 + 抓取+日报格式 |
+| 2 | zhihu-viral-breakdown  | zhihu-hot-cn；zhihu-assistant-skill；baoyu-url-to-markdown, baoyu-format-markdown | ClawHub/SkillHub；skills.sh | 热榜/趋势 + 抓取成文+拆解格式 |
 | 3a | zhihu-rewrite          | baoyu-cover-image, baoyu-article-illustrator | skills.sh | 封面与配图 |
 | 3b | zhihu-write            | baoyu-cover-image, baoyu-article-illustrator | skills.sh | 同 rewrite |
-| 4 | zhihu-publisher        | baoyu-compress-image；可选 social-push | skills.sh | 压缩+发布 |
-| 5 | zhihu-data-assistant   | baoyu-format-markdown | skills.sh | 报告格式 |
-| 6 | zhihu-comment-manager  | （按需选评论采集与回复技能） | ClawHub/skills.sh | 评论拉取、回复草稿 |
+| 4 | zhihu-publisher        | zhihu（管理/发布/获取）；baoyu-compress-image；可选 social-push | ClawHub/SkillHub；skills.sh | 知乎工具+压缩+发布 |
+| 5 | zhihu-data-assistant   | zhihu-hot-cn；baoyu-format-markdown | ClawHub/SkillHub；skills.sh | 热榜趋势+报告格式 |
+| 6 | zhihu-comment-manager  | zhihu-assistant-skill（回答草稿推飞书）；zhihu（管理）；按需评论采集与回复 | ClawHub/SkillHub；skills.sh | 回答草稿+飞书审核+评论拉取 |
 
 ### 安装前置与唯一命令来源
 
@@ -104,7 +105,13 @@ curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/ins
 **全部安装命令**
 
 ```bash
-# ClawHub — 知乎技能待补充，clawhub search zhihu 后按需 install
+# 第一步：安装 SkillHub CLI（仅首次需要，国内推荐）
+curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/install.sh | bash
+
+# ClawHub/SkillHub — 知乎工具 + 热榜监控 + 热榜抓取与回答草稿助手
+skillhub install zhihu
+skillhub install zhihu-hot-cn
+skillhub install zhihu-assistant-skill
 
 # skills.sh — 抓取、格式、配图、压缩、补充
 npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g;
@@ -120,17 +127,20 @@ npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g;
 **全部卸载命令**
 
 ```bash
-# ClawHub — 若有安装，按 slug 逐条 uninstall
+# ClawHub/SkillHub 安装的知乎技能
+clawhub uninstall zhihu;
+clawhub uninstall zhihu-hot-cn;
+clawhub uninstall zhihu-assistant-skill;
 
 # skills.sh
-npx skills remove baoyu-url-to-markdown
-npx skills remove baoyu-format-markdown
-npx skills remove baoyu-cover-image
-npx skills remove baoyu-article-illustrator
-npx skills remove baoyu-compress-image
-npx skills remove baoyu-translate
-npx skills remove baoyu-infographic
-npx skills remove baoyu-comic
+npx skills remove baoyu-url-to-markdown;
+npx skills remove baoyu-format-markdown;
+npx skills remove baoyu-cover-image;
+npx skills remove baoyu-article-illustrator;
+npx skills remove baoyu-compress-image;
+npx skills remove baoyu-translate;
+npx skills remove baoyu-infographic;
+npx skills remove baoyu-comic;
 ```
 
 ## 配置说明

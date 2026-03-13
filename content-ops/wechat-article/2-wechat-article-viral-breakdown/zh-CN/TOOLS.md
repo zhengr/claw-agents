@@ -21,7 +21,7 @@
 
 ## 推荐/已配置技能
 
-- **wechat-article-extractor**（ClawHub）：公众号文章提取为 Markdown；支持镜像站与反爬。安装：`clawhub install wechat-article-extractor`（以 clawhub.ai 为准）。
+- **wechat-article-extractor**（ClawHub）：公众号文章提取为 Markdown；支持镜像站与反爬。安装：`clawhub install wechat-article-extractor --workdir ~/.openclaw;`（以 clawhub.ai 为准）。
 - **baoyu-format-markdown**（skills.sh）：规范拆解报告格式。安装：`npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown` 或按 skills.sh。
 
 ---

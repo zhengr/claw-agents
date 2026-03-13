@@ -1,6 +1,6 @@
 # ClawHub 抖音相关技能一览
 
-> 来源：[ClawHub — 按 douyin 搜索](https://clawhub.ai/skills?sort=downloads&q=douyin)。安装方式：`clawhub install <slug>`。若当前无或较少，以本目录 README 下方技能表与 baoyu 系列为主；安装：`npx skills add <owner/repo> --skill <名>`。发布与抓取须遵守抖音开放平台与平台 ToS。
+> 来源：[ClawHub — 按 douyin 搜索](https://clawhub.ai/skills?sort=downloads&q=douyin)。安装方式：`clawhub install <slug> --workdir ~/.openclaw;`。若当前无或较少，以本目录 README 下方技能表与 baoyu 系列为主；安装：`npx skills add <owner/repo> --skill <名>`。发布与抓取须遵守抖音开放平台与平台 ToS。
 
 ## 技能总表（按下载量排序）
 
@@ -43,17 +43,17 @@
 
 ### 安装
 - **搜索**：ClawHub 查看 douyin 最新技能。
-- **命令**：`clawhub install <slug>`
+- **命令**：`clawhub install <slug> --workdir ~/.openclaw;`
 - 安装后技能目录名需与 config 中 `agents.list[].skills` 一致。
 - **skills.sh**：安装：`npx skills add <owner/repo> --skill <名>`；技能列表见下方。**勿在 TOOLS.md 存凭证。** 合规与 ToS 见平台文档。
 
 ### 更新
-- 重新执行 `clawhub install <slug>` 覆盖安装即可；具体以 ClawHub CLI 文档为准。
+- 重新执行 `clawhub install <slug> --workdir ~/.openclaw;` 覆盖安装即可；具体以 ClawHub CLI 文档为准。
 
 ### 卸载
-- **命令**：`clawhub uninstall <slug>`
+- **命令**：`clawhub uninstall <slug>;`
 - 或手动删除 ClawHub 技能目录下对应技能文件夹（目录名一般为 slug）。
 
 ### 各技能安装与卸载命令
 
-上表「技能总表」中每个 Slug：**安装** `clawhub install <slug>`，**卸载** `clawhub uninstall <slug>`。示例：`clawhub install douyin-hot-trend` / `clawhub uninstall douyin-hot-trend`；其余将 `<slug>` 替换为表中对应 Slug 即可。
+上表「技能总表」中每个 Slug：**安装** `clawhub install <slug> --workdir ~/.openclaw;`，**卸载** `clawhub uninstall <slug>;`。示例：`clawhub install douyin-hot-trend --workdir ~/.openclaw;` / `clawhub uninstall douyin-hot-trend;`；其余将 `<slug>` 替换为表中对应 Slug 即可。

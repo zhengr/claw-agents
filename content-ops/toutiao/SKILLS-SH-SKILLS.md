@@ -23,7 +23,7 @@
 
 | 序号 | 技能名 | 仓库 | 安装 | 卸载 |
 |------|--------|------|------|------|
-| 1～8 | （见上表） | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill <技能名> -y -g` | `npx skills remove <技能名>` |
+| 1～8 | （见上表） | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill <技能名> -y -g;` | `npx skills remove <技能名>;` |
 
 **全部安装/全部卸载**以 [SKILLS-EVALUATION.md §7.3](./SKILLS-EVALUATION.md) 或 README「七件套全部可使用的技能」为准。
 
@@ -58,5 +58,5 @@ npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g
 - 重新执行 `npx skills add <owner/repo> --skill <技能名>` 覆盖安装即可；或以 skills.sh CLI 文档为准。
 
 ### 卸载
-- **命令**：`npx skills remove <技能名>`（技能名与安装后目录名一致）
+- **命令**：`npx skills remove <技能名>;`（技能名与安装后目录名一致）
 - 或手动删除：项目安装为 `./.skills/<技能名>`，全局安装为 `~/.skills/<技能名>`。

@@ -138,15 +138,15 @@ npx skillsadd <owner/repo>/<skill-folder>
 
 | 技能名 | 仓库 | 安装 | 卸载 |
 |--------|------|------|------|
-| discord | vm0-ai/vm0-skills 或 steipete/clawdis | `npx skills add vm0-ai/vm0-skills --skill discord` | `npx skills remove discord` |
-| discord-bot-architect | sickn33/antigravity-awesome-skills | `npx skills add sickn33/antigravity-awesome-skills --skill discord-bot-architect` | `npx skills remove discord-bot-architect` |
-| baoyu-* | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill <技能名>` | `npx skills remove <技能名>` |
+| discord | vm0-ai/vm0-skills 或 steipete/clawdis | `npx skills add vm0-ai/vm0-skills --skill discord -y -g;` | `npx skills remove discord;` |
+| discord-bot-architect | sickn33/antigravity-awesome-skills | `npx skills add sickn33/antigravity-awesome-skills --skill discord-bot-architect -y -g;` | `npx skills remove discord-bot-architect;` |
+| baoyu-* | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill <技能名> -y -g;` | `npx skills remove <技能名>;` |
 
 ### 更新
 - 重新执行 `npx skills add <owner/repo> --skill <技能名>` 覆盖安装即可；或以 skills.sh CLI 文档为准。
 
 ### 卸载
-- **命令**：`npx skills remove <技能名>`（技能名与安装后目录名一致）
+- **命令**：`npx skills remove <技能名>;`（技能名与安装后目录名一致）
 - 或手动删除：项目安装为 `./.skills/<技能名>`，全局安装为 `~/.skills/<技能名>`。
 
 ## 与 Discord 三智能体的对应建议（skills.sh）

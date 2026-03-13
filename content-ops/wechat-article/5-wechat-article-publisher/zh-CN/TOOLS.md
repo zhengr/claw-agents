@@ -18,7 +18,7 @@
 
 ## 推荐/已配置技能
 
-- **wechat-ai-publisher**（ClawHub）：自动发文（写稿、排版、封面、草稿）。安装：`clawhub install wechat-ai-publisher`（以 clawhub.ai 为准）。
+- **wechat-ai-publisher**（ClawHub）：自动发文（写稿、排版、封面、草稿）。安装：`clawhub install wechat-ai-publisher --workdir ~/.openclaw;`（以 clawhub.ai 为准）。
 - **baoyu-post-to-wechat**（skills.sh）：发布到公众号。
 - **baoyu-markdown-to-html**（skills.sh）：MD 转微信 HTML。
 - **baoyu-compress-image**（skills.sh）：发布前压缩图片。

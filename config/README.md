@@ -149,7 +149,7 @@
 
 - **智能体**：bilibili 七件套（热门监控、内容助手、视频发布、数据助手、爆款拆解、写作、评论管理）；技能来自 [ClawHub bilibili](https://clawhub.ai/skills?sort=downloads&q=bilibili) 及 baoyu。
 - **workspace 路径**：`~/.openclaw/workspace-bilibili-*`；部署时将仓库 `content-ops/bilibili/1-...`～`content-ops/bilibili/7-...` 复制或链接到对应路径。
-- **技能安装**：`clawhub install <slug>`（如 bilibili-hot-monitor、bilibili-update-viewer、bilibili-helper、bilibili-subtitle-download-skill、bilibili-video-publish、bilibili-upload、bilibili-analytics）。投稿/发布类技能需浏览器登录或 B 站凭证，勿写入 TOOLS.md。详见 [content-ops/bilibili/README.md](../content-ops/bilibili/README.md)。
+- **技能安装**：`clawhub install <slug> --workdir ~/.openclaw;`（如 bilibili-hot-monitor、bilibili-update-viewer、bilibili-helper、bilibili-subtitle-download-skill、bilibili-video-publish、bilibili-upload、bilibili-analytics）。投稿/发布类技能需浏览器登录或 B 站凭证，勿写入 TOOLS.md。详见 [content-ops/bilibili/README.md](../content-ops/bilibili/README.md)。
 - **合并方式**：将片段的 `agents.list`、`bindings`、`tools` 合并进主配置；按需绑定渠道到对应 agent。
 
 ## 知乎管线（openclaw-zhihu-fragment.json）

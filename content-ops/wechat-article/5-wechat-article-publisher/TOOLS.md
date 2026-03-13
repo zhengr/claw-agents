@@ -18,7 +18,7 @@ Store logs at an agreed path (e.g. `publish-logs/`); document path and format he
 
 ## Recommended / Configured Skills
 
-- **wechat-ai-publisher** (ClawHub): Auto publish (draft, layout, cover, save). Install: `clawhub install wechat-ai-publisher` (verify on clawhub.ai).
+- **wechat-ai-publisher** (ClawHub): Auto publish (draft, layout, cover, save). Install: `clawhub install wechat-ai-publisher --workdir ~/.openclaw;` (verify on clawhub.ai).
 - **baoyu-post-to-wechat** (skills.sh): Publish to 公众号 via API or CDP.
 - **baoyu-markdown-to-html** (skills.sh): MD to WeChat-friendly HTML.
 - **baoyu-compress-image** (skills.sh): Compress images before publish.

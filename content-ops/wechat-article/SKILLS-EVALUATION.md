@@ -9,7 +9,7 @@
 | 1 | 1-hot-monitor | 热点/爆款搜索 → 日报/摘要 | 链接抓取、报告格式 | baoyu-url-to-markdown, baoyu-format-markdown |
 | 2 | 2-viral-breakdown | 爆款文章 → 拆解框架 | 文章搜索、正文提取、拆解输出格式 | wechat-article-extractor, baoyu-format-markdown |
 | 3 | 3-rewrite | 拆解框架 → 二创草稿+配图 | 封面图、长文配图 | baoyu-cover-image, baoyu-article-illustrator |
-| 4 | 4-write | 原创写作 → 草稿+配图 | 封面图、长文配图 | baoyu-cover-image, baoyu-article-illustrator |
+| 4 | 4-write | 原创原创 → 草稿+配图 | 封面图、长文配图 | baoyu-cover-image, baoyu-article-illustrator |
 | 5 | 5-publisher | 草稿 → 公众号发布+日志 | 发布、MD→HTML、图片压缩 | wechat-ai-publisher, baoyu-markdown-to-html, baoyu-compress-image, baoyu-post-to-wechat |
 | 6 | 6-data-assistant | 数据解析 → 可执行反馈 | 报告格式 | baoyu-format-markdown |
 | 7 | 7-comment-manager | 评论采集、回复草稿、情感 | 评论拉取、回复建议（按需） | 待选（ClawHub/skills.sh） |
@@ -59,7 +59,7 @@
 | **scrapling-web-fetch** | ClawHub | 123 | 网页正文+公众号+清洗 | 不专名「extractor」，但能做正文提取，**可作补充** |
 
 **结论（正文提取）**  
-- **viral-breakdown**：主用 **wechat-article-extractor**（skills.sh · freestylefly）。若 ClawHub 上有同名且文档清晰，可改为 `clawhub install wechat-article-extractor` 统一来源。
+- **viral-breakdown**：主用 **wechat-article-extractor**（skills.sh · freestylefly）。若 ClawHub 上有同名且文档清晰，可改为 `clawhub install wechat-article-extractor --workdir ~/.openclaw;` 统一来源。
 
 ---
 
@@ -173,7 +173,7 @@
 
 ## 三、平台与来源对比（网上结论摘要）
 
-- **ClawHub**：OpenClaw 社区技能市场（clawhub.ai），技能多、用 `clawhub install <slug>` 管理，适合「发现+统一安装」。  
+- **ClawHub**：OpenClaw 社区技能市场（clawhub.ai），技能多、用 `clawhub install <slug> --workdir ~/.openclaw;` 管理，适合「发现+统一安装」。  
 - **skills.sh**：Skills 官方展示与排名，安装量可见，安装方式为 `npx skills add <owner/repo> --skill <名>`，与 ClawHub 互补。  
 - **关系**：两者互补；同一技能可能两边都有，只装一处即可，优先选**安装量/星标更高、文档更全**的一侧。  
 - **Baoyu（jimliu/baoyu-skills）**：在 skills.sh 上安装量突出（7K–10K），覆盖发布、排版、配图、抓取、格式等，适合作为「发布+配图+格式」主链。
@@ -253,7 +253,7 @@ curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/ins
 |------|----------|------|
 | 热门监控 | baoyu-url-to-markdown, baoyu-format-markdown；可选 wechat-mp-cn | skills.sh；ClawHub |
 | 爆款拆解 | wechat-article-search, wechat-article-extractor, baoyu-format-markdown；可选 scrapling-web-fetch | ClawHub + skills.sh |
-| 二创/写作 | baoyu-cover-image, baoyu-article-illustrator | skills.sh |
+| 二创/原创 | baoyu-cover-image, baoyu-article-illustrator | skills.sh |
 | 自动发布 | baoyu-post-to-wechat, baoyu-markdown-to-html, baoyu-compress-image | skills.sh |
 | 数据助手 | baoyu-format-markdown；可选 wechat-mp-cn | skills.sh；ClawHub |
 | 评论管理 | wechat-auto-reply-assistant；评论采集按接口/自研 | ClawHub |
@@ -298,23 +298,23 @@ npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g;
 
 ```bash
 # ClawHub
-clawhub uninstall wechat-article-search
-clawhub uninstall wechat-mp-cn
-clawhub uninstall wechat-auto-reply-assistant
-clawhub uninstall scrapling-web-fetch
+clawhub uninstall wechat-article-search;
+clawhub uninstall wechat-mp-cn;
+clawhub uninstall wechat-auto-reply-assistant;
+clawhub uninstall scrapling-web-fetch;
 
 # skills.sh
-npx skills remove baoyu-url-to-markdown
-npx skills remove baoyu-format-markdown
-npx skills remove wechat-article-extractor
-npx skills remove baoyu-cover-image
-npx skills remove baoyu-article-illustrator
-npx skills remove baoyu-post-to-wechat
-npx skills remove baoyu-markdown-to-html
-npx skills remove baoyu-compress-image
-npx skills remove baoyu-translate
-npx skills remove baoyu-infographic
-npx skills remove baoyu-comic
+npx skills remove baoyu-url-to-markdown;
+npx skills remove baoyu-format-markdown;
+npx skills remove wechat-article-extractor;
+npx skills remove baoyu-cover-image;
+npx skills remove baoyu-article-illustrator;
+npx skills remove baoyu-post-to-wechat;
+npx skills remove baoyu-markdown-to-html;
+npx skills remove baoyu-compress-image;
+npx skills remove baoyu-translate;
+npx skills remove baoyu-infographic;
+npx skills remove baoyu-comic;
 ```
 
 同质能力只装一个；补充技能按需启用。安装后目录名需与 config 中 `skills` 一致。勿在 TOOLS.md 存凭证。

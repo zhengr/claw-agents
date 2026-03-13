@@ -6,12 +6,12 @@
 
 | 序号 | Agent | 所需能力 | 推荐技能 | 来源 |
 |------|-------|----------|----------|------|
-| 1 | weibo-hot-monitor | 链接抓取、日报格式 | baoyu-url-to-markdown, baoyu-format-markdown | skills.sh |
-| 2 | weibo-viral-breakdown | 抓取成文、拆解格式 | baoyu-url-to-markdown, baoyu-format-markdown | skills.sh |
+| 1 | weibo-hot-monitor | 关注流监控、按时间抓取去重、每日 Markdown；链接抓取、日报格式 | **weibo-fresh-posts**；baoyu-url-to-markdown, baoyu-format-markdown | ClawHub/SkillHub；skills.sh |
+| 2 | weibo-viral-breakdown | 抓取成文、拆解格式 | baoyu-url-to-markdown, baoyu-format-markdown；可选 weibo-fresh-posts | skills.sh；ClawHub/SkillHub |
 | 3 | weibo-rewrite / weibo-write | 封面与配图 | baoyu-cover-image, baoyu-article-illustrator | skills.sh |
-| 4 | weibo-publisher | 发布前压缩；发布 | baoyu-compress-image；baoyu-post-to-weibo 或 social-push | skills.sh |
-| 5 | weibo-data-assistant | 报告格式 | baoyu-format-markdown | skills.sh |
-| 6 | weibo-comment-manager | 回复建议；评论采集 | 按需 ClawHub/skills.sh | — |
+| 4 | weibo-publisher | 管理/执行/发布/审查；发布前压缩；发布 | **weibo-manager**；baoyu-compress-image；baoyu-post-to-weibo 或 social-push | ClawHub/SkillHub；skills.sh |
+| 5 | weibo-data-assistant | 报告格式；关注流数据 | baoyu-format-markdown；可选 weibo-fresh-posts | skills.sh；ClawHub/SkillHub |
+| 6 | weibo-comment-manager | 审查；回复建议；评论采集 | **weibo-manager**；按需 ClawHub/skills.sh | ClawHub/SkillHub；— |
 
 ## 二、同质技能「谁更好」一览
 
@@ -27,13 +27,13 @@
 
 | 步骤 | Agent id | 推荐技能 | 来源 | 说明 |
 |------|----------|----------|------|------|
-| 1 | weibo-hot-monitor | baoyu-url-to-markdown, baoyu-format-markdown | skills.sh | 抓取+日报格式 |
-| 2 | weibo-viral-breakdown | baoyu-url-to-markdown, baoyu-format-markdown | skills.sh | 抓取成文+拆解格式 |
+| 1 | weibo-hot-monitor | weibo-fresh-posts；baoyu-url-to-markdown, baoyu-format-markdown | ClawHub/SkillHub；skills.sh | 关注流监控+每日 Markdown + 抓取+日报格式 |
+| 2 | weibo-viral-breakdown | baoyu-url-to-markdown, baoyu-format-markdown；可选 weibo-fresh-posts | skills.sh；ClawHub/SkillHub | 抓取成文+拆解格式 |
 | 3a | weibo-rewrite | baoyu-cover-image, baoyu-article-illustrator | skills.sh | 封面与配图 |
 | 3b | weibo-write | baoyu-cover-image, baoyu-article-illustrator | skills.sh | 同 rewrite |
-| 4 | weibo-publisher | baoyu-compress-image；可选 baoyu-post-to-weibo / social-push | skills.sh | 压缩+发布 |
-| 5 | weibo-data-assistant | baoyu-format-markdown | skills.sh | 报告格式 |
-| 6 | weibo-comment-manager | （按需选评论采集与回复技能） | ClawHub/skills.sh | 评论拉取、回复草稿 |
+| 4 | weibo-publisher | weibo-manager；baoyu-compress-image；可选 baoyu-post-to-weibo / social-push | ClawHub/SkillHub；skills.sh | 管理/执行/发布/审查 + 压缩+发布 |
+| 5 | weibo-data-assistant | baoyu-format-markdown；可选 weibo-fresh-posts | skills.sh；ClawHub/SkillHub | 报告格式 |
+| 6 | weibo-comment-manager | weibo-manager（审查）；按需评论采集与回复技能 | ClawHub/SkillHub；skills.sh | 评论拉取、回复草稿、审查 |
 
 ---
 
@@ -73,12 +73,12 @@ curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/ins
 
 | 环节 | 必备技能 | 来源 |
 |------|----------|------|
-| 热门监控 | baoyu-url-to-markdown, baoyu-format-markdown | skills.sh |
-| 爆款拆解 | baoyu-url-to-markdown, baoyu-format-markdown | skills.sh |
-| 二创/写作 | baoyu-cover-image, baoyu-article-illustrator | skills.sh |
-| 自动发布 | baoyu-compress-image；baoyu-post-to-weibo 或 social-push（按需选一） | skills.sh |
-| 数据助手 | baoyu-format-markdown | skills.sh |
-| 评论管理 | 按需 ClawHub/skills.sh 评论采集与回复技能 | ClawHub/skills.sh |
+| 热门监控 | weibo-fresh-posts；baoyu-url-to-markdown, baoyu-format-markdown | ClawHub/SkillHub；skills.sh |
+| 爆款拆解 | baoyu-url-to-markdown, baoyu-format-markdown；可选 weibo-fresh-posts | skills.sh；ClawHub/SkillHub |
+| 二创/原创 | baoyu-cover-image, baoyu-article-illustrator | skills.sh |
+| 自动发布 | weibo-manager；baoyu-compress-image；baoyu-post-to-weibo 或 social-push（按需选一） | ClawHub/SkillHub；skills.sh |
+| 数据助手 | baoyu-format-markdown；可选 weibo-fresh-posts | skills.sh；ClawHub/SkillHub |
+| 评论管理 | weibo-manager（审查）；按需 ClawHub/skills.sh 评论采集与回复技能 | ClawHub/SkillHub；skills.sh |
 
 **补充技能（按需选装）**
 
@@ -90,35 +90,47 @@ curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/ins
 
 ### 7.3 全部不冲突：全部安装命令与全部卸载命令
 
-以下为全部不冲突技能（同质只取 1 个首选，可并存全部列入）的完整安装与卸载命令。微博管线当前以 skills.sh 为主；ClawHub 部分待补充后可按 [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md) 追加。
+以下为全部不冲突技能（同质只取 1 个首选，可并存全部列入）的完整安装与卸载命令。微博管线含 ClawHub/SkillHub 微博技能（[CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md)）与 skills.sh Baoyu。
 
 **全部安装命令**
 
 ```bash
+# 前置：SkillHub CLI（仅首次，国内推荐）
+curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/install.sh | bash
+
+# ClawHub/SkillHub — 微博关注流监控 + 微博管理/发布/审查
+skillhub install weibo-fresh-posts
+skillhub install weibo-manager
+
 # skills.sh — 微博七件套 + 补充（能用上的全要）
-npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-post-to-weibo -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g
+npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-post-to-weibo -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g;
 ```
 
 **全部卸载命令**
 
 ```bash
-npx skills remove baoyu-url-to-markdown
-npx skills remove baoyu-format-markdown
-npx skills remove baoyu-cover-image
-npx skills remove baoyu-article-illustrator
-npx skills remove baoyu-compress-image
-npx skills remove baoyu-post-to-weibo
-npx skills remove baoyu-translate
-npx skills remove baoyu-infographic
-npx skills remove baoyu-comic
+# ClawHub/SkillHub 安装的微博技能
+clawhub uninstall weibo-fresh-posts;
+clawhub uninstall weibo-manager;
+
+# skills.sh 技能
+npx skills remove baoyu-url-to-markdown;
+npx skills remove baoyu-format-markdown;
+npx skills remove baoyu-cover-image;
+npx skills remove baoyu-article-illustrator;
+npx skills remove baoyu-compress-image;
+npx skills remove baoyu-post-to-weibo;
+npx skills remove baoyu-translate;
+npx skills remove baoyu-infographic;
+npx skills remove baoyu-comic;
 ```
 
 同质能力只装一个；补充技能按需启用。安装后目录名需与 config 中 `skills` 一致。勿在 TOOLS.md 存凭证。

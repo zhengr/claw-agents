@@ -69,7 +69,7 @@ curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/ins
 |------|----------|------|
 | 热门监控 | douyin-hot-trend, baoyu-url-to-markdown, baoyu-format-markdown | ClawHub + skills.sh |
 | 爆款拆解 | douyin-downloader 或 douyin-video-fetch, baoyu-format-markdown | ClawHub + skills.sh |
-| 二创/写作 | baoyu-cover-image, baoyu-article-illustrator | skills.sh |
+| 二创/原创 | baoyu-cover-image, baoyu-article-illustrator | skills.sh |
 | 自动发布 | douyin-publish, baoyu-compress-image | ClawHub + skills.sh |
 | 数据助手 | baoyu-format-markdown | skills.sh |
 | 评论管理 | 按需选评论采集与回复技能 | ClawHub/skills.sh |
@@ -106,19 +106,19 @@ npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g;
 
 ```bash
 # ClawHub
-clawhub uninstall douyin-hot-trend
-clawhub uninstall douyin-downloader
-clawhub uninstall douyin-publish
+clawhub uninstall douyin-hot-trend;
+clawhub uninstall douyin-downloader;
+clawhub uninstall douyin-publish;
 
 # skills.sh
-npx skills remove baoyu-url-to-markdown
-npx skills remove baoyu-format-markdown
-npx skills remove baoyu-cover-image
-npx skills remove baoyu-article-illustrator
-npx skills remove baoyu-compress-image
-npx skills remove baoyu-translate
-npx skills remove baoyu-infographic
-npx skills remove baoyu-comic
+npx skills remove baoyu-url-to-markdown;
+npx skills remove baoyu-format-markdown;
+npx skills remove baoyu-cover-image;
+npx skills remove baoyu-article-illustrator;
+npx skills remove baoyu-compress-image;
+npx skills remove baoyu-translate;
+npx skills remove baoyu-infographic;
+npx skills remove baoyu-comic;
 ```
 
 ---

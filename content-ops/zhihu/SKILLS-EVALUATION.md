@@ -6,12 +6,12 @@
 
 | 序号 | Agent | 所需能力 | 推荐技能 | 来源 |
 |------|-------|----------|----------|------|
-| 1 | zhihu-hot-monitor | 链接抓取、日报格式 | baoyu-url-to-markdown, baoyu-format-markdown | skills.sh |
-| 2 | zhihu-viral-breakdown | 抓取成文、拆解格式 | baoyu-url-to-markdown, baoyu-format-markdown | skills.sh |
+| 1 | zhihu-hot-monitor | 热榜监控、趋势分析；热榜抓取+回答草稿；链接抓取、日报格式 | **zhihu-hot-cn**；**zhihu-assistant-skill**；baoyu-url-to-markdown, baoyu-format-markdown | ClawHub/SkillHub；skills.sh |
+| 2 | zhihu-viral-breakdown | 热榜/趋势；抓取成文、拆解格式 | zhihu-hot-cn；zhihu-assistant-skill；baoyu-url-to-markdown, baoyu-format-markdown | ClawHub/SkillHub；skills.sh |
 | 3 | zhihu-rewrite / zhihu-write | 封面与配图 | baoyu-cover-image, baoyu-article-illustrator | skills.sh |
-| 4 | zhihu-publisher | 发布前压缩；发布 | baoyu-compress-image；social-push 或知乎发布类 | skills.sh |
-| 5 | zhihu-data-assistant | 报告格式 | baoyu-format-markdown | skills.sh |
-| 6 | zhihu-comment-manager | 回复建议；评论采集 | 按需 ClawHub/skills.sh | — |
+| 4 | zhihu-publisher | 管理、发布、获取；发布前压缩；发布 | **zhihu**；baoyu-compress-image；social-push 或知乎发布类 | ClawHub/SkillHub；skills.sh |
+| 5 | zhihu-data-assistant | 热榜趋势；报告格式 | zhihu-hot-cn；baoyu-format-markdown | ClawHub/SkillHub；skills.sh |
+| 6 | zhihu-comment-manager | 回答草稿推飞书审核；管理；回复建议；评论采集 | **zhihu-assistant-skill**；**zhihu**；按需 ClawHub/skills.sh | ClawHub/SkillHub；— |
 
 ## 二、同质技能「谁更好」一览
 
@@ -26,13 +26,13 @@
 
 | 步骤 | Agent id | 推荐技能 | 来源 | 说明 |
 |------|----------|----------|------|------|
-| 1 | zhihu-hot-monitor | baoyu-url-to-markdown, baoyu-format-markdown | skills.sh | 抓取+日报格式 |
-| 2 | zhihu-viral-breakdown | baoyu-url-to-markdown, baoyu-format-markdown | skills.sh | 抓取成文+拆解格式 |
+| 1 | zhihu-hot-monitor | zhihu-hot-cn；zhihu-assistant-skill；baoyu-url-to-markdown, baoyu-format-markdown | ClawHub/SkillHub；skills.sh | 热榜监控+热榜抓取/回答草稿 + 抓取+日报格式 |
+| 2 | zhihu-viral-breakdown | zhihu-hot-cn；zhihu-assistant-skill；baoyu-url-to-markdown, baoyu-format-markdown | ClawHub/SkillHub；skills.sh | 热榜/趋势 + 抓取成文+拆解格式 |
 | 3a | zhihu-rewrite | baoyu-cover-image, baoyu-article-illustrator | skills.sh | 封面与配图 |
 | 3b | zhihu-write | baoyu-cover-image, baoyu-article-illustrator | skills.sh | 同 rewrite |
-| 4 | zhihu-publisher | baoyu-compress-image；可选 social-push | skills.sh | 压缩+发布 |
-| 5 | zhihu-data-assistant | baoyu-format-markdown | skills.sh | 报告格式 |
-| 6 | zhihu-comment-manager | （按需选评论采集与回复技能） | ClawHub/skills.sh | 评论拉取、回复草稿 |
+| 4 | zhihu-publisher | zhihu（管理/发布/获取）；baoyu-compress-image；可选 social-push | ClawHub/SkillHub；skills.sh | 知乎工具+压缩+发布 |
+| 5 | zhihu-data-assistant | zhihu-hot-cn；baoyu-format-markdown | ClawHub/SkillHub；skills.sh | 热榜趋势+报告格式 |
+| 6 | zhihu-comment-manager | zhihu-assistant-skill（回答草稿推飞书）；zhihu（管理）；按需评论采集与回复 | ClawHub/SkillHub；skills.sh | 回答草稿+飞书审核+评论拉取 |
 
 ## 四、七件套全部可使用的技能：命令来源
 
@@ -65,12 +65,12 @@ curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/ins
 
 | 环节 | 必备技能 | 来源 |
 |------|----------|------|
-| 热门监控 | baoyu-url-to-markdown, baoyu-format-markdown | skills.sh |
-| 爆款拆解 | baoyu-url-to-markdown, baoyu-format-markdown | skills.sh |
-| 二创/写作 | baoyu-cover-image, baoyu-article-illustrator | skills.sh |
-| 自动发布 | baoyu-compress-image；可选 social-push | skills.sh |
-| 数据助手 | baoyu-format-markdown | skills.sh |
-| 评论管理 | 按需选评论采集与回复技能 | ClawHub/skills.sh |
+| 热门监控 | zhihu-hot-cn；zhihu-assistant-skill；baoyu-url-to-markdown, baoyu-format-markdown | ClawHub/SkillHub；skills.sh |
+| 爆款拆解 | zhihu-hot-cn；zhihu-assistant-skill；baoyu-url-to-markdown, baoyu-format-markdown | ClawHub/SkillHub；skills.sh |
+| 二创/原创 | baoyu-cover-image, baoyu-article-illustrator | skills.sh |
+| 自动发布 | zhihu（管理/发布/获取）；baoyu-compress-image；可选 social-push | ClawHub/SkillHub；skills.sh |
+| 数据助手 | zhihu-hot-cn；baoyu-format-markdown | ClawHub/SkillHub；skills.sh |
+| 评论管理 | zhihu-assistant-skill（回答草稿推飞书）；zhihu（管理）；按需评论采集与回复 | ClawHub/SkillHub；skills.sh |
 
 **补充技能（按需选装）**
 
@@ -82,38 +82,47 @@ curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/ins
 
 ### 6.3 全部不冲突：全部安装命令与全部卸载命令
 
-以下为全部不冲突技能（同质只取 1 个首选，可并存全部列入）。**能用上的全要**：当前以 skills.sh Baoyu 全列为主；ClawHub 知乎技能待补充，若有 slug 可追加到 ClawHub 段。
+以下为全部不冲突技能（同质只取 1 个首选，可并存全部列入）。知乎管线含 ClawHub/SkillHub 知乎技能（[CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md)）与 skills.sh Baoyu。
 
 **全部安装命令**
 
 ```bash
-# ClawHub — 知乎技能待补充，clawhub search zhihu 后按需 install
+# 前置：SkillHub CLI（仅首次，国内推荐）
+curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/install.sh | bash
+
+# ClawHub/SkillHub — 知乎工具 + 热榜监控 + 热榜抓取与回答草稿助手
+skillhub install zhihu
+skillhub install zhihu-hot-cn
+skillhub install zhihu-assistant-skill
 
 # skills.sh — 抓取、格式、配图、压缩、补充
-npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g
+npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g;
 ```
 
 **全部卸载命令**
 
 ```bash
-# ClawHub — 若有安装，按 slug 逐条 uninstall
+# ClawHub/SkillHub 安装的知乎技能
+clawhub uninstall zhihu;
+clawhub uninstall zhihu-hot-cn;
+clawhub uninstall zhihu-assistant-skill;
 
 # skills.sh
-npx skills remove baoyu-url-to-markdown
-npx skills remove baoyu-format-markdown
-npx skills remove baoyu-cover-image
-npx skills remove baoyu-article-illustrator
-npx skills remove baoyu-compress-image
-npx skills remove baoyu-translate
-npx skills remove baoyu-infographic
-npx skills remove baoyu-comic
+npx skills remove baoyu-url-to-markdown;
+npx skills remove baoyu-format-markdown;
+npx skills remove baoyu-cover-image;
+npx skills remove baoyu-article-illustrator;
+npx skills remove baoyu-compress-image;
+npx skills remove baoyu-translate;
+npx skills remove baoyu-infographic;
+npx skills remove baoyu-comic;
 ```
 
 同质能力只装一个；补充技能按需启用。安装后目录名需与 config 中 `skills` 一致。

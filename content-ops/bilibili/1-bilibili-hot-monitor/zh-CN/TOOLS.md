@@ -11,7 +11,7 @@
 
 ## 技能（ClawHub）
 
-- **bilibili-hot-monitor**：生成 B 站热门视频日报并发送邮件。安装：`clawhub install bilibili-hot-monitor`。
-- **bilibili-update-viewer**：查看 UP 主最新视频与动态。安装：`clawhub install bilibili-update-viewer`。
+- **bilibili-hot-monitor**：生成 B 站热门视频日报并发送邮件。安装：`clawhub install bilibili-hot-monitor --workdir ~/.openclaw;`。
+- **bilibili-update-viewer**：查看 UP 主最新视频与动态。安装：`clawhub install bilibili-update-viewer --workdir ~/.openclaw;`。
 
 勿在本文件存储凭证。

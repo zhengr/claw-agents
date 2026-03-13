@@ -21,7 +21,7 @@ Output breakdowns with consistent, reusable fields for 二创 and data assistant
 
 ## Recommended / Configured Skills
 
-- **wechat-article-extractor** (ClawHub): Extract 公众号 articles to Markdown; supports mirror sites and anti-bot. Install: `clawhub install wechat-article-extractor` (verify name on clawhub.ai).
+- **wechat-article-extractor** (ClawHub): Extract 公众号 articles to Markdown; supports mirror sites and anti-bot. Install: `clawhub install wechat-article-extractor --workdir ~/.openclaw;` (verify name on clawhub.ai).
 - **baoyu-format-markdown** (skills.sh): Normalize breakdown report format. Install: `npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown` or per skills.sh.
 
 ---

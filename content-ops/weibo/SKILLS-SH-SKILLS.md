@@ -28,15 +28,15 @@
 
 | 序号 | 技能名 | 仓库 | 安装 | 卸载 |
 |------|--------|------|------|------|
-| 1 | baoyu-url-to-markdown | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g` | `npx skills remove baoyu-url-to-markdown` |
-| 2 | baoyu-format-markdown | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g` | `npx skills remove baoyu-format-markdown` |
-| 3 | baoyu-cover-image | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g` | `npx skills remove baoyu-cover-image` |
-| 4 | baoyu-article-illustrator | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g` | `npx skills remove baoyu-article-illustrator` |
-| 5 | baoyu-compress-image | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g` | `npx skills remove baoyu-compress-image` |
-| 6 | baoyu-post-to-weibo | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill baoyu-post-to-weibo -y -g` | `npx skills remove baoyu-post-to-weibo` |
-| 7 | baoyu-translate | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g` | `npx skills remove baoyu-translate` |
-| 8 | baoyu-infographic | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g` | `npx skills remove baoyu-infographic` |
-| 9 | baoyu-comic | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g` | `npx skills remove baoyu-comic` |
+| 1 | baoyu-url-to-markdown | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g;` | `npx skills remove baoyu-url-to-markdown;` |
+| 2 | baoyu-format-markdown | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g;` | `npx skills remove baoyu-format-markdown;` |
+| 3 | baoyu-cover-image | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g;` | `npx skills remove baoyu-cover-image;` |
+| 4 | baoyu-article-illustrator | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g;` | `npx skills remove baoyu-article-illustrator;` |
+| 5 | baoyu-compress-image | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g;` | `npx skills remove baoyu-compress-image;` |
+| 6 | baoyu-post-to-weibo | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill baoyu-post-to-weibo -y -g;` | `npx skills remove baoyu-post-to-weibo;` |
+| 7 | baoyu-translate | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g;` | `npx skills remove baoyu-translate;` |
+| 8 | baoyu-infographic | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g;` | `npx skills remove baoyu-infographic;` |
+| 9 | baoyu-comic | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g;` | `npx skills remove baoyu-comic;` |
 
 ## 与七件套对应建议
 
@@ -55,15 +55,15 @@
 
 ```bash
 # 见 README 或 SKILLS-EVALUATION §7.3 全部安装命令
-npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-post-to-weibo -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g
+npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-post-to-weibo -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g;
 ```
 
 安装后技能目录名需与 config 中 `skills` 一致。**勿在 TOOLS.md 存凭证。**
@@ -72,5 +72,5 @@ npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g
 - 重新执行 `npx skills add <owner/repo> --skill <技能名>` 覆盖安装即可；或以 skills.sh CLI 文档为准。
 
 ### 卸载
-- **命令**：`npx skills remove <技能名>`（技能名与安装后目录名一致）
+- **命令**：`npx skills remove <技能名>;`（技能名与安装后目录名一致）
 - 或手动删除：项目安装为 `./.skills/<技能名>`，全局安装为 `~/.skills/<技能名>`。

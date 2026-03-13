@@ -1,6 +1,6 @@
 # B站 (bilibili) 内容管线 (Bilibili Agents)
 
-> 基于 [ClawHub bilibili 技能](https://clawhub.ai/skills?sort=downloads&q=bilibili) 与 [skills.sh bilibili](https://skills.sh/?q=bilibili)（**ClawHub 为主、skills.sh 取最优**），为 **B站（bilibili）** 提供内容管线七件套：热门监控、爆款拆解、内容创作助手、视频发布、数据助手、写作、评论管理。与 openclaw-agents 其他领域（xiaohongshu / wechat-article / discord 等）并列，单独目录便于按渠道绑定与扩展。
+> 基于 [ClawHub bilibili 技能](https://clawhub.ai/skills?sort=downloads&q=bilibili) 与 [skills.sh bilibili](https://skills.sh/?q=bilibili)（**ClawHub 为主、skills.sh 取最优**），为 **B站（bilibili）** 提供内容管线七件套：热门监控、爆款拆解、内容创作助手、视频发布、数据助手、原创、评论管理。与 openclaw-agents 其他领域（xiaohongshu / wechat-article / discord 等）并列，单独目录便于按渠道绑定与扩展。
 
 ## 技能选型
 
@@ -35,15 +35,15 @@
 | 2    | bilibili-content-helper   | B站内容创作助手  | 2-bilibili-content-helper      | 标题/标签/简介优化、投稿策略、字幕总结与脚本辅助，产出草稿供发布 |
 | 3    | bilibili-video-publisher  | B站视频发布      | 3-bilibili-video-publisher     | 将已通过草稿在 B 站创作者平台发布，记录发布结果供数据助手分析 |
 | 4    | bilibili-data-assistant   | B站数据助手      | 4-bilibili-data-assistant      | 解析播放/互动数据、热门趋势，交叉验证后产出反馈给热门监控与内容助手 |
-| 5    | bilibili-viral-breakdown  | B站爆款拆解      | 5-bilibili-viral-breakdown     | 对监控/调研得到的热门视频做拆解（标题、钩子、结构、主题），产出拆解框架供内容助手与写作 |
-| 6    | bilibili-write            | B站写作          | 6-bilibili-write               | 强调原创：用户主图/选题+热点做原创视频脚本与配图方向，产出草稿供发布与数据助手 |
+| 5    | bilibili-viral-breakdown  | B站爆款拆解      | 5-bilibili-viral-breakdown     | 对监控/调研得到的热门视频做拆解（标题、钩子、结构、主题），产出拆解框架供内容助手与原创 |
+| 6    | bilibili-write            | B站原创          | 6-bilibili-write               | 强调原创：用户主图/选题+热点做原创视频脚本与配图方向，产出草稿供发布与数据助手 |
 | 7    | bilibili-comment-manager  | B站评论管理      | 7-bilibili-comment-manager     | 评论采集、起草回复、情感/弹幕分析；回复需审批/门禁后发布 |
 
-**管线关系：** 热门监控 → 日报/摘要 → 爆款拆解 → 拆解框架 → 内容助手/写作 → 草稿 → 视频发布 → 发布日志 → 数据助手 + 评论管理 → 反馈至热门监控与爆款拆解。
+**管线关系：** 热门监控 → 日报/摘要 → 爆款拆解 → 拆解框架 → 内容助手/原创 → 草稿 → 视频发布 → 发布日志 → 数据助手 + 评论管理 → 反馈至热门监控与爆款拆解。
 
 ## 智能工作执行链路
 
-B 站七件套按以下链路协同执行（与图文平台顺序略有不同：先监控与内容生产，再拆解与写作补充）。
+B 站七件套按以下链路协同执行（与图文平台顺序略有不同：先监控与内容生产，再拆解与原创补充）。
 
 | 步骤 | 环节 | 智能体 | 输入 | 输出 | 说明 |
 |------|------|--------|------|------|------|
@@ -51,13 +51,13 @@ B 站七件套按以下链路协同执行（与图文平台顺序略有不同：
 | 2 | 内容创作助手 | bilibili-content-helper | 日报/选题 + 已有草稿 | 标题/标签/简介优化、字幕总结、脚本辅助 | 消费监控产出，产出草稿供发布 |
 | 3 | 视频发布 | bilibili-video-publisher | 已审核草稿 | 发布结果日志（链接、时间、状态） | 创作者平台或 CLI 投稿；仅发布已通过内容 |
 | 4 | 数据助手 | bilibili-data-assistant | 发布日志 + 播放/互动数据 | 可执行反馈（热门趋势、优化方向） | 交叉验证效果，反馈至热门监控与内容助手 |
-| 5 | 爆款拆解 | bilibili-viral-breakdown | 监控/调研得到的热门视频 | 拆解框架（标题、钩子、结构、主题） | 供内容助手与写作参考 |
-| 6 | 写作 | bilibili-write | 用户选题 + 热点/爆款洞察 | 原创视频脚本与配图方向、草稿 | 独立于内容助手的原创生产 |
+| 5 | 爆款拆解 | bilibili-viral-breakdown | 监控/调研得到的热门视频 | 拆解框架（标题、钩子、结构、主题） | 供内容助手与原创参考 |
+| 6 | 原创 | bilibili-write | 用户选题 + 热点/爆款洞察 | 原创视频脚本与配图方向、草稿 | 独立于内容助手的原创生产 |
 | 7 | 评论管理 | bilibili-comment-manager | 视频/账号评论与弹幕 | 回复草稿 + 情感/弹幕摘要 | 回复须审批/门禁后发布 |
 
-**闭环：** 数据助手的反馈驱动热门监控与内容创作助手调整范围与策略，爆款拆解为内容助手与写作提供可复用框架，形成「监控 → 内容/发布 → 数据 → 拆解/写作 → 内容」闭环。
+**闭环：** 数据助手的反馈驱动热门监控与内容创作助手调整范围与策略，爆款拆解为内容助手与原创提供可复用框架，形成「监控 → 内容/发布 → 数据 → 拆解/原创 → 内容」闭环。
 
-**并行与触发：** 爆款拆解与写作可与内容助手并行消费监控产出；评论管理可与数据助手并行。执行顺序建议 1 → 2 → 3 → 4，5/6 可并行或按需触发，7 可持续或按周期执行。
+**并行与触发：** 爆款拆解与原创可与内容助手并行消费监控产出；评论管理可与数据助手并行。执行顺序建议 1 → 2 → 3 → 4，5/6 可并行或按需触发，7 可持续或按周期执行。
 
 ## 预设技能（按评估结论，去重取最优）
 
@@ -112,21 +112,21 @@ npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g;
 
 ```bash
 # ClawHub
-clawhub uninstall bilibili-hot-monitor
-clawhub uninstall bilibili-update-viewer
-clawhub uninstall bilibili-helper
-clawhub uninstall bilibili-subtitle-download-skill
-clawhub uninstall bilibili-video-publish
-clawhub uninstall bilibili-upload
-clawhub uninstall bilibili-analytics
+clawhub uninstall bilibili-hot-monitor;
+clawhub uninstall bilibili-update-viewer;
+clawhub uninstall bilibili-helper;
+clawhub uninstall bilibili-subtitle-download-skill;
+clawhub uninstall bilibili-video-publish;
+clawhub uninstall bilibili-upload;
+clawhub uninstall bilibili-analytics;
 
 # skills.sh
-npx skills remove baoyu-format-markdown
-npx skills remove baoyu-cover-image
-npx skills remove baoyu-article-illustrator
-npx skills remove baoyu-translate
-npx skills remove baoyu-infographic
-npx skills remove baoyu-comic
+npx skills remove baoyu-format-markdown;
+npx skills remove baoyu-cover-image;
+npx skills remove baoyu-article-illustrator;
+npx skills remove baoyu-translate;
+npx skills remove baoyu-infographic;
+npx skills remove baoyu-comic;
 ```
 
 ## 配置说明

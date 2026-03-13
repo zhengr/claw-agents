@@ -1,6 +1,6 @@
 # B站七件套技能评估报告
 
-> 基于 [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md) 与 [SKILLS-SH-SKILLS.md](./SKILLS-SH-SKILLS.md)，结合 B 站七件套 Agent 实际需求做分组与最终推荐。原则：**ClawHub 为主、skills.sh 取最优；同能力只保留一个最优技能。** B 站链路为：热门监控 → 内容创作助手 → 视频发布 → 数据助手 → 爆款拆解 → 写作 → 评论管理。
+> 基于 [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md) 与 [SKILLS-SH-SKILLS.md](./SKILLS-SH-SKILLS.md)，结合 B 站七件套 Agent 实际需求做分组与最终推荐。原则：**ClawHub 为主、skills.sh 取最优；同能力只保留一个最优技能。** B 站链路为：热门监控 → 内容创作助手 → 视频发布 → 数据助手 → 爆款拆解 → 原创 → 评论管理。
 
 ## 一、七件套所需能力与技能映射
 
@@ -73,7 +73,7 @@ curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/ins
 | 视频发布 | bilibili-video-publish, bilibili-upload | ClawHub |
 | 数据助手 | bilibili-analytics | ClawHub |
 | 爆款拆解 | baoyu-format-markdown | skills.sh |
-| 写作 | baoyu-cover-image, baoyu-article-illustrator | skills.sh |
+| 原创 | baoyu-cover-image, baoyu-article-illustrator | skills.sh |
 | 评论管理 | 按需选评论/弹幕采集与回复技能 | ClawHub/skills.sh |
 
 **补充技能（按需选装）**
@@ -97,7 +97,7 @@ clawhub install bilibili-video-publish --workdir ~/.openclaw;
 clawhub install bilibili-upload --workdir ~/.openclaw;
 clawhub install bilibili-analytics --workdir ~/.openclaw;
 
-# skills.sh — 爆款拆解、写作、补充
+# skills.sh — 爆款拆解、原创、补充
 npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g;
 npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g;
 npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g;
@@ -110,21 +110,21 @@ npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g;
 
 ```bash
 # ClawHub
-clawhub uninstall bilibili-hot-monitor
-clawhub uninstall bilibili-update-viewer
-clawhub uninstall bilibili-helper
-clawhub uninstall bilibili-subtitle-download-skill
-clawhub uninstall bilibili-video-publish
-clawhub uninstall bilibili-upload
-clawhub uninstall bilibili-analytics
+clawhub uninstall bilibili-hot-monitor;
+clawhub uninstall bilibili-update-viewer;
+clawhub uninstall bilibili-helper;
+clawhub uninstall bilibili-subtitle-download-skill;
+clawhub uninstall bilibili-video-publish;
+clawhub uninstall bilibili-upload;
+clawhub uninstall bilibili-analytics;
 
 # skills.sh
-npx skills remove baoyu-format-markdown
-npx skills remove baoyu-cover-image
-npx skills remove baoyu-article-illustrator
-npx skills remove baoyu-translate
-npx skills remove baoyu-infographic
-npx skills remove baoyu-comic
+npx skills remove baoyu-format-markdown;
+npx skills remove baoyu-cover-image;
+npx skills remove baoyu-article-illustrator;
+npx skills remove baoyu-translate;
+npx skills remove baoyu-infographic;
+npx skills remove baoyu-comic;
 ```
 
 ---

@@ -80,15 +80,15 @@ npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g;
 
 | 技能名 | 仓库 | 安装 | 卸载 |
 |--------|------|------|------|
-| bilibili-subtitle | hamsterider-m/bilibili-subtitle | `npx skills add hamsterider-m/bilibili-subtitle --skill bilibili-subtitle` | `npx skills remove bilibili-subtitle` |
-| bilibili-analyzer | aidotnet/moyucode | `npx skills add aidotnet/moyucode --skill bilibili-analyzer` | `npx skills remove bilibili-analyzer` |
-| baoyu-* | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill <技能名>` | `npx skills remove <技能名>` |
+| bilibili-subtitle | hamsterider-m/bilibili-subtitle | `npx skills add hamsterider-m/bilibili-subtitle --skill bilibili-subtitle -y -g;` | `npx skills remove bilibili-subtitle;` |
+| bilibili-analyzer | aidotnet/moyucode | `npx skills add aidotnet/moyucode --skill bilibili-analyzer -y -g;` | `npx skills remove bilibili-analyzer;` |
+| baoyu-* | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill <技能名> -y -g;` | `npx skills remove <技能名>;` |
 
 ### 更新
 - 重新执行 `npx skills add <owner/repo> --skill <技能名>` 覆盖安装即可；或以 skills.sh CLI 文档为准。
 
 ### 卸载
-- **命令**：`npx skills remove <技能名>`（技能名与安装后目录名一致）
+- **命令**：`npx skills remove <技能名>;`（技能名与安装后目录名一致）
 - 或手动删除：项目安装为 `./.skills/<技能名>`，全局安装为 `~/.skills/<技能名>`。
 
 ## 与七件套对应建议（skills.sh）

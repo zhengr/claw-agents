@@ -1,6 +1,6 @@
 # 快手内容管线 (Kuaishou Agents)
 
-> 基于 [ANALYSIS-渠道与流程对齐 OctoFlow](../../ANALYSIS-渠道与流程对齐OctoFlow.md) §2.1 建议，为**快手**（短视频）提供与 xiaohongshu / wechat-article 同构的内容管线七件套：热门监控、爆款拆解、二创、自动发布、数据助手、写作、评论管理。读（抓取）优先官方 API，无 API 时可用 yt-dlp 类；写（发布）需快手开放平台 API 或浏览器自动化。**合规与平台 ToS 需严格遵守。**
+> 基于 [ANALYSIS-渠道与流程对齐 OctoFlow](../../ANALYSIS-渠道与流程对齐OctoFlow.md) §2.1 建议，为**快手**（短视频）提供与 xiaohongshu / wechat-article 同构的内容管线七件套：热门监控、爆款拆解、二创、自动发布、数据助手、原创、评论管理。读（抓取）优先官方 API，无 API 时可用 yt-dlp 类；写（发布）需快手开放平台 API 或浏览器自动化。**合规与平台 ToS 需严格遵守。**
 
 ## 技能选型
 
@@ -30,10 +30,10 @@
 3. **二创**：根据拆解框架与主题进行新文案与封面/脚本，产出草稿供发布与数据助手使用。
 4. **自动发布**：将已通过草稿发布到快手（需开放平台 API 或浏览器），并记录结果供数据助手分析。
 5. **数据助手**：解析数据、交叉验证效果，将可执行结论反馈给爆款拆解（形成闭环）。
-6. **写作**：强调原创；用户选题+热点/爆款做原创短视频脚本与封面，产出草稿供发布与数据助手。
+6. **原创**：强调原创；用户选题+热点/爆款做原创短视频脚本与封面，产出草稿供发布与数据助手。
 7. **评论管理**：评论采集、起草回复、情感分析；回复需审批/门禁后发布。
 
-**管线关系：** 热门监控 → 日报/摘要 → 爆款拆解 → 拆解框架 → 二创/写作 → 草稿+配图 → 自动发布 → 发布日志 → 数据助手 + 评论管理 → 反馈至爆款拆解与热门监控。
+**管线关系：** 热门监控 → 日报/摘要 → 爆款拆解 → 拆解框架 → 二创/原创 → 草稿+配图 → 自动发布 → 发布日志 → 数据助手 + 评论管理 → 反馈至爆款拆解与热门监控。
 
 ## 智能体清单
 
@@ -44,7 +44,7 @@
 | 3    | kuaishou-rewrite          | 快手二创       | 3-kuaishou-rewrite               | 根据拆解框架与主题创作新文案与封面/脚本 |
 | 4    | kuaishou-publisher        | 快手自动发布   | 4-kuaishou-publisher             | 将已通过草稿发布到快手并记录结果（需开放平台/浏览器） |
 | 5    | kuaishou-data-assistant   | 快手数据助手   | 5-kuaishou-data-assistant        | 解析数据、交叉验证效果、反馈给爆款拆解 |
-| 6    | kuaishou-write            | 快手写作       | 6-kuaishou-write                 | 强调原创：用户选题+热点/爆款做原创短视频内容，产出草稿 |
+| 6    | kuaishou-write            | 快手原创       | 6-kuaishou-write                 | 强调原创：用户选题+热点/爆款做原创短视频内容，产出草稿 |
 | 7    | kuaishou-comment-manager  | 快手评论管理   | 7-kuaishou-comment-manager      | 评论采集、起草回复、情感分析；回复需审批/门禁后发布 |
 
 ## 智能工作执行链路
@@ -56,14 +56,14 @@
 | 1 | 热门监控 | kuaishou-hot-monitor | 关键词/品类/时间范围 | 日报或按需摘要（热点、爆款列表） | 入口；可为定时或人工触发 |
 | 2 | 爆款拆解 | kuaishou-viral-breakdown | 日报/摘要中的爆款链接或列表 | 拆解框架（标题、钩子、结构、主题） | 消费监控产出，供二创与数据侧使用 |
 | 3a | 二创 | kuaishou-rewrite | 拆解框架 + 主题 | 草稿（文案 + 封面 + 配图） | 基于拆解做差异化二创，不发布 |
-| 3b | 写作 | kuaishou-write | 用户选题 + 热点/爆款洞察 | 草稿（文案 + 封面 + 配图） | 独立于拆解的原创内容生产 |
+| 3b | 原创 | kuaishou-write | 用户选题 + 热点/爆款洞察 | 草稿（文案 + 封面 + 配图） | 独立于拆解的原创内容生产 |
 | 4 | 自动发布 | kuaishou-publisher | 已审核草稿 | 发布结果日志（链接、时间、状态） | 仅发布已通过审核内容；发布前压缩图片 |
 | 5 | 数据助手 | kuaishou-data-assistant | 发布日志 + 互动数据 | 可执行反馈（关键词/拆解维度/优先主题） | 交叉验证效果，反馈至爆款拆解与监控 |
 | 6 | 评论管理 | kuaishou-comment-manager | 文章/账号评论源 | 回复草稿 + 情感摘要 | 回复须审批/门禁后由人工或流程发布 |
 
 **闭环：** 数据助手的反馈驱动爆款拆解调整搜索与拆解标准，热门监控可据此调整关键词与范围，形成「监控 → 拆解 → 内容 → 发布 → 数据 → 反馈」闭环。
 
-**并行与触发：** 3a 二创与 3b 写作可并行；评论管理可与数据助手并行。执行顺序 1 → 2 → (3a 或 3b) → 4 → 5/6；步骤 5、6 可持续运行或按周期执行。
+**并行与触发：** 3a 二创与 3b 原创可并行；评论管理可与数据助手并行。执行顺序 1 → 2 → (3a 或 3b) → 4 → 5/6；步骤 5、6 可持续运行或按周期执行。
 
 ## 预设技能（按评估结论，去重取最优）
 
@@ -115,14 +115,14 @@ npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g;
 # ClawHub — 若有安装，按 slug 逐条 uninstall
 
 # skills.sh
-npx skills remove baoyu-url-to-markdown
-npx skills remove baoyu-format-markdown
-npx skills remove baoyu-cover-image
-npx skills remove baoyu-article-illustrator
-npx skills remove baoyu-compress-image
-npx skills remove baoyu-translate
-npx skills remove baoyu-infographic
-npx skills remove baoyu-comic
+npx skills remove baoyu-url-to-markdown;
+npx skills remove baoyu-format-markdown;
+npx skills remove baoyu-cover-image;
+npx skills remove baoyu-article-illustrator;
+npx skills remove baoyu-compress-image;
+npx skills remove baoyu-translate;
+npx skills remove baoyu-infographic;
+npx skills remove baoyu-comic;
 ```
 
 ## 配置说明

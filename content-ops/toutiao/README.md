@@ -1,6 +1,6 @@
 # 头条号内容管线 (Toutiao Agents)
 
-> 基于 [ANALYSIS-渠道与流程对齐 OctoFlow](../../ANALYSIS-渠道与流程对齐OctoFlow.md) §2.1 建议，为**头条号**（综合图文/视频）提供与 xiaohongshu / wechat-article 同构的内容管线七件套：热门监控、爆款拆解、二创、自动发布、数据助手、写作、评论管理。读（抓取）采用通用或专用抓取，写（发布）需开放平台或浏览器自动化。
+> 基于 [ANALYSIS-渠道与流程对齐 OctoFlow](../../ANALYSIS-渠道与流程对齐OctoFlow.md) §2.1 建议，为**头条号**（综合图文/视频）提供与 xiaohongshu / wechat-article 同构的内容管线七件套：热门监控、爆款拆解、二创、自动发布、数据助手、原创、评论管理。读（抓取）采用通用或专用抓取，写（发布）需开放平台或浏览器自动化。
 
 ## 技能选型（ClawHub 优先，skills.sh 后补）
 
@@ -8,8 +8,9 @@
 
 | 序号 | 来源 | 搜索链接 | 技能一览文档 | 安装命令 |
 |------|------|----------|--------------|----------|
-| 1 | **ClawHub（为主）** | [clawhub.ai/skills?q=toutiao](https://clawhub.ai/skills?sort=downloads&q=toutiao) | [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md) | `clawhub install <slug>` |
-| 2 | **skills.sh（取最优）** | [skills.sh/?q=baoyu](https://skills.sh/?q=baoyu) | [SKILLS-SH-SKILLS.md](./SKILLS-SH-SKILLS.md) | `npx skills add <owner/repo> --skill <名>` |
+| 1 | **ClawHub（为主）** | [clawhub.ai/skills?q=toutiao](https://clawhub.ai/skills?sort=downloads&q=toutiao) | [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md) | `clawhub install <slug> --workdir ~/.openclaw;` |
+| 2 | **SkillHub（国内推荐）** | SkillHub 搜索「头条」 | [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md) | `skillhub install <slug>`（需先安装 SkillHub CLI） |
+| 3 | **skills.sh（取最优）** | [skills.sh/?q=baoyu](https://skills.sh/?q=baoyu) | [SKILLS-SH-SKILLS.md](./SKILLS-SH-SKILLS.md) | `npx skills add <owner/repo> --skill <名> -y -g;` |
 
 ## 技能评估结论（摘录）
 
@@ -37,10 +38,10 @@
 3. **二创**：根据拆解框架与主题进行新文案与配图，产出草稿供发布与数据助手使用。
 4. **自动发布**：将已通过草稿发布到头条号（需开放平台或浏览器），并记录结果供数据助手分析。
 5. **数据助手**：解析数据、交叉验证效果，将可执行结论反馈给爆款拆解（形成闭环）。
-6. **写作**：强调原创；用户主图/选题+热点做原创内容，产出草稿供发布与数据助手。
+6. **原创**：强调原创；用户主图/选题+热点做原创内容，产出草稿供发布与数据助手。
 7. **评论管理**：评论采集、起草回复、情感分析；回复需审批/门禁后发布。
 
-**管线关系：** 热门监控 → 日报/摘要 → 爆款拆解 → 拆解框架 → 二创/写作 → 草稿+配图 → 自动发布 → 发布日志 → 数据助手 + 评论管理 → 反馈至爆款拆解与热门监控。
+**管线关系：** 热门监控 → 日报/摘要 → 爆款拆解 → 拆解框架 → 二创/原创 → 草稿+配图 → 自动发布 → 发布日志 → 数据助手 + 评论管理 → 反馈至爆款拆解与热门监控。
 
 ## 智能体清单
 
@@ -51,7 +52,7 @@
 | 3    | toutiao-rewrite           | 头条号二创       | 3-toutiao-rewrite                  | 根据拆解框架与主题创作新文案与配图 |
 | 4    | toutiao-publisher          | 头条号自动发布   | 4-toutiao-publisher                | 将已通过草稿发布到头条号并记录结果（需开放平台/浏览器） |
 | 5    | toutiao-data-assistant    | 头条号数据助手   | 5-toutiao-data-assistant           | 解析数据、交叉验证效果、反馈给爆款拆解 |
-| 6    | toutiao-write              | 头条号写作       | 6-toutiao-write                    | 强调原创：用户主图/选题+热点做原创内容，产出草稿 |
+| 6    | toutiao-write              | 头条号原创       | 6-toutiao-write                    | 强调原创：用户主图/选题+热点做原创内容，产出草稿 |
 | 7    | toutiao-comment-manager   | 头条号评论管理   | 7-toutiao-comment-manager          | 评论采集、起草回复、情感分析；回复需审批/门禁后发布 |
 
 ## 智能工作执行链路
@@ -63,14 +64,14 @@
 | 1 | 热门监控 | toutiao-hot-monitor | 关键词/品类/时间范围 | 日报或按需摘要（热点、爆款列表） | 入口；可为定时或人工触发 |
 | 2 | 爆款拆解 | toutiao-viral-breakdown | 日报/摘要中的爆款链接或列表 | 拆解框架（标题、钩子、结构、主题） | 消费监控产出，供二创与数据侧使用 |
 | 3a | 二创 | toutiao-rewrite | 拆解框架 + 主题 | 草稿（文案 + 封面 + 配图） | 基于拆解做差异化二创，不发布 |
-| 3b | 写作 | toutiao-write | 用户选题 + 热点/爆款洞察 | 草稿（文案 + 封面 + 配图） | 独立于拆解的原创内容生产 |
+| 3b | 原创 | toutiao-write | 用户选题 + 热点/爆款洞察 | 草稿（文案 + 封面 + 配图） | 独立于拆解的原创内容生产 |
 | 4 | 自动发布 | toutiao-publisher | 已审核草稿 | 发布结果日志（链接、时间、状态） | 仅发布已通过审核内容；发布前压缩图片 |
 | 5 | 数据助手 | toutiao-data-assistant | 发布日志 + 互动数据 | 可执行反馈（关键词/拆解维度/优先主题） | 交叉验证效果，反馈至爆款拆解与监控 |
 | 6 | 评论管理 | toutiao-comment-manager | 文章/账号评论源 | 回复草稿 + 情感摘要 | 回复须审批/门禁后由人工或流程发布 |
 
 **闭环：** 数据助手的反馈驱动爆款拆解调整搜索与拆解标准，热门监控可据此调整关键词与范围，形成「监控 → 拆解 → 内容 → 发布 → 数据 → 反馈」闭环。
 
-**并行与触发：** 3a 二创与 3b 写作可并行；评论管理可与数据助手并行。执行顺序 1 → 2 → (3a 或 3b) → 4 → 5/6；步骤 5、6 可持续运行或按周期执行。
+**并行与触发：** 3a 二创与 3b 原创可并行；评论管理可与数据助手并行。执行顺序 1 → 2 → (3a 或 3b) → 4 → 5/6；步骤 5、6 可持续运行或按周期执行。
 
 ## 预设技能（按评估结论，去重取最优）
 
@@ -78,12 +79,12 @@
 
 | 步骤 | Agent id                 | 推荐技能 | 来源 | 说明 |
 |------|--------------------------|----------|------|------|
-| 1 | toutiao-hot-monitor      | baoyu-url-to-markdown, baoyu-format-markdown | skills.sh | 抓取+日报格式 |
-| 2 | toutiao-viral-breakdown  | baoyu-url-to-markdown, baoyu-format-markdown | skills.sh | 抓取成文+拆解格式 |
+| 1 | toutiao-hot-monitor      | toutiao-news-trends；baoyu-url-to-markdown, baoyu-format-markdown | ClawHub/SkillHub；skills.sh | 热点/趋势 + 抓取+日报格式 |
+| 2 | toutiao-viral-breakdown  | baoyu-url-to-markdown, baoyu-format-markdown；可选 toutiao-news-trends | skills.sh；ClawHub/SkillHub | 抓取成文+拆解格式 |
 | 3a | toutiao-rewrite          | baoyu-cover-image, baoyu-article-illustrator | skills.sh | 封面与配图 |
 | 3b | toutiao-write            | baoyu-cover-image, baoyu-article-illustrator | skills.sh | 同 rewrite |
-| 4 | toutiao-publisher        | baoyu-compress-image | skills.sh | 压缩；发布需开放平台/浏览器 |
-| 5 | toutiao-data-assistant   | baoyu-format-markdown | skills.sh | 报告格式 |
+| 4 | toutiao-publisher        | toutiao-publisher；baoyu-compress-image | ClawHub/SkillHub；skills.sh | 头条发布 + 压缩；发布需浏览器/开放平台 |
+| 5 | toutiao-data-assistant   | baoyu-format-markdown；可选 toutiao-news-trends | skills.sh；ClawHub/SkillHub | 报告格式 |
 | 6 | toutiao-comment-manager  | （按需选评论采集与回复技能） | ClawHub/skills.sh | 评论拉取、回复草稿 |
 
 ### 七件套全部可使用的技能：全部安装 / 全部卸载命令
@@ -93,6 +94,13 @@
 **全部安装命令（复制执行即可）**
 
 ```bash
+# 第一步：安装 SkillHub CLI（仅首次需要，国内推荐）
+curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/install.sh | bash
+
+# ClawHub/SkillHub — 头条热点趋势 + 头条发布
+skillhub install toutiao-news-trends
+skillhub install toutiao-publisher
+
 # skills.sh — 头条号七件套 + 补充（能用上的全要）
 npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g;
 npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g;
@@ -107,14 +115,19 @@ npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g;
 **全部卸载命令（复制执行即可）**
 
 ```bash
-npx skills remove baoyu-url-to-markdown
-npx skills remove baoyu-format-markdown
-npx skills remove baoyu-cover-image
-npx skills remove baoyu-article-illustrator
-npx skills remove baoyu-compress-image
-npx skills remove baoyu-translate
-npx skills remove baoyu-infographic
-npx skills remove baoyu-comic
+# ClawHub/SkillHub 安装的头条技能
+clawhub uninstall toutiao-news-trends;
+clawhub uninstall toutiao-publisher;
+
+# skills.sh 技能
+npx skills remove baoyu-url-to-markdown;
+npx skills remove baoyu-format-markdown;
+npx skills remove baoyu-cover-image;
+npx skills remove baoyu-article-illustrator;
+npx skills remove baoyu-compress-image;
+npx skills remove baoyu-translate;
+npx skills remove baoyu-infographic;
+npx skills remove baoyu-comic;
 ```
 
 ### 安装前置与唯一命令来源

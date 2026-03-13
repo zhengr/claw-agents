@@ -67,7 +67,7 @@ curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/ins
 |------|----------|------|
 | 热门监控 | baoyu-url-to-markdown, baoyu-format-markdown | skills.sh |
 | 爆款拆解 | baoyu-url-to-markdown, baoyu-format-markdown | skills.sh |
-| 二创/写作 | baoyu-cover-image, baoyu-article-illustrator | skills.sh |
+| 二创/原创 | baoyu-cover-image, baoyu-article-illustrator | skills.sh |
 | 自动发布 | baoyu-compress-image；可选 wechat-video-publish | skills.sh；ClawHub |
 | 数据助手 | baoyu-format-markdown | skills.sh |
 | 评论管理 | 按需选评论采集与回复技能 | ClawHub/skills.sh |
@@ -105,17 +105,17 @@ npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g;
 
 ```bash
 # ClawHub
-clawhub uninstall wechat-video-publish
+clawhub uninstall wechat-video-publish;
 
 # skills.sh
-npx skills remove baoyu-url-to-markdown
-npx skills remove baoyu-format-markdown
-npx skills remove baoyu-cover-image
-npx skills remove baoyu-article-illustrator
-npx skills remove baoyu-compress-image
-npx skills remove baoyu-translate
-npx skills remove baoyu-infographic
-npx skills remove baoyu-comic
+npx skills remove baoyu-url-to-markdown;
+npx skills remove baoyu-format-markdown;
+npx skills remove baoyu-cover-image;
+npx skills remove baoyu-article-illustrator;
+npx skills remove baoyu-compress-image;
+npx skills remove baoyu-translate;
+npx skills remove baoyu-infographic;
+npx skills remove baoyu-comic;
 ```
 
 同质能力只装一个；补充技能按需启用。安装后目录名需与 config 中 `skills` 一致。

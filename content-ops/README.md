@@ -1,6 +1,6 @@
 # 内容运营管线 (Content-Ops)
 
-> 统一内容管线七件套：热门监控、爆款拆解、二创/写作、自动发布、数据助手、评论管理。按渠道分目录部署（公众号、小红书、抖音、B 站等），技能以 **ClawHub（SkillHub）为主、skills.sh 取最优**。
+> 统一内容管线七件套：热门监控、爆款拆解、二创/原创、自动发布、数据助手、评论管理。按渠道分目录部署（公众号、小红书、抖音、B 站等），技能以 **ClawHub（SkillHub）为主、skills.sh 取最优**。
 
 ## 渠道目录
 
@@ -55,4 +55,4 @@ npx skills add https://github.com/anthropics/skills --skill xlsx -y -g;
 
 其他渠道见各目录 `README.md` 的「安装命令」小节。
 
-**命令规范**：`clawhub install` 须带 `--workdir ~/.openclaw`；`npx skills add` 须以 `-y -g` 结尾（示例中写为 `-y -g;`）。
+**命令规范**：`clawhub install` 须带 `--workdir ~/.openclaw` 且以 `;` 结尾；`clawhub uninstall`、`npx skills remove` 须以 `;` 结尾；`npx skills add` 须以 `-y -g;` 结尾。

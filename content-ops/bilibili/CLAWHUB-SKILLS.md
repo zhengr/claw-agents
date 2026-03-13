@@ -1,6 +1,6 @@
 # ClawHub B站 (bilibili) 相关技能一览
 
-> 来源：[ClawHub — 按 bilibili 搜索](https://clawhub.ai/skills?sort=downloads&q=bilibili)。安装方式：`clawhub install <slug>`（以 ClawHub 当前 CLI 为准）。
+> 来源：[ClawHub — 按 bilibili 搜索](https://clawhub.ai/skills?sort=downloads&q=bilibili)。安装方式：`clawhub install <slug> --workdir ~/.openclaw;`（以 ClawHub 当前 CLI 为准）。
 
 ## 技能总表（按下载量排序）
 
@@ -83,21 +83,21 @@ B 站视频搜索与数据分析：抓取指定关键词搜索结果、生成统
 
 ### 安装
 - **搜索**：[ClawHub bilibili](https://clawhub.ai/skills?sort=downloads&q=bilibili) 查看最新技能与下载量。
-- **命令**：`clawhub install <slug>`
+- **命令**：`clawhub install <slug> --workdir ~/.openclaw;`
 - 安装后技能目录名需与 openclaw 配置中 `agents.list[].skills` 一致。
 - **登录/凭证**：部分技能（投稿、私信、播放）需浏览器登录或 B 站 Cookie/凭证；勿在 TOOLS.md 或工作区存储凭证。
 - **skills.sh 来源**：安装 `npx skills add <owner/repo> --skill <名>`；[skills.sh bilibili](https://skills.sh/?q=bilibili) 技能列表及安装方式见本目录 README，可与 ClawHub 搭配使用。
 
 ### 更新
-- 重新执行 `clawhub install <slug>` 覆盖安装即可；具体以 ClawHub CLI 文档为准。
+- 重新执行 `clawhub install <slug> --workdir ~/.openclaw;` 覆盖安装即可；具体以 ClawHub CLI 文档为准。
 
 ### 卸载
-- **命令**：`clawhub uninstall <slug>`
+- **命令**：`clawhub uninstall <slug>;`
 - 或手动删除 ClawHub 技能目录下对应技能文件夹（目录名一般为 slug）。
 
 ### 各技能安装与卸载命令
 
-上表「技能总表」中每个 Slug：**安装** `clawhub install <slug>`，**卸载** `clawhub uninstall <slug>`。示例：`clawhub install bilibili-hot-monitor` / `clawhub uninstall bilibili-hot-monitor`；其余将 `<slug>` 替换为表中对应 Slug 即可。
+上表「技能总表」中每个 Slug：**安装** `clawhub install <slug> --workdir ~/.openclaw;`，**卸载** `clawhub uninstall <slug>;`。示例：`clawhub install bilibili-hot-monitor --workdir ~/.openclaw;` / `clawhub uninstall bilibili-hot-monitor;`；其余将 `<slug>` 替换为表中对应 Slug 即可。
 
 ---
 
