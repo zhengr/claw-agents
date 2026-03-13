@@ -4,8 +4,8 @@
 
 ## 技能总表（按安装量排序）
 
-| # | 技能名 | 仓库 / 路径 | 安装量 |
-|---|--------|-------------|--------|
+| 序号 | 技能名 | 仓库 / 路径 | 安装量 |
+|------|--------|-------------|--------|
 | 1 | xiaohongshu | zhjiang22/openclaw-xhs | 3.2K |
 | 2 | xiaohongshu-note-analyzer | softbread/xiaohongshu-doctor | 1.0K |
 | 3 | write-xiaohongshu | adjfks/corner-skills | 1.4K |
@@ -43,8 +43,8 @@
 
 > 来源：[skills.sh/?q=baoyu](https://skills.sh/?q=baoyu)，仓库 **jimliu/baoyu-skills**。下表为 17 个技能及本管线（xiaohongshu 七件套）适用 agent 与用途。
 
-| # | 技能名 | 安装量 | 本管线适用（agent / 用途） |
-|---|--------|--------|----------------------------|
+| 序号 | 技能名 | 安装量 | 本管线适用（agent / 用途） |
+|------|--------|--------|----------------------------|
 | 1 | baoyu-image-gen | 10.4K | rewrite：配图 |
 | 2 | baoyu-post-to-wechat | 10.4K | — |
 | 3 | baoyu-cover-image | 9.7K | rewrite：封面 |
@@ -107,14 +107,14 @@ npx skillsadd <owner/repo>/<skill-folder>
 
 ### 各技能安装与卸载命令示例
 
-| 技能名 | 仓库 | 安装 | 卸载 |
-|--------|------|------|------|
-| xiaohongshu | zhjiang22/openclaw-xhs | `npx skills add zhjiang22/openclaw-xhs --skill xiaohongshu` | `npx skills remove xiaohongshu` |
-| xiaohongshu-note-analyzer | softbread/xiaohongshu-doctor | `npx skills add softbread/xiaohongshu-doctor --skill xiaohongshu-note-analyzer` | `npx skills remove xiaohongshu-note-analyzer` |
-| write-xiaohongshu | adjfks/corner-skills | `npx skills add adjfks/corner-skills --skill write-xiaohongshu` | `npx skills remove write-xiaohongshu` |
-| xiaohongshu-ops | xiangyu-cas/xiaohongshu-ops-skill | `npx skills add xiangyu-cas/xiaohongshu-ops-skill --skill xiaohongshu-ops` | `npx skills remove xiaohongshu-ops` |
-| xiaohongshu-search-summarizer | piekill/xiaohongshu-summarizer-skill | `npx skills add piekill/xiaohongshu-summarizer-skill --skill xiaohongshu-search-summarizer` | `npx skills remove xiaohongshu-search-summarizer` |
-| baoyu-*（任选） | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill <技能名>` | `npx skills remove <技能名>` |
+| 序号 | 技能名 | 仓库 | 安装 | 卸载 |
+|------|--------|------|------|------|
+| 1 | xiaohongshu | zhjiang22/openclaw-xhs | `npx skills add zhjiang22/openclaw-xhs --skill xiaohongshu` | `npx skills remove xiaohongshu` |
+| 2 | xiaohongshu-note-analyzer | softbread/xiaohongshu-doctor | `npx skills add softbread/xiaohongshu-doctor --skill xiaohongshu-note-analyzer` | `npx skills remove xiaohongshu-note-analyzer` |
+| 3 | write-xiaohongshu | adjfks/corner-skills | `npx skills add adjfks/corner-skills --skill write-xiaohongshu` | `npx skills remove write-xiaohongshu` |
+| 4 | xiaohongshu-ops | xiangyu-cas/xiaohongshu-ops-skill | `npx skills add xiangyu-cas/xiaohongshu-ops-skill --skill xiaohongshu-ops` | `npx skills remove xiaohongshu-ops` |
+| 5 | xiaohongshu-search-summarizer | piekill/xiaohongshu-summarizer-skill | `npx skills add piekill/xiaohongshu-summarizer-skill --skill xiaohongshu-search-summarizer` | `npx skills remove xiaohongshu-search-summarizer` |
+| 6 | baoyu-*（任选） | jimliu/baoyu-skills | `npx skills add jimliu/baoyu-skills --skill <技能名>` | `npx skills remove <技能名>` |
 
 ### 更新
 - 重新执行 `npx skills add <owner/repo> --skill <技能名>` 覆盖安装即可；或以 skills.sh CLI 文档为准。
@@ -125,12 +125,12 @@ npx skillsadd <owner/repo>/<skill-folder>
 
 ## 与 xiaohongshu 七件套的对应建议（skills.sh 后补）
 
-| xiaohongshu Agent | 可选的 skills.sh 技能（ClawHub 未覆盖时） |
-|---------------|--------------------------------------------|
-| 8-xiaohongshu-viral-breakdown | xiaohongshu-note-analyzer、xiaohongshu-search-summarizer、xiaohongshu-ops、baoyu-url-to-markdown、baoyu-format-markdown |
-| 9-xiaohongshu-rewrite | write-xiaohongshu、xiaohongshu-images、xiaohongshu-cover-generator、baoyu-xhs-images、baoyu-cover-image、baoyu-article-illustrator |
-| 10-xiaohongshu-publisher | xiaohongshu-publisher（solar-luna 或 iamzifei）、xiaohongshu-publish、baoyu-compress-image |
-| 11-xiaohongshu-data-assistant | xiaohongshu-note-analyzer、xiaohongshu-search-summarizer、xiaohongshu-data、baoyu-format-markdown |
+| 序号 | xiaohongshu Agent | 可选的 skills.sh 技能（ClawHub 未覆盖时） |
+|------|---------------|--------------------------------------------|
+| 1 | 8-xiaohongshu-viral-breakdown | xiaohongshu-note-analyzer、xiaohongshu-search-summarizer、xiaohongshu-ops、baoyu-url-to-markdown、baoyu-format-markdown |
+| 2 | 9-xiaohongshu-rewrite | write-xiaohongshu、xiaohongshu-images、xiaohongshu-cover-generator、baoyu-xhs-images、baoyu-cover-image、baoyu-article-illustrator |
+| 3 | 10-xiaohongshu-publisher | xiaohongshu-publisher（solar-luna 或 iamzifei）、xiaohongshu-publish、baoyu-compress-image |
+| 4 | 11-xiaohongshu-data-assistant | xiaohongshu-note-analyzer、xiaohongshu-search-summarizer、xiaohongshu-data、baoyu-format-markdown |
 
 **完整技能栈（七件套 + 补充）：** 含标题筛选、爆款筛选、多语言、信息图/漫画风等补充能力及完整安装命令见 [SKILLS-EVALUATION.md § 七、完整技能栈](./SKILLS-EVALUATION.md#七完整技能栈七件套--补充能力)。
 
