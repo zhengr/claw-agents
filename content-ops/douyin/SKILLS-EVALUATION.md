@@ -87,19 +87,19 @@ curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/ins
 
 ```bash
 # ClawHub — 同质取一（下载选 douyin-downloader，发布选 douyin-publish）
-clawhub install douyin-hot-trend
-clawhub install douyin-downloader
-clawhub install douyin-publish
+clawhub install douyin-hot-trend --workdir ~/.openclaw;
+clawhub install douyin-downloader --workdir ~/.openclaw;
+clawhub install douyin-publish --workdir ~/.openclaw;
 
 # skills.sh — 抓取、格式、配图、压缩、补充
-npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g
+npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g;
 ```
 
 **全部卸载命令**

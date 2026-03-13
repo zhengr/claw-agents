@@ -89,21 +89,21 @@ curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/ins
 
 ```bash
 # ClawHub
-clawhub install bilibili-hot-monitor
-clawhub install bilibili-update-viewer
-clawhub install bilibili-helper
-clawhub install bilibili-subtitle-download-skill
-clawhub install bilibili-video-publish
-clawhub install bilibili-upload
-clawhub install bilibili-analytics
+clawhub install bilibili-hot-monitor --workdir ~/.openclaw;
+clawhub install bilibili-update-viewer --workdir ~/.openclaw;
+clawhub install bilibili-helper --workdir ~/.openclaw;
+clawhub install bilibili-subtitle-download-skill --workdir ~/.openclaw;
+clawhub install bilibili-video-publish --workdir ~/.openclaw;
+clawhub install bilibili-upload --workdir ~/.openclaw;
+clawhub install bilibili-analytics --workdir ~/.openclaw;
 
 # skills.sh — 爆款拆解、写作、补充
-npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g
+npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g;
 ```
 
 **全部卸载命令**

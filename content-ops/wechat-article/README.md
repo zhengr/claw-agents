@@ -112,46 +112,46 @@ curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/ins
 
 ```bash
 # ClawHub — 公众号七件套 + 补充
-clawhub install wechat-article-search
-clawhub install wechat-mp-cn
-clawhub install wechat-auto-reply-assistant
-clawhub install scrapling-web-fetch
+clawhub install wechat-article-search --workdir ~/.openclaw;
+clawhub install wechat-mp-cn --workdir ~/.openclaw;
+clawhub install wechat-auto-reply-assistant --workdir ~/.openclaw;
+clawhub install scrapling-web-fetch --workdir ~/.openclaw;
 
 # skills.sh — 抓取、格式、提取、配图、发布、排版、压缩、补充
-npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g
-npx skills add freestylefly/wechat-article-extractor-skill --skill wechat-article-extractor -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-post-to-wechat -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-markdown-to-html -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g
+npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g;
+npx skills add freestylefly/wechat-article-extractor-skill --skill wechat-article-extractor -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-post-to-wechat -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-markdown-to-html -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g;
 ```
 
 **全部卸载命令**
 
 ```bash
 # ClawHub
-clawhub uninstall wechat-article-search
-clawhub uninstall wechat-mp-cn
-clawhub uninstall wechat-auto-reply-assistant
-clawhub uninstall scrapling-web-fetch
+clawhub uninstall wechat-article-search;
+clawhub uninstall wechat-mp-cn;
+clawhub uninstall wechat-auto-reply-assistant;
+clawhub uninstall scrapling-web-fetch;
 
 # skills.sh
-npx skills remove baoyu-url-to-markdown
-npx skills remove baoyu-format-markdown
-npx skills remove wechat-article-extractor
-npx skills remove baoyu-cover-image
-npx skills remove baoyu-article-illustrator
-npx skills remove baoyu-post-to-wechat
-npx skills remove baoyu-markdown-to-html
-npx skills remove baoyu-compress-image
-npx skills remove baoyu-translate
-npx skills remove baoyu-infographic
-npx skills remove baoyu-comic
+npx skills remove baoyu-url-to-markdown;
+npx skills remove baoyu-format-markdown;
+npx skills remove wechat-article-extractor;
+npx skills remove baoyu-cover-image;
+npx skills remove baoyu-article-illustrator;
+npx skills remove baoyu-post-to-wechat;
+npx skills remove baoyu-markdown-to-html;
+npx skills remove baoyu-compress-image;
+npx skills remove baoyu-translate;
+npx skills remove baoyu-infographic;
+npx skills remove baoyu-comic;
 ```
 
 若 CLI 为 `npx skillsadd`（无空格），以 skills.sh 文档为准。

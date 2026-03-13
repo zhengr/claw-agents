@@ -99,86 +99,86 @@
 
 ```bash
 # ClawHub — 监控/搜索/抓取/趋势
-clawhub install xiaohongshu-mcp
-clawhub install xiaohongshu-cn
-clawhub install xiaohongshutools
-clawhub install xiaohongshu-deep-research
-clawhub install xiaohongshu-search-summarizer
-clawhub install xiaohongshu-skill
-clawhub install xiaohongshu-api
-clawhub install xhs-research-daily
+clawhub install xiaohongshu-mcp --workdir ~/.openclaw;
+clawhub install xiaohongshu-cn --workdir ~/.openclaw;
+clawhub install xiaohongshutools --workdir ~/.openclaw;
+clawhub install xiaohongshu-deep-research --workdir ~/.openclaw;
+clawhub install xiaohongshu-search-summarizer --workdir ~/.openclaw;
+clawhub install xiaohongshu-skill --workdir ~/.openclaw;
+clawhub install xiaohongshu-api --workdir ~/.openclaw;
+clawhub install xhs-research-daily --workdir ~/.openclaw;
 
 # ClawHub — 发布（可并存，同质已只取 mcp）
-clawhub install xiaohongshu-publish
-clawhub install xiaohongshu-publisher
-clawhub install xiaohongshu-post
-clawhub install redbook-browser-ops
-clawhub install xiaohongshu-mcporter-publish
-clawhub install xiaohongshu-video-publish
-clawhub install auto-publisher
-clawhub install dragon-xiaohongshu
-clawhub install xiaohongshu-publish-skill
-clawhub install xiaohongshu-publish-wangzh
-clawhub install xhs-publisher
-clawhub install xhsredbook
-clawhub install xiaohongshu-operate
+clawhub install xiaohongshu-publish --workdir ~/.openclaw;
+clawhub install xiaohongshu-publisher --workdir ~/.openclaw;
+clawhub install xiaohongshu-post --workdir ~/.openclaw;
+clawhub install redbook-browser-ops --workdir ~/.openclaw;
+clawhub install xiaohongshu-mcporter-publish --workdir ~/.openclaw;
+clawhub install xiaohongshu-video-publish --workdir ~/.openclaw;
+clawhub install auto-publisher --workdir ~/.openclaw;
+clawhub install dragon-xiaohongshu --workdir ~/.openclaw;
+clawhub install xiaohongshu-publish-skill --workdir ~/.openclaw;
+clawhub install xiaohongshu-publish-wangzh --workdir ~/.openclaw;
+clawhub install xhs-publisher --workdir ~/.openclaw;
+clawhub install xhsredbook --workdir ~/.openclaw;
+clawhub install xiaohongshu-operate --workdir ~/.openclaw;
 
 # ClawHub — 内容/二创/写作（viral 同质只取 viral-content）
-clawhub install xiaohongshu-content
-clawhub install xiaohongshu-founder-growth-writer
-clawhub install xhs-content-creator
-clawhub install xiaohongshu-viral-content
-clawhub install xhs-writing-coach
-clawhub install xiaohongshu-article-generator
-clawhub install xiaohongshu-algorithm-optimizer
-clawhub install xiaohongshu-ai-money-guide
+clawhub install xiaohongshu-content --workdir ~/.openclaw;
+clawhub install xiaohongshu-founder-growth-writer --workdir ~/.openclaw;
+clawhub install xhs-content-creator --workdir ~/.openclaw;
+clawhub install xiaohongshu-viral-content --workdir ~/.openclaw;
+clawhub install xhs-writing-coach --workdir ~/.openclaw;
+clawhub install xiaohongshu-article-generator --workdir ~/.openclaw;
+clawhub install xiaohongshu-algorithm-optimizer --workdir ~/.openclaw;
+clawhub install xiaohongshu-ai-money-guide --workdir ~/.openclaw;
 
 # ClawHub — 评论/互动
-clawhub install xiaohongshu-reply-assistant
-clawhub install rednote-mac
-clawhub install xiaohongshu-comment
-clawhub install xiaohongshu-first-line
+clawhub install xiaohongshu-reply-assistant --workdir ~/.openclaw;
+clawhub install rednote-mac --workdir ~/.openclaw;
+clawhub install xiaohongshu-comment --workdir ~/.openclaw;
+clawhub install xiaohongshu-first-line --workdir ~/.openclaw;
 
 # ClawHub — 视频
-clawhub install xhs-video-finder
-clawhub install xhs-video-downloader
-clawhub install xhs-video-analyzer
+clawhub install xhs-video-finder --workdir ~/.openclaw;
+clawhub install xhs-video-downloader --workdir ~/.openclaw;
+clawhub install xhs-video-analyzer --workdir ~/.openclaw;
 
 # ClawHub — 运营（同质只取 openclaw）
-clawhub install openclaw-xiaohongshu-ops
-clawhub install zeelin-xiaohongshu-autopost
+clawhub install openclaw-xiaohongshu-ops --workdir ~/.openclaw;
+clawhub install zeelin-xiaohongshu-autopost --workdir ~/.openclaw;
 
 # ClawHub — 登录/运维
-clawhub install xiaohongshu-login
-clawhub install xiaohongshu-mcp-patch
-clawhub install jackwener-xhs-cli
+clawhub install xiaohongshu-login --workdir ~/.openclaw;
+clawhub install xiaohongshu-mcp-patch --workdir ~/.openclaw;
+clawhub install jackwener-xhs-cli --workdir ~/.openclaw;
 
 # ClawHub — 图文/信息图
-clawhub install xiaohongshu-generator
-clawhub install xhs-md2pic
-clawhub install xiaohongshu-post-gen
-clawhub install xiaohongshu-auto-publish
+clawhub install xiaohongshu-generator --workdir ~/.openclaw;
+clawhub install xhs-md2pic --workdir ~/.openclaw;
+clawhub install xiaohongshu-post-gen --workdir ~/.openclaw;
+clawhub install xiaohongshu-auto-publish --workdir ~/.openclaw;
 
 # ClawHub — 跨平台/迁移（餐厅只取一个）
-clawhub install restaurant-crosscheck
-clawhub install kb-social-publisher
-clawhub install wechat-to-xiaohongshu
-clawhub install social-copy-generator
-clawhub install content-repurpose-studio
+clawhub install restaurant-crosscheck --workdir ~/.openclaw;
+clawhub install kb-social-publisher --workdir ~/.openclaw;
+clawhub install wechat-to-xiaohongshu --workdir ~/.openclaw;
+clawhub install social-copy-generator --workdir ~/.openclaw;
+clawhub install content-repurpose-studio --workdir ~/.openclaw;
 
 # ClawHub — 其它
-clawhub install xhs-comic-creator
+clawhub install xhs-comic-creator --workdir ~/.openclaw;
 
 # skills.sh
-npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-xhs-images -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g
+npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-xhs-images -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g;
 ```
 
 **全部卸载命令（复制执行即可）**

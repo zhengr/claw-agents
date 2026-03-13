@@ -100,9 +100,9 @@ curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/ins
 
 ```bash
 # ClawHub
-clawhub install douyin-hot-trend;
-clawhub install douyin-downloader;
-clawhub install douyin-publish;
+clawhub install douyin-hot-trend --workdir ~/.openclaw;
+clawhub install douyin-downloader --workdir ~/.openclaw;
+clawhub install douyin-publish --workdir ~/.openclaw;
 
 # skills.sh
 npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g;

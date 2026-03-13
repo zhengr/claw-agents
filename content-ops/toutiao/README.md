@@ -94,14 +94,14 @@
 
 ```bash
 # skills.sh — 头条号七件套 + 补充（能用上的全要）
-npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g
-npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g
+npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g;
 ```
 
 **全部卸载命令（复制执行即可）**

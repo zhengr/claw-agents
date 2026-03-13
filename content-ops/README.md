@@ -38,9 +38,21 @@ curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/ins
 
 ```bash
 clawhub search xiaohongshu
-clawhub install xiaohongshu-mcp
-clawhub install xiaohongshu-cn
+clawhub install xiaohongshu-mcp --workdir ~/.openclaw;
+clawhub install xiaohongshu-cn --workdir ~/.openclaw;
 # … 其余见 xiaohongshu/README.md 或 xiaohongshu/SKILLS-EVALUATION.md
 ```
 
+
+```bash
+npx skills add https://github.com/anthropics/skills --skill pdf -y -g;
+npx skills add https://github.com/anthropics/skills --skill pptx -y -g;
+npx skills add https://github.com/anthropics/skills --skill docx -y -g;
+npx skills add https://github.com/anthropics/skills --skill xlsx -y -g;
+```
+
+
+
 其他渠道见各目录 `README.md` 的「安装命令」小节。
+
+**命令规范**：`clawhub install` 须带 `--workdir ~/.openclaw`；`npx skills add` 须以 `-y -g` 结尾（示例中写为 `-y -g;`）。
