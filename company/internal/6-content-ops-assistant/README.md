@@ -149,20 +149,17 @@
         "name": "小红书运营助理",
         "workspace": "~/.openclaw/workspace-xiaohongshu-ops-assistant",
         "agentDir": "~/.openclaw/agents/xiaohongshu-ops-assistant/agent",
-        "tools": {
-          "agentToAgent": {
-            "enabled": true,
-            "allow": [
-              "xiaohongshu-ops-assistant",
-              "xiaohongshu-hot-monitor",
-              "xiaohongshu-viral-breakdown",
-              "xiaohongshu-rewrite",
-              "xiaohongshu-write",
-              "xiaohongshu-publisher",
-              "xiaohongshu-data-assistant",
-              "xiaohongshu-comment-manager"
-            ]
-          }
+        "subagents": {
+          "allowAgents": [
+            "xiaohongshu-ops-assistant",
+            "xiaohongshu-hot-monitor",
+            "xiaohongshu-viral-breakdown",
+            "xiaohongshu-rewrite",
+            "xiaohongshu-write",
+            "xiaohongshu-publisher",
+            "xiaohongshu-data-assistant",
+            "xiaohongshu-comment-manager"
+          ]
         }
       }
     ]
@@ -187,20 +184,17 @@
         "name": "小红书运营助理",
         "workspace": "~/.openclaw/workspace-xiaohongshu-ops-assistant",
         "agentDir": "~/.openclaw/agents/xiaohongshu-ops-assistant/agent",
-        "tools": {
-          "agentToAgent": {
-            "enabled": true,
-            "allow": [
-              "xiaohongshu-ops-assistant",
-              "xiaohongshu-hot-monitor",
-              "xiaohongshu-viral-breakdown",
-              "xiaohongshu-rewrite",
-              "xiaohongshu-write",
-              "xiaohongshu-publisher",
-              "xiaohongshu-data-assistant",
-              "xiaohongshu-comment-manager"
-            ]
-          }
+        "subagents": {
+          "allowAgents": [
+            "xiaohongshu-ops-assistant",
+            "xiaohongshu-hot-monitor",
+            "xiaohongshu-viral-breakdown",
+            "xiaohongshu-rewrite",
+            "xiaohongshu-write",
+            "xiaohongshu-publisher",
+            "xiaohongshu-data-assistant",
+            "xiaohongshu-comment-manager"
+          ]
         }
       },
       {
@@ -208,20 +202,17 @@
         "name": "公众号运营助理",
         "workspace": "~/.openclaw/workspace-wechat-article-ops-assistant",
         "agentDir": "~/.openclaw/agents/wechat-article-ops-assistant/agent",
-        "tools": {
-          "agentToAgent": {
-            "enabled": true,
-            "allow": [
-              "wechat-article-ops-assistant",
-              "wechat-article-hot-monitor",
-              "wechat-article-viral-breakdown",
-              "wechat-article-rewrite",
-              "wechat-article-write",
-              "wechat-article-publisher",
-              "wechat-article-data-assistant",
-              "wechat-article-comment-manager"
-            ]
-          }
+        "subagents": {
+          "allowAgents": [
+            "wechat-article-ops-assistant",
+            "wechat-article-hot-monitor",
+            "wechat-article-viral-breakdown",
+            "wechat-article-rewrite",
+            "wechat-article-write",
+            "wechat-article-publisher",
+            "wechat-article-data-assistant",
+            "wechat-article-comment-manager"
+          ]
         }
       }
     ]
