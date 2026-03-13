@@ -15,11 +15,11 @@
 ## 安装方式（skills.sh）
 
 ```bash
-npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown
-npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown
-npx skills add jimliu/baoyu-skills --skill baoyu-cover-image
-npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator
-npx skills add jimliu/baoyu-skills --skill baoyu-compress-image
+npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g;
 ```
 
 安装后技能目录名需与 config 中 `skills` 一致。**勿在 TOOLS.md 存凭证。** 抓取与发布须遵守快手开放平台与 ToS。

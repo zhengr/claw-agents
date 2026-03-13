@@ -69,30 +69,30 @@
 
 ```bash
 # 示例：从某仓库安装指定技能（技能名为仓库内目录名或 --skill 参数）
-npx skills add zhjiang22/openclaw-xhs --skill xiaohongshu
-npx skills add softbread/xiaohongshu-doctor --skill xiaohongshu-note-analyzer
-npx skills add adjfks/corner-skills --skill write-xiaohongshu
-npx skills add autoclaw-cc/xiaohongshu-mcp-skills --skill xiaohongshu
-npx skills add iamzifei/xiaohongshu-images-skill --skill xiaohongshu-images
-npx skills add freestylefly/xiaohongshu-skills --skill xiaohongshu-cover-generator
-npx skills add xiangyu-cas/xiaohongshu-ops-skill --skill xiaohongshu-ops
-npx skills add piekill/xiaohongshu-summarizer-skill --skill xiaohongshu-search-summarizer
+npx skills add zhjiang22/openclaw-xhs --skill xiaohongshu -y -g;
+npx skills add softbread/xiaohongshu-doctor --skill xiaohongshu-note-analyzer -y -g;
+npx skills add adjfks/corner-skills --skill write-xiaohongshu -y -g;
+npx skills add autoclaw-cc/xiaohongshu-mcp-skills --skill xiaohongshu -y -g;
+npx skills add iamzifei/xiaohongshu-images-skill --skill xiaohongshu-images -y -g;
+npx skills add freestylefly/xiaohongshu-skills --skill xiaohongshu-cover-generator -y -g;
+npx skills add xiangyu-cas/xiaohongshu-ops-skill --skill xiaohongshu-ops -y -g;
+npx skills add piekill/xiaohongshu-summarizer-skill --skill xiaohongshu-search-summarizer -y -g;
 ```
 
 **Baoyu 系列（与 xiaohongshu 预设技能表一致，后补方案）：**
 
 ```bash
-npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown
-npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown
-npx skills add jimliu/baoyu-skills --skill baoyu-xhs-images
-npx skills add jimliu/baoyu-skills --skill baoyu-cover-image
-npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator
-npx skills add jimliu/baoyu-skills --skill baoyu-compress-image
-npx skills add jimliu/baoyu-skills --skill baoyu-image-gen
-npx skills add jimliu/baoyu-skills --skill baoyu-slide-deck
-npx skills add jimliu/baoyu-skills --skill baoyu-infographic
-npx skills add jimliu/baoyu-skills --skill baoyu-comic
-npx skills add jimliu/baoyu-skills --skill baoyu-translate
+npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-xhs-images -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-image-gen -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-slide-deck -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g;
 ```
 
 若 CLI 为 `npx skillsadd`（无空格），则：
@@ -131,6 +131,8 @@ npx skillsadd <owner/repo>/<skill-folder>
 | 9-xiaohongshu-rewrite | write-xiaohongshu、xiaohongshu-images、xiaohongshu-cover-generator、baoyu-xhs-images、baoyu-cover-image、baoyu-article-illustrator |
 | 10-xiaohongshu-publisher | xiaohongshu-publisher（solar-luna 或 iamzifei）、xiaohongshu-publish、baoyu-compress-image |
 | 11-xiaohongshu-data-assistant | xiaohongshu-note-analyzer、xiaohongshu-search-summarizer、xiaohongshu-data、baoyu-format-markdown |
+
+**完整技能栈（七件套 + 补充）：** 含标题筛选、爆款筛选、多语言、信息图/漫画风等补充能力及完整安装命令见 [SKILLS-EVALUATION.md § 七、完整技能栈](./SKILLS-EVALUATION.md#七完整技能栈七件套--补充能力)。
 
 ---
 

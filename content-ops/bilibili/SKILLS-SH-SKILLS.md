@@ -48,30 +48,30 @@
 **常用示例：**
 
 ```bash
-npx skills add hamsterider-m/bilibili-subtitle --skill bilibili-subtitle
-npx skills add aidotnet/moyucode --skill bilibili-analyzer
-npx skills add 958877748/skills --skill bilibili-downloader
-npx skills add nanmicoder/claude-code-skills --skill bilibili-chapter-generator
-npx skills add jackwener/bilibili-cli --skill bilibili-cli
-npx skills add davincievans/bilibili-subtitle-download-skill --skill bilibili-subtitle-downloader
+npx skills add hamsterider-m/bilibili-subtitle --skill bilibili-subtitle -y -g;
+npx skills add aidotnet/moyucode --skill bilibili-analyzer -y -g;
+npx skills add 958877748/skills --skill bilibili-downloader -y -g;
+npx skills add nanmicoder/claude-code-skills --skill bilibili-chapter-generator -y -g;
+npx skills add jackwener/bilibili-cli --skill bilibili-cli -y -g;
+npx skills add davincievans/bilibili-subtitle-download-skill --skill bilibili-subtitle-downloader -y -g;
 ```
 
 **Baoyu 系列（jimliu/baoyu-skills）本管线可选：**
 
 ```bash
-npx skills add jimliu/baoyu-skills --skill baoyu-cover-image
-npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator
-npx skills add jimliu/baoyu-skills --skill baoyu-compress-image
-npx skills add jimliu/baoyu-skills --skill baoyu-slide-deck
-npx skills add jimliu/baoyu-skills --skill baoyu-infographic
-npx skills add jimliu/baoyu-skills --skill baoyu-comic
-npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown
-npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown
-npx skills add jimliu/baoyu-skills --skill baoyu-image-gen
-npx skills add jimliu/baoyu-skills --skill baoyu-markdown-to-html
-npx skills add jimliu/baoyu-skills --skill baoyu-danger-x-to-markdown
-npx skills add jimliu/baoyu-skills --skill baoyu-post-to-x
-npx skills add jimliu/baoyu-skills --skill baoyu-translate
+npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-slide-deck -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-image-gen -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-markdown-to-html -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-danger-x-to-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-post-to-x -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g;
 ```
 
 若 CLI 为 `npx skillsadd`（无空格），格式以 skills.sh 文档为准。安装后技能目录名需与 openclaw 配置中 `agents.list[].skills` 一致。

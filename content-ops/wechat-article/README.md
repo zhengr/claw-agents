@@ -7,7 +7,24 @@
 | 来源 | 搜索链接 | 技能一览文档 | 安装命令 |
 |------|----------|--------------|----------|
 | **ClawHub（为主）** | [clawhub.ai/skills?q=wechat](https://clawhub.ai/skills?sort=downloads&q=wechat) | [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md) | `clawhub install <slug>` |
-| **skills.sh（取最优）** | [skills.sh/?q=wechat](https://skills.sh/?q=wechat) | 见下方技能表与安装方式 | `npx skills add <owner/repo> --skill <名>` |
+| **skills.sh（取最优）** | [skills.sh/?q=wechat](https://skills.sh/?q=wechat) | [SKILLS-SH-SKILLS.md](./SKILLS-SH-SKILLS.md) | `npx skills add <owner/repo> --skill <名>` |
+
+## 技能评估结论（摘录）
+
+> 完整评估见 [SKILLS-EVALUATION.md](./SKILLS-EVALUATION.md)。原则：**ClawHub 为主、skills.sh 取最优；同能力只保留一个最优技能，减少重复。**
+
+| 能力 | 首选 | 备选/不重复装 |
+|------|------|----------------|
+| 链接→Markdown | baoyu-url-to-markdown | wechat-article-fetcher, wechat-article-to-markdown |
+| 公众号搜索 | wechat-article-search（ClawHub） | skills.sh 同源只装一处 |
+| 正文提取 | wechat-article-extractor（freestylefly） | scrapling-web-fetch 作补充 |
+| 报告/拆解格式 | baoyu-format-markdown | — |
+| 封面/长文配图 | baoyu-cover-image, baoyu-article-illustrator | huashu-wechat-image 等不替代 |
+| 发布到公众号 | baoyu-post-to-wechat | wechat-article-publisher, wechat-ai-publisher, md2wechat 等不重复 |
+| MD→微信 HTML | baoyu-markdown-to-html | — |
+| 图片压缩 | baoyu-compress-image | — |
+| 监控/阅读量/舆情 | wechat-mp-cn | — |
+| 评论回复建议 | wechat-auto-reply-assistant | — |
 
 ## 必须保证的七个环节
 
@@ -51,49 +68,61 @@
 
 **并行与触发：** 3a 二创与 3b 写作可并行；评论管理可与数据助手并行。执行顺序 1 → 2 → (3a 或 3b) → 4 → 5/6；步骤 5、6 可持续运行或按周期执行。
 
-## 预设技能（按执行链路顺序）
+## 预设技能（按评估结论，去重取最优）
 
-**ClawHub 技能一览**见 [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md)，**skills.sh 技能一览**安装：`npx skills add <owner/repo> --skill <名>`；技能列表见下方。以下按 **智能工作执行链路** 顺序列出（1→2→3a→3b→4→5→6）。
+以下为 [SKILLS-EVALUATION.md](./SKILLS-EVALUATION.md) 最终推荐：每个 Agent 只保留必要且不重复的技能；同能力只选一个来源。
 
-| 步骤 | Agent id                        | 默认技能列表                                                                 | 用途说明 |
-|------|---------------------------------|------------------------------------------------------------------------------|----------|
-| 1 | wechat-article-hot-monitor     | baoyu-url-to-markdown, baoyu-format-markdown                               | 抓取热点链接、规范日报格式 |
-| 2 | wechat-article-viral-breakdown  | wechat-article-extractor, baoyu-format-markdown                             | 文章提取（ClawHub/skills.sh）+ 拆解输出规范 |
-| 3a | wechat-article-rewrite         | baoyu-cover-image, baoyu-article-illustrator                               | 封面与长文配图 |
-| 3b | wechat-article-write           | baoyu-cover-image, baoyu-article-illustrator                              | 原创内容配图与封面 |
-| 4 | wechat-article-publisher       | wechat-ai-publisher, baoyu-markdown-to-html, baoyu-compress-image, baoyu-post-to-wechat | 发布（ClawHub 或 skills.sh）+ 排版与压缩 |
-| 5 | wechat-article-data-assistant  | baoyu-format-markdown                                                      | 数据报告格式规范 |
-| 6 | wechat-article-comment-manager | （按需从 ClawHub/skills.sh 选评论采集与回复技能）                             | 评论拉取、回复草稿、情感摘要 |
+| 步骤 | Agent id                        | 推荐技能 | 来源 | 说明 |
+|------|---------------------------------|----------|------|------|
+| 1 | wechat-article-hot-monitor     | baoyu-url-to-markdown, baoyu-format-markdown | skills.sh | 抓取链接、日报格式；若需阅读量/舆情再加 wechat-mp-cn |
+| 2 | wechat-article-viral-breakdown  | wechat-article-search, wechat-article-extractor, baoyu-format-markdown | ClawHub + skills.sh | 搜索用 ClawHub；提取用 freestylefly；遇反爬可加 scrapling-web-fetch |
+| 3a | wechat-article-rewrite         | baoyu-cover-image, baoyu-article-illustrator | skills.sh | 封面与长文配图 |
+| 3b | wechat-article-write           | baoyu-cover-image, baoyu-article-illustrator | skills.sh | 同 rewrite |
+| 4 | wechat-article-publisher       | baoyu-post-to-wechat, baoyu-markdown-to-html, baoyu-compress-image | skills.sh | 发布+排版+压缩（wechat-ai-publisher 可不装） |
+| 5 | wechat-article-data-assistant  | baoyu-format-markdown；可选 wechat-mp-cn | skills.sh；ClawHub | 报告格式必选；要数据再选 wechat-mp-cn |
+| 6 | wechat-article-comment-manager | wechat-auto-reply-assistant；评论采集按接口/自研 | ClawHub | 回复草稿用 ClawHub；采集需另配 |
 
-### 安装方式（按来源区分，建议按链路顺序安装）
+### 安装命令（按来源与链路顺序）
 
-**来源：ClawHub（为主）** — 安装后目录名与 config 中 `skills` 一致。
+安装后目录名需与 config 中 `skills` 一致。**发布智能体需配置公众号凭证**（环境变量或 EXTEND.md）；不要在 TOOLS.md 或工作区存储凭证。
+
+**第一步：安装 SkillHub CLI**
+
+```bash
+curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/install.sh | bash
+```
+
+**第二步：安装技能**
+
+**ClawHub**
 
 ```bash
 clawhub search wechat
-clawhub install wechat-article-extractor
-clawhub install wechat-ai-publisher
+clawhub install wechat-article-search
+clawhub install wechat-mp-cn
+clawhub install wechat-auto-reply-assistant
+# 可选：viral-breakdown 遇反爬时
+# clawhub install scrapling-web-fetch
 ```
 
-**来源：skills.sh（取最优）** — Baoyu 系列与公众号专项安装：`npx skills add <owner/repo> --skill <名>`；技能列表见下方。按执行链路顺序安装示例：
+**skills.sh（Baoyu + 公众号提取）**
 
 ```bash
-# 步骤 1、2：监控与拆解
-npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown
-npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown
-# 步骤 3a、3b：二创与写作
-npx skills add jimliu/baoyu-skills --skill baoyu-cover-image
-npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator
-# 步骤 4：发布
-npx skills add jimliu/baoyu-skills --skill baoyu-post-to-wechat
-npx skills add jimliu/baoyu-skills --skill baoyu-markdown-to-html
-npx skills add jimliu/baoyu-skills --skill baoyu-compress-image
-# 文章提取 / 发布（可选）
-npx skills add freestylefly/wechat-article-extractor-skill --skill wechat-article-extractor
-npx skills add iamzifei/wechat-article-publisher-skill --skill wechat-article-publisher
+# 1 hot-monitor、2 viral-breakdown、5 data-assistant：抓取与格式
+npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g;
+# 2 viral-breakdown：文章提取（用 freestylefly 版）
+npx skills add freestylefly/wechat-article-extractor-skill --skill wechat-article-extractor -y -g;
+# 3a rewrite、3b write：配图
+npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g;
+# 4 publisher：发布与排版
+npx skills add jimliu/baoyu-skills --skill baoyu-post-to-wechat -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-markdown-to-html -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g;
 ```
 
-若使用 `npx skillsadd`（无空格），格式以 skills.sh 文档为准。安装后确认技能目录名与 config 中 `skills` 一致。**发布智能体需配置公众号凭证**（环境变量或 EXTEND.md）；不要在 TOOLS.md 或工作区存储凭证。
+若 CLI 为 `npx skillsadd`（无空格），以 skills.sh 文档为准。
 
 ## 补充约定（设计时已落实）
 

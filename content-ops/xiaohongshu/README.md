@@ -9,10 +9,40 @@
 | 来源 | 搜索链接 | 技能一览文档 | 安装命令 |
 |------|----------|--------------|----------|
 | **ClawHub（优先）** | [clawhub.ai/skills?q=xiaohongshu](https://clawhub.ai/skills?sort=downloads&q=xiaohongshu) | [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md) | `clawhub install <slug>` |
-| **skills.sh（后补）** | [skills.sh/?q=xiaohongshu](https://skills.sh/?q=xiaohongshu)、[skills.sh/?q=baoyu](https://skills.sh/?q=baoyu) | 见下方技能表与安装方式 | `npx skills add <owner/repo> --skill <名>` |
+| **skills.sh（后补）** | [skills.sh/?q=xiaohongshu](https://skills.sh/?q=xiaohongshu)、[skills.sh/?q=baoyu](https://skills.sh/?q=baoyu) | [SKILLS-SH-SKILLS.md](./SKILLS-SH-SKILLS.md) | `npx skills add <owner/repo> --skill <名>` |
 
-- **ClawHub**：优先在 ClawHub 选用小红书相关技能并写在各智能体 TOOLS.md 中；完整列表见 [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md)。
-- **skills.sh**：ClawHub 未覆盖时从 skills.sh 补充；安装：`npx skills add <owner/repo> --skill <名>`；小红书专项可查 [skills.sh/?q=xiaohongshu](https://skills.sh/?q=xiaohongshu)，Baoyu 系列（baoyu-xhs-images、baoyu-cover-image、baoyu-article-illustrator、baoyu-url-to-markdown、baoyu-format-markdown、baoyu-compress-image）见 [jimliu/baoyu-skills](https://skills.sh/?q=baoyu)；技能列表与安装示例见下方。
+## 技能评估结论（摘录）
+
+> 完整评估见 [SKILLS-EVALUATION.md](./SKILLS-EVALUATION.md)。原则：**ClawHub 为主、skills.sh 取最优；同能力只保留一个最优技能。** ClawHub 技能按**评分优选**（见 [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md) 表）。  
+> **完整技能栈**（七件套 + 标题筛选、爆款筛选、标题/算法优化、写作辅导、审核复盘、视频分析、多语言等补充）见 [SKILLS-EVALUATION.md § 七、完整技能栈](./SKILLS-EVALUATION.md#七完整技能栈七件套--补充能力)。
+
+| 能力 | 首选（按 ClawHub 评分） | 备选/不重复装 |
+|------|-------------------------|----------------|
+| 链接→Markdown/报告格式 | baoyu-url-to-markdown, baoyu-format-markdown | — |
+| 小红书配图/封面 | baoyu-xhs-images, baoyu-cover-image, baoyu-article-illustrator | — |
+| 发布到小红书 | xiaohongshu-mcp (3.633) | xiaohongshu-mcp-skill、xiaohongshu-mcp-skills、assistant-operator 选一 |
+| 搜索/趋势/分析 | xiaohongshu-mcp, xiaohongshu-cn (3.584) | xiaohongshu-deep-research, xiaohongshu-search-summarizer |
+| 深度调研/拆解 | xiaohongshu-deep-research (3.568), xiaohongshu-search-summarizer (3.275) | — |
+| 内容/写作策略 | xiaohongshu-content (3.349), xiaohongshu-founder-growth-writer (3.338) | — |
+| 图片压缩 | baoyu-compress-image | — |
+| 评论回复 | xiaohongshu-mcp / xiaohongshu-mcp-skills；reply-assistant 按需 | — |
+
+**补充能力（完整栈）** — 在七件套基础上扩展，覆盖选题→筛选→拆解→创作→发布→数据→评论全链路：
+
+| 补充能力 | 用途 | 推荐技能 | 来源 |
+|----------|------|----------|------|
+| 标题筛选 / 标题质量 | 按爆款标题范式筛选笔记，监控/拆解前预筛 | xiaohongshu-content、xiaohongshu-algorithm-optimizer | ClawHub |
+| 标题与首图优化 | 优化标题、首图、标签，提高曝光与互动 | xiaohongshu-algorithm-optimizer、xhs-writing-coach | ClawHub |
+| 爆款/视频筛选 | 按细分领域筛新鲜/爆款视频，带 xsec_token URL | xhs-video-finder | ClawHub |
+| 写作与互动辅导 | 标题/正文/标签/封面/评论引导、互动提升 | xhs-writing-coach | ClawHub |
+| 审核与复盘 | 选题→草稿→飞书审核→发布→复盘 | openclaw-xiaohongshu-ops、clawnote | ClawHub |
+| 视频下载与分析 | 下载视频、提取语音/总结，供拆解与数据 | xhs-video-downloader、xhs-video-analyzer | ClawHub |
+| 评论破冰与回复 | 破冰句、评论情感与回复建议 | xiaohongshu-first-line、xiaohongshu-reply-assistant | ClawHub |
+| 多语言 | 多语言与翻译 | baoyu-translate | skills.sh |
+| 信息图/漫画风 | 丰富二创形式 | baoyu-infographic、baoyu-comic | skills.sh |
+
+更细的映射与同质取舍见 [SKILLS-EVALUATION.md § 七、完整技能栈](./SKILLS-EVALUATION.md#七完整技能栈七件套--补充能力)。
+
 - **全仓库技能总览与 Baoyu 归类**见 [docs/SKILLS-MASTER.md](../../docs/SKILLS-MASTER.md)。
 
 ## 智能体清单
@@ -47,44 +77,205 @@
 
 **并行与触发：** 3a 二创与 3b 原创可并行；评论管理可与数据助手并行。执行顺序 1 → 2 → (3a 或 3b) → 4 → 5/6；步骤 5、6 可持续运行或按周期执行。
 
-## 预设技能（ClawHub 优先，skills.sh 后补）
+## 预设技能（按评估结论，去重取最优）
 
-各 agent 的 `skills` 可在 [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md) 与下方技能表按职责选用。以下按 **智能工作执行链路** 顺序列出（1→2→3a→3b→4→5→6）：
+以下为 [SKILLS-EVALUATION.md](./SKILLS-EVALUATION.md) 最终推荐；同能力只选一个来源。
 
-| 步骤 | Agent id                      | 默认技能列表（skills.sh 后补） | 用途说明 |
-|------|-------------------------------|--------------------------------|----------|
-| 1 | xiaohongshu-hot-monitor       | baoyu-url-to-markdown, baoyu-format-markdown | 抓取热点链接、规范日报格式 |
-| 2 | xiaohongshu-viral-breakdown   | baoyu-url-to-markdown, baoyu-format-markdown | 抓取 URL 成文、规范拆解输出 |
-| 3a | xiaohongshu-rewrite           | baoyu-xhs-images, baoyu-cover-image, baoyu-article-illustrator | 小红书配图与封面 |
-| 3b | xiaohongshu-write             | baoyu-xhs-images, baoyu-cover-image, baoyu-article-illustrator | 原创内容配图与封面 |
-| 4 | xiaohongshu-publisher         | baoyu-compress-image | 发布前图片压缩 |
-| 5 | xiaohongshu-data-assistant    | baoyu-format-markdown | 数据小结/报告格式 |
-| 6 | xiaohongshu-comment-manager   | （按需从 ClawHub/skills.sh 选评论采集与回复技能） | 评论拉取、回复草稿、情感摘要 |
+| 步骤 | Agent id                      | 推荐技能 | 来源 | 说明 |
+|------|-------------------------------|----------|------|------|
+| 1 | xiaohongshu-hot-monitor       | baoyu-url-to-markdown, baoyu-format-markdown；可选 xiaohongshu-cn | skills.sh；ClawHub | 抓取+日报格式；可选趋势 |
+| 2 | xiaohongshu-viral-breakdown   | baoyu-url-to-markdown, baoyu-format-markdown；可选 xiaohongshu-mcp, xiaohongshutools | skills.sh；ClawHub | 抓取成文+拆解格式；可选平台搜索 |
+| 3a | xiaohongshu-rewrite           | baoyu-xhs-images, baoyu-cover-image, baoyu-article-illustrator | skills.sh | 小红书配图与封面 |
+| 3b | xiaohongshu-write             | baoyu-xhs-images, baoyu-cover-image, baoyu-article-illustrator | skills.sh | 同 rewrite |
+| 4 | xiaohongshu-publisher         | baoyu-compress-image；xiaohongshu-mcp 或 xiaohongshu-publish | skills.sh + ClawHub | 压缩+发布 |
+| 5 | xiaohongshu-data-assistant    | baoyu-format-markdown；可选 xiaohongshu-cn | skills.sh；ClawHub | 报告格式；可选数据分析 |
+| 6 | xiaohongshu-comment-manager   | xiaohongshu-reply-assistant；评论采集按需 | ClawHub | 回复建议；采集需另配 |
 
-### 安装方式（按来源区分，建议按链路顺序安装）
+### 七件套全部可使用的技能：全部安装 / 全部卸载命令
 
-**来源：ClawHub** — 安装后目录名与 config 中 `skills` 一致。
+**全部不冲突**：来自 [CLAWHUB-SKILLS.md 按用途分类](./CLAWHUB-SKILLS.md)——同质只取 1 个首选（如发布只列 xiaohongshu-mcp），可并存的全部列入；config 中 `agents.list[].skills` 填写的为「安装后目录名」（ClawHub 即 `<slug>`，skills.sh 即技能名）。若某技能与当前环境冲突可单独注释该行。
 
-```bash
-clawhub search xiaohongshu
-clawhub install <slug>
-```
-
-**来源：skills.sh** — 安装：`npx skills add <owner/repo> --skill <名>`；Baoyu 后补按 **执行链路对应智能体** 顺序安装（先 1 监控/2 拆解，再 3a 二创/3b 原创，再 4 发布、5 数据、6 评论）：
+**全部安装命令（复制执行即可）**
 
 ```bash
-# 步骤 1、2：监控与拆解
-npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g;
-npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g;
-# 步骤 3a、3b：二创与原创
-npx skills add jimliu/baoyu-skills --skill baoyu-xhs-images -y -g;
-npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g;
-npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g;
-# 步骤 4：发布
-npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g;
+# ClawHub — 监控/搜索/抓取/趋势
+clawhub install xiaohongshu-mcp
+clawhub install xiaohongshu-cn
+clawhub install xiaohongshutools
+clawhub install xiaohongshu-deep-research
+clawhub install xiaohongshu-search-summarizer
+clawhub install xiaohongshu-skill
+clawhub install xiaohongshu-api
+clawhub install xhs-research-daily
+
+# ClawHub — 发布（可并存，同质已只取 mcp）
+clawhub install xiaohongshu-publish
+clawhub install xiaohongshu-publisher
+clawhub install xiaohongshu-post
+clawhub install redbook-browser-ops
+clawhub install xiaohongshu-mcporter-publish
+clawhub install xiaohongshu-video-publish
+clawhub install auto-publisher
+clawhub install dragon-xiaohongshu
+clawhub install xiaohongshu-publish-skill
+clawhub install xiaohongshu-publish-wangzh
+clawhub install xhs-publisher
+clawhub install xhsredbook
+clawhub install xiaohongshu-operate
+
+# ClawHub — 内容/二创/写作（viral 同质只取 viral-content）
+clawhub install xiaohongshu-content
+clawhub install xiaohongshu-founder-growth-writer
+clawhub install xhs-content-creator
+clawhub install xiaohongshu-viral-content
+clawhub install xhs-writing-coach
+clawhub install xiaohongshu-article-generator
+clawhub install xiaohongshu-algorithm-optimizer
+clawhub install xiaohongshu-ai-money-guide
+
+# ClawHub — 评论/互动
+clawhub install xiaohongshu-reply-assistant
+clawhub install rednote-mac
+clawhub install xiaohongshu-comment
+clawhub install xiaohongshu-first-line
+
+# ClawHub — 视频
+clawhub install xhs-video-finder
+clawhub install xhs-video-downloader
+clawhub install xhs-video-analyzer
+
+# ClawHub — 运营（同质只取 openclaw）
+clawhub install openclaw-xiaohongshu-ops
+clawhub install zeelin-xiaohongshu-autopost
+
+# ClawHub — 登录/运维
+clawhub install xiaohongshu-login
+clawhub install xiaohongshu-mcp-patch
+clawhub install jackwener-xhs-cli
+
+# ClawHub — 图文/信息图
+clawhub install xiaohongshu-generator
+clawhub install xhs-md2pic
+clawhub install xiaohongshu-post-gen
+clawhub install xiaohongshu-auto-publish
+
+# ClawHub — 跨平台/迁移（餐厅只取一个）
+clawhub install restaurant-crosscheck
+clawhub install kb-social-publisher
+clawhub install wechat-to-xiaohongshu
+clawhub install social-copy-generator
+clawhub install content-repurpose-studio
+
+# ClawHub — 其它
+clawhub install xhs-comic-creator
+
+# skills.sh
+npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g
+npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g
+npx skills add jimliu/baoyu-skills --skill baoyu-xhs-images -y -g
+npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g
+npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g
+npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g
+npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g
+npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g
+npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g
 ```
 
-若使用 `npx skillsadd`（无空格），格式以 skills.sh 文档为准。安装后技能目录名需与配置中 `skills` 数组一致。
+**全部卸载命令（复制执行即可）**
+
+```bash
+# ClawHub — 监控/搜索/抓取/趋势
+clawhub uninstall xiaohongshu-mcp
+clawhub uninstall xiaohongshu-cn
+clawhub uninstall xiaohongshutools
+clawhub uninstall xiaohongshu-deep-research
+clawhub uninstall xiaohongshu-search-summarizer
+clawhub uninstall xiaohongshu-skill
+clawhub uninstall xiaohongshu-api
+clawhub uninstall xhs-research-daily
+
+# ClawHub — 发布
+clawhub uninstall xiaohongshu-publish
+clawhub uninstall xiaohongshu-publisher
+clawhub uninstall xiaohongshu-post
+clawhub uninstall redbook-browser-ops
+clawhub uninstall xiaohongshu-mcporter-publish
+clawhub uninstall xiaohongshu-video-publish
+clawhub uninstall auto-publisher
+clawhub uninstall dragon-xiaohongshu
+clawhub uninstall xiaohongshu-publish-skill
+clawhub uninstall xiaohongshu-publish-wangzh
+clawhub uninstall xhs-publisher
+clawhub uninstall xhsredbook
+clawhub uninstall xiaohongshu-operate
+
+# ClawHub — 内容/二创/写作
+clawhub uninstall xiaohongshu-content
+clawhub uninstall xiaohongshu-founder-growth-writer
+clawhub uninstall xhs-content-creator
+clawhub uninstall xiaohongshu-viral-content
+clawhub uninstall xhs-writing-coach
+clawhub uninstall xiaohongshu-article-generator
+clawhub uninstall xiaohongshu-algorithm-optimizer
+clawhub uninstall xiaohongshu-ai-money-guide
+
+# ClawHub — 评论/互动
+clawhub uninstall xiaohongshu-reply-assistant
+clawhub uninstall rednote-mac
+clawhub uninstall xiaohongshu-comment
+clawhub uninstall xiaohongshu-first-line
+
+# ClawHub — 视频
+clawhub uninstall xhs-video-finder
+clawhub uninstall xhs-video-downloader
+clawhub uninstall xhs-video-analyzer
+
+# ClawHub — 运营
+clawhub uninstall openclaw-xiaohongshu-ops
+clawhub uninstall zeelin-xiaohongshu-autopost
+
+# ClawHub — 登录/运维
+clawhub uninstall xiaohongshu-login
+clawhub uninstall xiaohongshu-mcp-patch
+clawhub uninstall jackwener-xhs-cli
+
+# ClawHub — 图文/信息图
+clawhub uninstall xiaohongshu-generator
+clawhub uninstall xhs-md2pic
+clawhub uninstall xiaohongshu-post-gen
+clawhub uninstall xiaohongshu-auto-publish
+
+# ClawHub — 跨平台/迁移
+clawhub uninstall restaurant-crosscheck
+clawhub uninstall kb-social-publisher
+clawhub uninstall wechat-to-xiaohongshu
+clawhub uninstall social-copy-generator
+clawhub uninstall content-repurpose-studio
+
+# ClawHub — 其它
+clawhub uninstall xhs-comic-creator
+
+# skills.sh
+npx skills remove baoyu-url-to-markdown
+npx skills remove baoyu-format-markdown
+npx skills remove baoyu-xhs-images
+npx skills remove baoyu-cover-image
+npx skills remove baoyu-article-illustrator
+npx skills remove baoyu-compress-image
+npx skills remove baoyu-translate
+npx skills remove baoyu-infographic
+npx skills remove baoyu-comic
+```
+
+### 安装前置与唯一命令来源
+
+**第一步：安装 SkillHub CLI**（仅首次需要）
+
+```bash
+curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/install.sh | bash
+```
+
+**全部技能安装/卸载**：以本页上方「全部安装命令」与「全部卸载命令」为准（唯一完整列表）；安装后目录名需与 config 中 `skills` 一致。若使用 `npx skills add`，以 [SKILLS-SH-SKILLS.md](./SKILLS-SH-SKILLS.md) 为准。
 
 ## 配置说明
 

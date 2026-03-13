@@ -6,8 +6,18 @@
 
 | 来源 | 搜索链接 | 技能一览文档 | 安装命令 |
 |------|----------|--------------|----------|
-| **ClawHub（若有）** | [clawhub.ai/skills?q=toutiao](https://clawhub.ai/skills?sort=downloads&q=toutiao) | [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md) | `clawhub install <slug>` |
-| **skills.sh（取最优）** | [skills.sh/?q=baoyu](https://skills.sh/?q=baoyu) | 见下方技能表与安装方式 | `npx skills add <owner/repo> --skill <名>` |
+| **ClawHub（为主）** | [clawhub.ai/skills?q=toutiao](https://clawhub.ai/skills?sort=downloads&q=toutiao) | [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md) | `clawhub install <slug>` |
+| **skills.sh（取最优）** | [skills.sh/?q=baoyu](https://skills.sh/?q=baoyu) | [SKILLS-SH-SKILLS.md](./SKILLS-SH-SKILLS.md) | `npx skills add <owner/repo> --skill <名>` |
+
+## 技能评估结论（摘录）
+
+> 完整评估见 [SKILLS-EVALUATION.md](./SKILLS-EVALUATION.md)。原则：**ClawHub 为主、skills.sh 取最优；同能力只保留一个最优技能。** 头条号 ClawHub 技能待补充，当前以 Baoyu 为主。
+
+| 能力 | 首选 | 备选/不重复装 |
+|------|------|----------------|
+| 链接→Markdown/报告格式 | baoyu-url-to-markdown, baoyu-format-markdown | — |
+| 封面/长文配图 | baoyu-cover-image, baoyu-article-illustrator | — |
+| 图片压缩 | baoyu-compress-image | — |
 
 全仓库技能总览与 Baoyu 归类见 [docs/SKILLS-MASTER.md](../../docs/SKILLS-MASTER.md)。
 
@@ -53,38 +63,43 @@
 
 **并行与触发：** 3a 二创与 3b 写作可并行；评论管理可与数据助手并行。执行顺序 1 → 2 → (3a 或 3b) → 4 → 5/6；步骤 5、6 可持续运行或按周期执行。
 
-## 预设技能（按执行链路顺序）
+## 预设技能（按评估结论，去重取最优）
 
-以下按 **智能工作执行链路** 顺序列出（1→2→3a→3b→4→5→6）。见 [CLAWHUB-SKILLS.md](./CLAWHUB-SKILLS.md) 与下方技能表。
+以下为 [SKILLS-EVALUATION.md](./SKILLS-EVALUATION.md) 最终推荐；同能力只选一个来源。
 
-| 步骤 | Agent id                 | 默认技能列表（示例） | 用途说明 |
-|------|--------------------------|----------------------|----------|
-| 1 | toutiao-hot-monitor      | baoyu-url-to-markdown, baoyu-format-markdown | 抓取热点链接、规范日报格式 |
-| 2 | toutiao-viral-breakdown  | baoyu-url-to-markdown, baoyu-format-markdown | 抓取成文、规范拆解输出 |
-| 3a | toutiao-rewrite          | baoyu-cover-image, baoyu-article-illustrator | 封面与配图 |
-| 3b | toutiao-write            | baoyu-cover-image, baoyu-article-illustrator | 原创内容配图与封面 |
-| 4 | toutiao-publisher        | baoyu-compress-image | 发布前压缩；发布需开放平台或浏览器 |
-| 5 | toutiao-data-assistant   | baoyu-format-markdown | 数据报告格式规范 |
-| 6 | toutiao-comment-manager  | （按需选评论采集与回复技能） | 评论拉取、回复草稿、情感摘要 |
+| 步骤 | Agent id                 | 推荐技能 | 来源 | 说明 |
+|------|--------------------------|----------|------|------|
+| 1 | toutiao-hot-monitor      | baoyu-url-to-markdown, baoyu-format-markdown | skills.sh | 抓取+日报格式 |
+| 2 | toutiao-viral-breakdown  | baoyu-url-to-markdown, baoyu-format-markdown | skills.sh | 抓取成文+拆解格式 |
+| 3a | toutiao-rewrite          | baoyu-cover-image, baoyu-article-illustrator | skills.sh | 封面与配图 |
+| 3b | toutiao-write            | baoyu-cover-image, baoyu-article-illustrator | skills.sh | 同 rewrite |
+| 4 | toutiao-publisher        | baoyu-compress-image | skills.sh | 压缩；发布需开放平台/浏览器 |
+| 5 | toutiao-data-assistant   | baoyu-format-markdown | skills.sh | 报告格式 |
+| 6 | toutiao-comment-manager  | （按需选评论采集与回复技能） | ClawHub/skills.sh | 评论拉取、回复草稿 |
 
-### 安装方式（建议按链路顺序安装）
+### 安装命令（按来源与链路顺序）
 
-**来源：ClawHub** — `clawhub search toutiao` 后 `clawhub install <slug>`。
+安装后目录名需与 config 中 `skills` 一致。**勿在 TOOLS.md 存凭证。**
 
-**来源：skills.sh** — 按执行链路对应智能体顺序安装：
+**第一步：安装 SkillHub CLI**
 
 ```bash
-# 步骤 1、2：监控与拆解
-npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g;
-npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g;
-# 步骤 3a、3b：二创与写作
-npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g;
-npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g;
-# 步骤 4：发布
-npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g;
+curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/install.sh | bash
 ```
 
-**勿在 TOOLS.md 存凭证。**
+**第二步：安装技能**
+
+**ClawHub** — `clawhub search toutiao` 后按需 `clawhub install <slug>`（当前头条号技能待补充）。
+
+**skills.sh（Baoyu）**
+
+```bash
+npx skills add jimliu/baoyu-skills --skill baoyu-url-to-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-format-markdown -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-cover-image -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-article-illustrator -y -g;
+npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g;
+```
 
 ## 配置说明
 
