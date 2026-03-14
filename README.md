@@ -310,6 +310,8 @@ openclaw --profile rescue browser status
 
 **单智能体模式（默认）**：不配置多智能体时，`agentId` 默认为 `main`，工作空间为 `~/.openclaw/workspace`，状态为 `~/.openclaw/agents/main/agent`。
 
+**智能体文档规范（七文件与 zh-CN 一对一）**：本仓库约定每个智能体目录下 7 个标准文件为 AGENTS、BOOTSTRAP、HEARTBEAT、IDENTITY、SOUL、TOOLS、USER；根目录存在的任一文件，必须在 `zh-CN/` 下存在同名中文版。it、content-ops、company 等所有智能体均需满足此规范。详见 [it/README.md](it/README.md#文档与技能绑定索引)。
+
 ---
 
 ## 6. 创建智能体

@@ -1,0 +1,1424 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.8",
+    "lastTouchedAt": "2026-03-13T14:24:56.742Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-05T03:25:27.694Z",
+    "lastRunVersion": "2026.3.3",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "update": {
+    "checkOnStart": false
+  },
+  "browser": {
+    "executablePath": "/usr/bin/google-chrome",
+    "headless": true,
+    "defaultProfile": "openclaw"
+  },
+  "models": {
+    "providers": {
+      "dashscope": {
+        "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "apiKey": "$api-key",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "qwen3-max-2026-01-23",
+            "name": "Qwen3-Max-2026-01-23",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 262144,
+            "maxTokens": 65536
+          },
+          {
+            "id": "qwen3.5-plus",
+            "name": "Qwen3.5-Plus",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1000000,
+            "maxTokens": 65536
+          },
+          {
+            "id": "qwen-flash",
+            "name": "qwen-flash-thinking",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1000000,
+            "maxTokens": 32768
+          },
+          {
+            "id": "qwen3-coder-next",
+            "name": "qwen3-coder-next",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 262144,
+            "maxTokens": 65536
+          },
+          {
+            "id": "qwen3-coder-plus",
+            "name": "qwen3-coder-plus",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1000000,
+            "maxTokens": 65536
+          },
+          {
+            "id": "MiniMax-M2.5",
+            "name": "MiniMax-M2.5",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1000000,
+            "maxTokens": 65536
+          },
+          {
+            "id": "kimi-k2.5",
+            "name": "kimi-k2.5-thinking",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 262144,
+            "maxTokens": 32768
+          },
+          {
+            "id": "kimi-k2-thinking",
+            "name": "kimi-k2-thinking",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 262144,
+            "maxTokens": 32768
+          },
+          {
+            "id": "glm-5",
+            "name": "glm-5",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 202752,
+            "maxTokens": 16348
+          },
+          {
+            "id": "glm-4.7",
+            "name": "glm-4.7",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 202756,
+            "maxTokens": 16348
+          },
+          {
+            "id": "glm-4.6",
+            "name": "glm-4.6",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 202756,
+            "maxTokens": 16348
+          },
+          {
+            "id": "glm-4.5",
+            "name": "glm-4.5",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 16348
+          },
+          {
+            "id": "glm-4.5-air",
+            "name": "glm-4.5-air",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 16348
+          }
+        ]
+      },
+      "dashscope-us": {
+        "baseUrl": "https://dashscope-us.aliyuncs.com/compatible-mode/v1",
+        "apiKey": "$api-key",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "qwen3-max-2025-09-23",
+            "name": "qwen3-max-2025-09-23",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 32768,
+            "maxTokens": 8192
+          },
+          {
+            "id": "qwen3-vl-plus",
+            "name": "qwen3-vl-plus",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 32768,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "minimax-cn": {
+        "baseUrl": "https://api.minimaxi.com/anthropic",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "MiniMax-M2.5",
+            "name": "MiniMax M2.5",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 15,
+              "output": 60,
+              "cacheRead": 2,
+              "cacheWrite": 10
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "moonshot": {
+        "baseUrl": "https://api.moonshot.ai/v1",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "moonshot-v1-8k",
+            "name": "Kimi-K2-0905（15元/天）",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 4,
+              "output": 21,
+              "cacheRead": 0.7,
+              "cacheWrite": 0
+            },
+            "contextWindow": 8192,
+            "maxTokens": 4096
+          },
+          {
+            "id": "moonshot-v1-32k",
+            "name": "Kimi-K2.5（15元/天）",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 4,
+              "output": 21,
+              "cacheRead": 0.7,
+              "cacheWrite": 0
+            },
+            "contextWindow": 32768,
+            "maxTokens": 8192
+          },
+          {
+            "id": "moonshot-v1-128k",
+            "name": "Kimi-K2.5-128k（限量）",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 4,
+              "output": 21,
+              "cacheRead": 0.7,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "kimi-k2.5",
+            "name": "Kimi K2.5（兼容）",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 4,
+              "output": 21,
+              "cacheRead": 0.7,
+              "cacheWrite": 0
+            },
+            "contextWindow": 256000,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "minimax-portal": {
+        "baseUrl": "https://api.minimaxi.com/anthropic",
+        "apiKey": "minimax-oauth",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "MiniMax-M2.1",
+            "name": "MiniMax-M2.1（10万 Token/天）",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.5,
+              "output": 1.5,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 8192,
+            "maxTokens": 8192
+          },
+          {
+            "id": "MiniMax-M2",
+            "name": "MiniMax-M2（10万 Token/天）",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.5,
+              "output": 1.5,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 8192,
+            "maxTokens": 8192
+          },
+          {
+            "id": "minimax-text-01",
+            "name": "MiniMax-Text-01（新用户免费）",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "MiniMax-M2.5",
+            "name": "MiniMax-M2.5（付费/额度）",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 15,
+              "output": 60,
+              "cacheRead": 2,
+              "cacheWrite": 10
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "zai": {
+        "baseUrl": "https://open.bigmodel.cn/api/coding/paas/v4",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "glm-5",
+            "name": "GLM-5",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 5,
+              "output": 15,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 204800,
+            "maxTokens": 131072
+          },
+          {
+            "id": "glm-4.7",
+            "name": "GLM-4.7",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.5,
+              "output": 1.5,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 204800,
+            "maxTokens": 131072
+          },
+          {
+            "id": "glm-4.7-flash",
+            "name": "GLM-4.7 Flash（免费）",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 204800,
+            "maxTokens": 131072
+          },
+          {
+            "id": "glm-4.7-flashx",
+            "name": "GLM-4.7 FlashX",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.1,
+              "output": 0.3,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 204800,
+            "maxTokens": 131072
+          },
+          {
+            "id": "glm-4-flash",
+            "name": "GLM-4-Flash",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.1,
+              "output": 0.3,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 4096
+          }
+        ]
+      },
+      "dashscope-coding": {
+        "baseUrl": "https://coding.dashscope.aliyuncs.com/v1",
+        "apiKey": "sk-sp-e2aa17060f3d404fa79bc4d1914829d0",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "qwen3.5-plus",
+            "name": "Qwen3.5-Plus",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1000000,
+            "maxTokens": 65536
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "dashscope-coding/qwen3.5-plus"
+      },
+      "imageModel": {
+        "primary": "dashscope/qwen3-vl-plus"
+      },
+      "models": {
+        "dashscope/qwen3-max-2026-01-23": {
+          "alias": "qwen3-max-2026-01-23"
+        },
+        "dashscope/qwen3.5-plus": {
+          "alias": "qwen3.5-plus"
+        },
+        "dashscope-us/qwen3-max-2025-09-23": {
+          "alias": "qwen3-max-2025-09-23"
+        },
+        "dashscope-us/qwen3-vl-plus": {
+          "alias": "qwen3-vl-plus"
+        },
+        "dashscope/qwen-flash": {
+          "alias": "qwen-flash"
+        },
+        "dashscope/qwen3-coder-next": {},
+        "dashscope/qwen3-coder-plus": {
+          "alias": "qwen3-coder-plus"
+        },
+        "dashscope/MiniMax-M2.5": {
+          "alias": "MiniMax-M2.5"
+        },
+        "dashscope/kimi-k2.5": {
+          "alias": "kimi-k2.5"
+        },
+        "dashscope/kimi-k2-thinking": {
+          "alias": "kimi-k2-thinking"
+        },
+        "dashscope/glm-5": {
+          "alias": "glm-5"
+        },
+        "dashscope/glm-4.7": {
+          "alias": "glm-4.7"
+        },
+        "bailian/glm-4.6": {
+          "alias": "glm-4.6"
+        },
+        "dashscope/glm-4.5": {
+          "alias": "glm-4.5"
+        },
+        "dashscope/glm-4.5-air": {
+          "alias": "glm-4.5-air"
+        },
+        "minimax-cn/MiniMax-M2.5": {
+          "alias": "Minimax M2.5"
+        },
+        "moonshot/moonshot-v1-8k": {
+          "alias": "Kimi-K2-8K"
+        },
+        "moonshot/moonshot-v1-32k": {
+          "alias": "Kimi-K2.5-32K"
+        },
+        "moonshot/moonshot-v1-128k": {
+          "alias": "Kimi-K2.5-128K"
+        },
+        "moonshot/kimi-k2.5": {
+          "alias": "Kimi K2.5"
+        },
+        "kimi-coding/k2p5": {
+          "alias": "Kimi K2.5 (coding)"
+        },
+        "minimax-portal/MiniMax-M2.1": {
+          "alias": "MiniMax-M2.1"
+        },
+        "minimax-portal/MiniMax-M2": {
+          "alias": "MiniMax-M2"
+        },
+        "minimax-portal/minimax-text-01": {
+          "alias": "MiniMax-Text-01"
+        },
+        "minimax-portal/MiniMax-M2.5": {
+          "alias": "MiniMax-M2.5"
+        },
+        "zai/glm-5": {
+          "alias": "GLM-5"
+        },
+        "zai/glm-4.7": {
+          "alias": "GLM-4.7"
+        },
+        "zai/glm-4.7-flash": {
+          "alias": "GLM-4.7 Flash"
+        },
+        "zai/glm-4.7-flashx": {
+          "alias": "GLM-4.7 FlashX"
+        },
+        "zai/glm-4-flash": {
+          "alias": "GLM-4-Flash"
+        },
+        "dashscope-coding/qwen3.5-plus": {
+          "alias": "qwen3.5-plus"
+        }
+      },
+      "workspace": "/home/admin/.openclaw/workspace",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    },
+    "list": [
+      {
+        "id": "main"
+      },
+      {
+        "id": "admin-assistant",
+        "name": "admin-assistant",
+        "workspace": "/home/admin/.openclaw/workspace-admin-assistant",
+        "agentDir": "/home/admin/.openclaw/agents/admin-assistant/agent"
+      },
+      {
+        "id": "ops-assistant",
+        "name": "ops-assistant",
+        "workspace": "/home/admin/.openclaw/workspace-ops-assistant",
+        "agentDir": "/home/admin/.openclaw/agents/ops-assistant/agent"
+      },
+      {
+        "id": "business-assistant",
+        "name": "business-assistant",
+        "workspace": "/home/admin/.openclaw/workspace-business-assistant",
+        "agentDir": "/home/admin/.openclaw/agents/business-assistant/agent"
+      },
+      {
+        "id": "boss-assistant",
+        "name": "boss-assistant",
+        "workspace": "/home/admin/.openclaw/workspace-boss-assistant",
+        "agentDir": "/home/admin/.openclaw/agents/boss-assistant/agent"
+      },
+      {
+        "id": "boss-wife-assistant",
+        "name": "boss-wife-assistant",
+        "workspace": "/home/admin/.openclaw/workspace-boss-wife-assistant",
+        "agentDir": "/home/admin/.openclaw/agents/boss-wife-assistant/agent"
+      },
+      {
+        "id": "cs-assistant",
+        "name": "cs-assistant",
+        "workspace": "/home/admin/.openclaw/workspace-cs-assistant",
+        "agentDir": "/home/admin/.openclaw/agents/cs-assistant/agent",
+        "tools": {
+          "profile": "messaging",
+          "elevated": {
+            "enabled": true,
+            "allowFrom": {
+              "wecom": [
+                "WuXiaoFeng"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": "cs-specialist-xiaonuan",
+        "name": "cs-specialist-xiaonuan",
+        "workspace": "/home/admin/.openclaw/workspace-cs-specialist-xiaonuan",
+        "agentDir": "/home/admin/.openclaw/agents/cs-specialist-xiaonuan/agent",
+        "tools": {
+          "profile": "messaging"
+        }
+      },
+      {
+        "id": "openclaw-assistant",
+        "name": "openclaw-assistant",
+        "workspace": "/home/admin/.openclaw/workspace-openclaw-assistant",
+        "agentDir": "/home/admin/.openclaw/agents/openclaw-assistant/agent"
+      },
+      {
+        "id": "xiaohongshu-ops-assistant",
+        "name": "xiaohongshu-ops-assistant",
+        "workspace": "/home/admin/.openclaw/workspace-xiaohongshu-ops-assistant",
+        "agentDir": "/home/admin/.openclaw/agents/xiaohongshu-ops-assistant/agent",
+        "subagents": {
+          "allowAgents": [
+            "xiaohongshu-hot-monitor",
+            "xiaohongshu-viral-breakdown",
+            "xiaohongshu-rewrite",
+            "xiaohongshu-write",
+            "xiaohongshu-publisher",
+            "xiaohongshu-data-assistant",
+            "xiaohongshu-comment-manager"
+          ]
+        }
+      },
+      {
+        "id": "xiaohongshu-hot-monitor",
+        "name": "xiaohongshu-hot-monitor",
+        "workspace": "/home/admin/.openclaw/workspace-xiaohongshu-hot-monitor",
+        "agentDir": "/home/admin/.openclaw/agents/xiaohongshu-hot-monitor/agent",
+        "subagents": {
+          "allowAgents": [
+            "xiaohongshu-viral-breakdown",
+            "xiaohongshu-data-assistant",
+            "xiaohongshu-comment-manager"
+          ]
+        }
+      },
+      {
+        "id": "xiaohongshu-viral-breakdown",
+        "name": "xiaohongshu-viral-breakdown",
+        "workspace": "/home/admin/.openclaw/workspace-xiaohongshu-viral-breakdown",
+        "agentDir": "/home/admin/.openclaw/agents/xiaohongshu-viral-breakdown/agent",
+        "subagents": {
+          "allowAgents": [
+            "xiaohongshu-rewrite",
+            "xiaohongshu-data-assistant"
+          ]
+        }
+      },
+      {
+        "id": "xiaohongshu-write",
+        "name": "xiaohongshu-write",
+        "workspace": "/home/admin/.openclaw/workspace-xiaohongshu-write",
+        "agentDir": "/home/admin/.openclaw/agents/xiaohongshu-write/agent",
+        "subagents": {
+          "allowAgents": [
+            "xiaohongshu-publisher",
+            "xiaohongshu-data-assistant",
+            "xiaohongshu-comment-manager"
+          ]
+        }
+      },
+      {
+        "id": "xiaohongshu-rewrite",
+        "name": "xiaohongshu-rewrite",
+        "workspace": "/home/admin/.openclaw/workspace-xiaohongshu-rewrite",
+        "agentDir": "/home/admin/.openclaw/agents/xiaohongshu-rewrite/agent",
+        "subagents": {
+          "allowAgents": [
+            "xiaohongshu-publisher",
+            "xiaohongshu-data-assistant",
+            "xiaohongshu-comment-manager"
+          ]
+        }
+      },
+      {
+        "id": "xiaohongshu-publisher",
+        "name": "xiaohongshu-publisher",
+        "workspace": "/home/admin/.openclaw/workspace-xiaohongshu-publisher",
+        "agentDir": "/home/admin/.openclaw/agents/xiaohongshu-publisher/agent",
+        "subagents": {
+          "allowAgents": [
+            "xiaohongshu-data-assistant",
+            "xiaohongshu-comment-manager"
+          ]
+        }
+      },
+      {
+        "id": "xiaohongshu-data-assistant",
+        "name": "xiaohongshu-data-assistant",
+        "workspace": "/home/admin/.openclaw/workspace-xiaohongshu-data-assistant",
+        "agentDir": "/home/admin/.openclaw/agents/xiaohongshu-data-assistant/agent"
+      },
+      {
+        "id": "xiaohongshu-comment-manager",
+        "name": "xiaohongshu-comment-manager",
+        "workspace": "/home/admin/.openclaw/workspace-xiaohongshu-comment-manager",
+        "agentDir": "/home/admin/.openclaw/agents/xiaohongshu-comment-manager/agent"
+      },
+      {
+        "id": "wechat-article-ops-assistant",
+        "name": "wechat-article-ops-assistant",
+        "workspace": "/home/admin/.openclaw/workspace-wechat-article-ops-assistant",
+        "agentDir": "/home/admin/.openclaw/agents/wechat-article-ops-assistant/agent",
+        "subagents": {
+          "allowAgents": [
+            "wechat-article-hot-monitor",
+            "wechat-article-viral-breakdown",
+            "wechat-article-rewrite",
+            "wechat-article-write",
+            "wechat-article-publisher",
+            "wechat-article-data-assistant",
+            "wechat-article-comment-manager"
+          ]
+        }
+      },
+      {
+        "id": "wechat-article-hot-monitor",
+        "name": "wechat-article-hot-monitor",
+        "workspace": "/home/admin/.openclaw/workspace-wechat-article-hot-monitor",
+        "agentDir": "/home/admin/.openclaw/agents/wechat-article-hot-monitor/agent",
+        "subagents": {
+          "allowAgents": [
+            "wechat-article-viral-breakdown",
+            "wechat-article-data-assistant",
+            "wechat-article-comment-manager"
+          ]
+        }
+      },
+      {
+        "id": "wechat-article-viral-breakdown",
+        "name": "wechat-article-viral-breakdown",
+        "workspace": "/home/admin/.openclaw/workspace-wechat-article-viral-breakdown",
+        "agentDir": "/home/admin/.openclaw/agents/wechat-article-viral-breakdown/agent",
+        "subagents": {
+          "allowAgents": [
+            "wechat-article-rewrite",
+            "wechat-article-publisher"
+          ]
+        }
+      },
+      {
+        "id": "wechat-article-write",
+        "name": "wechat-article-write",
+        "workspace": "/home/admin/.openclaw/workspace-wechat-article-write",
+        "agentDir": "/home/admin/.openclaw/agents/wechat-article-write/agent",
+        "subagents": {
+          "allowAgents": [
+            "wechat-article-publisher",
+            "wechat-article-data-assistant",
+            "wechat-article-comment-manager"
+          ]
+        }
+      },
+      {
+        "id": "wechat-article-rewrite",
+        "name": "wechat-article-rewrite",
+        "workspace": "/home/admin/.openclaw/workspace-wechat-article-rewrite",
+        "agentDir": "/home/admin/.openclaw/agents/wechat-article-rewrite/agent",
+        "subagents": {
+          "allowAgents": [
+            "wechat-article-publisher",
+            "wechat-article-data-assistant",
+            "wechat-article-comment-manager"
+          ]
+        }
+      },
+      {
+        "id": "wechat-article-publisher",
+        "name": "wechat-article-publisher",
+        "workspace": "/home/admin/.openclaw/workspace-wechat-article-publisher",
+        "agentDir": "/home/admin/.openclaw/agents/wechat-article-publisher/agent",
+        "subagents": {
+          "allowAgents": [
+            "wechat-article-data-assistant",
+            "wechat-article-comment-manager"
+          ]
+        }
+      },
+      {
+        "id": "wechat-article-data-assistant",
+        "name": "wechat-article-data-assistant",
+        "workspace": "/home/admin/.openclaw/workspace-wechat-article-data-assistant",
+        "agentDir": "/home/admin/.openclaw/agents/wechat-article-data-assistant/agent"
+      },
+      {
+        "id": "wechat-article-comment-manager",
+        "name": "wechat-article-comment-manager",
+        "workspace": "/home/admin/.openclaw/workspace-wechat-article-comment-manager",
+        "agentDir": "/home/admin/.openclaw/agents/wechat-article-comment-manager/agent"
+      }
+    ]
+  },
+  "tools": {
+    "profile": "full"
+  },
+  "bindings": [
+    {
+      "type": "route",
+      "agentId": "admin-assistant",
+      "match": {
+        "channel": "wecom",
+        "accountId": "admin-assistant"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "ops-assistant",
+      "match": {
+        "channel": "wecom",
+        "accountId": "ops-assistant"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "business-assistant",
+      "match": {
+        "channel": "wecom",
+        "accountId": "business-assistant"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "boss-assistant",
+      "match": {
+        "channel": "wecom",
+        "accountId": "boss-assistant"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "boss-wife-assistant",
+      "match": {
+        "channel": "wecom",
+        "accountId": "boss-wife-assistant"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "cs-assistant",
+      "match": {
+        "channel": "wecom",
+        "accountId": "cs-assistant"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "cs-specialist-xiaonuan",
+      "match": {
+        "channel": "wecom",
+        "accountId": "cs-specialist-xiaonuan"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "openclaw-assistant",
+      "match": {
+        "channel": "wecom",
+        "accountId": "openclaw-assistant"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "xiaohongshu-viral-breakdown",
+      "match": {
+        "channel": "wecom",
+        "accountId": "xiaohongshu-viral-breakdown"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "xiaohongshu-rewrite",
+      "match": {
+        "channel": "wecom",
+        "accountId": "xiaohongshu-rewrite"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "xiaohongshu-publisher",
+      "match": {
+        "channel": "wecom",
+        "accountId": "xiaohongshu-publisher"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "xiaohongshu-data-assistant",
+      "match": {
+        "channel": "wecom",
+        "accountId": "xiaohongshu-data-assistant"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "xiaohongshu-hot-monitor",
+      "match": {
+        "channel": "wecom",
+        "accountId": "xiaohongshu-hot-monitor"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "xiaohongshu-write",
+      "match": {
+        "channel": "wecom",
+        "accountId": "xiaohongshu-write"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "xiaohongshu-comment-manager",
+      "match": {
+        "channel": "wecom",
+        "accountId": "xiaohongshu-comment-manager"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "xiaohongshu-ops-assistant",
+      "match": {
+        "channel": "wecom",
+        "accountId": "xiaohongshu-ops"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "wechat-article-ops-assistant",
+      "match": {
+        "channel": "wecom",
+        "accountId": "wechat-article-ops"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "wechat-article-hot-monitor",
+      "match": {
+        "channel": "wecom",
+        "accountId": "wechat-article-hot-monitor"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "wechat-article-viral-breakdown",
+      "match": {
+        "channel": "wecom",
+        "accountId": "wechat-article-viral-breakdown"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "wechat-article-write",
+      "match": {
+        "channel": "wecom",
+        "accountId": "wechat-article-write"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "wechat-article-rewrite",
+      "match": {
+        "channel": "wecom",
+        "accountId": "wechat-article-rewrite"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "wechat-article-publisher",
+      "match": {
+        "channel": "wecom",
+        "accountId": "wechat-article-publisher"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "wechat-article-data-assistant",
+      "match": {
+        "channel": "wecom",
+        "accountId": "wechat-article-data-assistant"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "wechat-article-comment-manager",
+      "match": {
+        "channel": "wecom",
+        "accountId": "wechat-article-comment-manager"
+      }
+    }
+  ],
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": true,
+    "nativeSkills": true,
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "dmScope": "per-account-channel-peer"
+  },
+  "cron": {
+    "enabled": true
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "boot-md": {
+          "enabled": true
+        },
+        "command-logger": {
+          "enabled": true
+        },
+        "session-memory": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "channels": {
+    "wecom": {
+      "enabled": true,
+      "accounts": {
+        "openclaw-assistant": {
+          "botId": "aibq9EJDbm2hBRXyFvxbPXXJBSDtrlRDjfs",
+          "secret": "TBkvwvvQHkVzVdvhWRVWeAsuhhMZENsTagpG4hPJCwE",
+          "name": "运维助理.AI",
+          "enabled": true
+        },
+        "admin-assistant": {
+          "botId": "aibxzCvoof9c3W0uw44gIB5jnV0_Yf-qNaA",
+          "secret": "FQGG8vXM7beaa5TrrRlbH3HmTBSpBGpZhM4nTSyw2pI",
+          "name": "行政助理.AI",
+          "enabled": true
+        },
+        "ops-assistant": {
+          "botId": "aibospGt1DYMumrgeLAviqtPek12FDrQSzl",
+          "secret": "M82dkuTQwbl041PDG61y3zWPs7NNC5BE8dzLWCe2QFj",
+          "name": "运营助理.AI",
+          "enabled": true
+        },
+        "business-assistant": {
+          "botId": "aibd-Tgq88b98-Fq_6aeFLzN8_wG8_35wIw",
+          "secret": "5hV6PDOdvM22zSkWl8s7jDCNCnSkMNjFDrPFNX33EWe",
+          "name": "商务助理.AI",
+          "enabled": true
+        },
+        "boss-assistant": {
+          "botId": "aibWJRNQswySAAynXFi23XdFwBPMsweSnIf",
+          "secret": "EBrcwHUk4UbEPgiWVt45YpLo6rR7l9pfsjI56Xl69cj",
+          "name": "老板助理.AI",
+          "enabled": true
+        },
+        "boss-wife-assistant": {
+          "botId": "aibfb9gtBCmoa5b_3JZ-rPj_q6mphDoZ1k6",
+          "secret": "hEkHCUoEjfPE3G9rZhZrmddizyTw6XOqNwRW2b6hJeP",
+          "name": "老板娘助理.AI",
+          "enabled": true
+        },
+        "cs-assistant": {
+          "botId": "aib5OPpBb_bt2d9LmTfIVzLiWew279Z7gWj",
+          "secret": "Sq2alUNoT2gA9D3broUqrTLEzXRpGmdhSONd8zfyssx",
+          "name": "客服助理.AI",
+          "enabled": true
+        },
+        "cs-specialist-xiaonuan": {
+          "botId": "aibanj5NoWvtyBbwPV_r-z9uCCwr4Vq_p4t",
+          "secret": "sXhD7lcsjGrHzoAtyN6iWiKMicwu5z2hdOD9FNYInRV",
+          "name": "客服专员-小暖",
+          "enabled": true
+        },
+        "xiaohongshu-ops": {
+          "botId": "aibvK0sfFjKMjbPwtwoOxRwTDY1ylggK0v7",
+          "secret": "e7v2Hz9x3DNoTNoPc3i3tKsfLUgJCxUcRdwL779B9U9",
+          "name": "小红书运营",
+          "enabled": true
+        },
+        "xiaohongshu-hot-monitor": {
+          "botId": "aibL9dq48Kfd3yvgjXQXTHF33xwn8K_bTFo",
+          "secret": "X179TZYCqQqLvSgYo4OvMSoDUEocPsIMjiPF7g16n2r",
+          "name": "运营：小红书热门监控",
+          "enabled": true
+        },
+        "xiaohongshu-viral-breakdown": {
+          "botId": "aibadNweZunNWQLUZy3T2lFN2Qyp5sldzUu",
+          "secret": "Z9HDZYs1QGNydxREDbEwgiOdXHsGz2r2gPwFnwCu3jG",
+          "name": "运营：小红书爆款拆解",
+          "enabled": true
+        },
+        "xiaohongshu-write": {
+          "botId": "aibYxgmG4UpETjbma6fKUUMUzgWKYVHIf4k",
+          "secret": "oyY1wurV5UzkqdB0xbJlJQfPjcwcEoXbA6aBkbGsm5q",
+          "name": "运营：小红书原创",
+          "enabled": true
+        },
+        "xiaohongshu-rewrite": {
+          "botId": "aib3Fs2ZCehPU_kIqOXCqbCdE86oSc4Mb2b",
+          "secret": "MujX3OabAiw45jg4lKoOuvbnqc9VLteDxyIpDmar9BX",
+          "name": "运营：小红书二创",
+          "enabled": true
+        },
+        "xiaohongshu-publisher": {
+          "botId": "aibAFn4W_bPrMvzs4-1JbMvd8urz_YH_79H",
+          "secret": "GHKjpRpyDQqWc7sVA1UBRjWxcMj3Wt6NMxBf1SM2l8o",
+          "name": "运营：小红书自动发布",
+          "enabled": true
+        },
+        "xiaohongshu-data-assistant": {
+          "botId": "aibjCkD843EXhztwgB_rsJczxxZxI2vBM_L",
+          "secret": "RrVpejiJFO3vfYjzQ3FAxeRYZOuoIP9bYlAfYFGq61f",
+          "name": "运营：小红书数据助手",
+          "enabled": true
+        },
+        "xiaohongshu-comment-manager": {
+          "botId": "aibFPnT2pyrdJcWcYv25rPVppdzq5yG1B9T",
+          "secret": "BhbFVHSkgIxSODfZ4Ei8yLUeuJzjjyP6kJFRVAOhdd9",
+          "name": "运营：小红书评论管理",
+          "enabled": true
+        },
+        "wechat-article-ops": {
+          "botId": "aib06vsCy3dzLed9HafEA7lorfL3S1X602U",
+          "secret": "W8uqeFCMkJO037BYNULjKx85K7v5uwQ3GYPcgo7wQyN",
+          "name": "公共号运营",
+          "enabled": true
+        },
+        "wechat-article-hot-monitor": {
+          "botId": "aibJdKjj-mObCqIAX7OJtTwSyprjunTpDRi",
+          "secret": "DWlA83NJvT4ErHL3gBn9RX8cVeWm7sXAA8QTGYVdhEL",
+          "name": "运营：公共号热门监控",
+          "enabled": true
+        },
+        "wechat-article-viral-breakdown": {
+          "botId": "aibfCjccm2plP9MJ23xUqA2uP-TqW0u2847",
+          "secret": "jqoP7unFku245WzlGxo3cElinE6sSky8iTfF9IdwJ4M",
+          "name": "运营：公共号爆款拆解",
+          "enabled": true
+        },
+        "wechat-article-write": {
+          "botId": "aibgAaFNWpbCIKgcoxySSHhD4IPW2ppguDH",
+          "secret": "RK7yeHjLkvIawCuxMd6ARTlQeGOURGzIAIYbjUSsRcL",
+          "name": "运营：公共号原创",
+          "enabled": true
+        },
+        "wechat-article-rewrite": {
+          "botId": "aibQ6XxM2fYm04oD2FuQVyGL06c2Gdv9kME",
+          "secret": "wQlNfuA1Plpx2TJMYWpuuLTE2bzl7s21mQjqYZftTB1",
+          "name": "运营：公共号二创",
+          "enabled": true
+        },
+        "wechat-article-publisher": {
+          "botId": "aibfAiToEbrIPmA6ail-nSRmfkn60b8lO47",
+          "secret": "tQQGDn3otOViIBmfNMHHdhkg5zGtQefv7z3gO3fuaOj",
+          "name": "运营：公共号自动发布",
+          "enabled": true
+        },
+        "wechat-article-data-assistant": {
+          "botId": "aibWgpsCK91KqXpfpKFtC64BaUtda9Ua-wd",
+          "secret": "ydVsbn1XTqAH4qrOy1Zg7JoWbiKY3sRk33xQjpN1xeZ",
+          "name": "运营：公共号数据助手",
+          "enabled": true
+        },
+        "wechat-article-comment-manager": {
+          "botId": "aibHl2YjBXHErVT-FA6_sj5r7UVxxXQn7tZ",
+          "secret": "1qrnAVAzDmmokSRmiomxwdpMLsnHA9MQg6b8Nt5CgBo",
+          "name": "运营：公共号评论管理",
+          "enabled": true
+        }
+      }
+    }
+  },
+  "gateway": {
+    "port": 16018,
+    "mode": "local",
+    "bind": "lan",
+    "controlUi": {
+      "basePath": "5828ed90",
+      "allowedOrigins": [
+        "http://47.102.47.177:16018"
+      ],
+      "allowInsecureAuth": true,
+      "dangerouslyDisableDeviceAuth": true
+    },
+    "auth": {
+      "mode": "token",
+      "token": "4aab9a11ae90e8d558b6708baf85de16"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "reload": {
+      "mode": "restart"
+    },
+    "http": {
+      "endpoints": {
+        "chatCompletions": {
+          "enabled": true
+        },
+        "responses": {
+          "enabled": true
+        }
+      }
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "contacts.add",
+        "calendar.add",
+        "reminders.add",
+        "sms.send"
+      ]
+    }
+  },
+  "plugins": {
+    "enabled": true,
+    "allow": [
+      "dingtalk",
+      "skillhub",
+      "qqbot",
+      "dashscope-cfg",
+      "wecom",
+      "minimax-portal-auth"
+    ],
+    "entries": {
+      "dashscope-cfg": {
+        "enabled": true
+      },
+      "wecom": {
+        "enabled": true
+      },
+      "dingtalk": {
+        "enabled": true
+      },
+      "qqbot": {
+        "enabled": true
+      },
+      "skillhub": {
+        "enabled": true,
+        "config": {
+          "primaryCli": "skillhub",
+          "fallbackCli": "clawhub",
+          "primaryLabel": "cn-optimized",
+          "fallbackLabel": "public-registry"
+        }
+      },
+      "minimax-portal-auth": {
+        "enabled": true
+      }
+    },
+    "installs": {
+      "dashscope-cfg": {
+        "source": "path",
+        "sourcePath": "/opt/openclaw/extensions/dashscope-cfg",
+        "installPath": "/home/admin/.openclaw/extensions/dashscope-cfg",
+        "version": "2026.2.25",
+        "installedAt": "2026-03-05T03:36:01.180Z"
+      },
+      "dingtalk": {
+        "source": "npm",
+        "spec": "@soimy/dingtalk",
+        "installPath": "/home/admin/.openclaw/extensions/dingtalk",
+        "version": "3.2.0",
+        "resolvedName": "@soimy/dingtalk",
+        "resolvedVersion": "3.2.0",
+        "resolvedSpec": "@soimy/dingtalk@3.2.0",
+        "integrity": "sha512-6JDDZit0WPy3xUC0rNQVMQEKMXcbjnN5r0/Rq44xJ3IOFceQnZVhLXgnahQsuw/03GJAxNl6FKb0PTxm1R7ZIw==",
+        "shasum": "9b32caab49d1e1c76ab41d39b15175ff76f0e112",
+        "resolvedAt": "2026-03-10T10:29:17.992Z",
+        "installedAt": "2026-03-10T10:31:26.395Z"
+      },
+      "qqbot": {
+        "source": "path",
+        "sourcePath": "/home/admin/qqbot",
+        "installPath": "/home/admin/.openclaw/extensions/qqbot",
+        "version": "1.5.1",
+        "installedAt": "2026-03-05T07:23:31.488Z"
+      },
+      "wecom": {
+        "source": "npm",
+        "spec": "@wecom/wecom-openclaw-plugin",
+        "installPath": "/home/admin/.openclaw/extensions/wecom-openclaw-plugin",
+        "version": "1.0.6",
+        "resolvedName": "@wecom/wecom-openclaw-plugin",
+        "resolvedVersion": "1.0.6",
+        "resolvedSpec": "@wecom/wecom-openclaw-plugin@1.0.6",
+        "integrity": "sha512-1yn6P3KGdEfKoTuGH0Ot4vuoHOFqZJ+qlVrEXYBzkPwtNHb7s2ja2YKizaffYWb0h2s464PEXKhmkQq/RRJwkg==",
+        "shasum": "f77c23c0285a94d6034ce2e3c5a08df1acbcf1de",
+        "resolvedAt": "2026-03-10T13:00:38.834Z",
+        "installedAt": "2026-03-10T13:04:24.664Z"
+      }
+    }
+  }
+}
