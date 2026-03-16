@@ -19,7 +19,7 @@
 | 6 | cs-assistant | 客服助理 | customer/6-cs-assistant | **对内**：辅助客服人员提升能力；话术检索与建议、公司业务与行业知识（话术/业务/行业信息后续提供） |
 | 7 | cs-specialist-xiaonuan | 客服专员-小暖 | customer/7-cs-specialist-xiaonuan | **对外**：智能客服「小暖」；根据行业内容、业务话术、公司业务服务客户，语气温暖贴心 |
 
-**说明：** 小红书等渠道七件套已独立为 `content-ops/<channel>/` 管线，见 `config/README.md`。渠道运营助理（internal/6-content-ops-assistant）采用**单 Agent 委派**：仅该运营助理可委派到其渠道七件套，配置见 [internal/6-content-ops-assistant/README.md](internal/6-content-ops-assistant/README.md)。
+**说明：** 小红书等渠道七件套已独立为 `content-ops/<channel>/` 管线，见 `config/README.md`。渠道运营助理（internal/6-content-ops-assistant）采用**单 Agent 委派**：仅该运营助理可委派到其渠道七件套，配置见 [internal/6-content-ops-assistant/README.md](10、Company%20Manger/6-content-ops-assistant/README.md)。
 
 ## 配置说明
 
@@ -77,7 +77,7 @@ openclaw agents bind --agent cs-specialist-xiaonuan --bind webchat:xiaonuan
 
 ### 5. 渠道运营助理（11 个）
 
-渠道运营助理需单独配置**单 Agent 委派**（仅该助理可委派到其渠道七件套），详见 [internal/6-content-ops-assistant/README.md](internal/6-content-ops-assistant/README.md)。以下为添加与绑定命令示例。
+渠道运营助理需单独配置**单 Agent 委派**（仅该助理可委派到其渠道七件套），详见 [internal/6-content-ops-assistant/README.md](10、Company%20Manger/6-content-ops-assistant/README.md)。以下为添加与绑定命令示例。
 
 **添加 11 个渠道运营助理**（workspace 指向本仓库 `company/internal/6-content-ops-assistant/<id>/`，部署时复制或链接到 `~/.openclaw/workspace-<id>`）：
 
@@ -111,7 +111,7 @@ openclaw agents bind --agent toutiao-ops-assistant         --bind wecom:toutiao-
 openclaw agents bind --agent kuaishou-ops-assistant        --bind wecom:kuaishou-ops;
 ```
 
-其他渠道将 `wecom` 替换为 `feishu`、`webchat` 等即可。委派配置（`tools.agentToAgent` 仅对上述运营助理开放）须在 `openclaw.json` 中按 [README.md](internal/6-content-ops-assistant/README.md) 示例合并。
+其他渠道将 `wecom` 替换为 `feishu`、`webchat` 等即可。委派配置（`tools.agentToAgent` 仅对上述运营助理开放）须在 `openclaw.json` 中按 [README.md](10、Company%20Manger/6-content-ops-assistant/README.md) 示例合并。
 
 ## 文件结构（每智能体）
 

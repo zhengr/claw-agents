@@ -668,9 +668,9 @@ openclaw gateway --port 18789
 openclaw --profile scrm setup
 openclaw --profile scrm gateway --port 18819
 
-# 3）Web3（profile web3，端口 18869）
-openclaw --profile web3 setup
-openclaw --profile web3 gateway --port 18869
+# 3）Web3（profile 9、Web3，端口 18869）
+openclaw --profile 9、Web3 setup
+openclaw --profile 9、Web3 gateway --port 18869
 ```
 
 **验证**：
@@ -679,17 +679,17 @@ openclaw --profile web3 gateway --port 18869
 # 各 profile 状态与诊断
 openclaw status
 openclaw --profile scrm status
-openclaw --profile web3 status
+openclaw --profile 9、Web3 status
 
 # 各实例内智能体与绑定
 openclaw agents list --bindings
 openclaw --profile scrm agents list --bindings
-openclaw --profile web3 agents list --bindings
+openclaw --profile 9、Web3 agents list --bindings
 
 # Gateway 健康（需对应实例已启动）
 openclaw health --json
 openclaw --profile scrm health --json
-openclaw --profile web3 health --json
+openclaw --profile 9、Web3 health --json
 ```
 
 合并配置片段前，将各片段中的路径占位符替换为实际路径（SCRM 使用 `~/.openclaw-scrm`，Web3 使用 `~/.openclaw-web3`）；详见 [config/README.md](config/README.md)。
