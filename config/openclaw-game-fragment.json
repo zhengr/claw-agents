@@ -1,9 +1,6 @@
 {
   "agents": {
     "defaults": {
-      "model": {
-        "primary": "YOUR_DEFAULT_MODEL"
-      },
       "compaction": {
         "mode": "safeguard"
       }

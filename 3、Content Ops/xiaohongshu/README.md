@@ -45,6 +45,28 @@
 
 - **全仓库技能总览与 Baoyu 归类**见 [docs/SKILLS-MASTER.md](../../docs/SKILLS-MASTER.md)。
 
+
+## 浏览器已登录态补充入口
+
+对于热点读取、站内搜索、趋势抓取这类场景，可补充使用：
+
+- `opencli-skill`：热点读取、站内搜索、趋势抓取
+- `baoyu-url-to-markdown`：链接正文抓取与转 markdown
+- `baoyu-format-markdown`：日报、拆解报告、趋势周报规范化输出
+
+推荐链路：
+
+```text
+opencli-skill -> 热点 / 热榜 / 搜索结果
+baoyu-url-to-markdown -> 正文抓取
+baoyu-format-markdown -> 日报 / 拆解报告
+```
+
+边界：
+
+- 适合作为浏览器登录态数据入口补充，不替代现有平台专用技能
+- 写操作默认人工确认、小号测试、低频执行，不作为自动执行基线
+
 ## 智能体清单
 
 | 序号 | Agent id                      | 展示名           | 目录                               | 职责摘要 |
