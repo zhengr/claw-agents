@@ -83,8 +83,8 @@ openclaw agents bind --agent cs-specialist-xiaonuan --bind webchat:xiaonuan
 
 ```bash
 openclaw agents add xiaohongshu-ops-assistant      --workspace ~/.openclaw/workspace-xiaohongshu-ops-assistant;
-openclaw agents add wechat-article-ops-assistant  --workspace ~/.openclaw/workspace-wechat-article-ops-assistant;
-openclaw agents add wechat-video-ops-assistant    --workspace ~/.openclaw/workspace-wechat-video-ops-assistant;
+openclaw agents add wechat-article-specialist  --workspace ~/.openclaw/workspace-wechat-article-specialist;
+openclaw agents add wechat-video-specialist    --workspace ~/.openclaw/workspace-wechat-video-specialist;
 openclaw agents add douyin-ops-assistant          --workspace ~/.openclaw/workspace-douyin-ops-assistant;
 openclaw agents add bilibili-ops-assistant        --workspace ~/.openclaw/workspace-bilibili-ops-assistant;
 openclaw agents add zhihu-ops-assistant           --workspace ~/.openclaw/workspace-zhihu-ops-assistant;
@@ -99,8 +99,8 @@ openclaw agents add kuaishou-ops-assistant        --workspace ~/.openclaw/worksp
 
 ```bash
 openclaw agents bind --agent xiaohongshu-ops-assistant     --bind wecom:xiaohongshu-ops;
-openclaw agents bind --agent wechat-article-ops-assistant  --bind wecom:wechat-article-ops;
-openclaw agents bind --agent wechat-video-ops-assistant   --bind wecom:wechat-video-ops;
+openclaw agents bind --agent wechat-article-specialist  --bind wecom:wechat-article-ops;
+openclaw agents bind --agent wechat-video-specialist   --bind wecom:wechat-video-ops;
 openclaw agents bind --agent douyin-ops-assistant          --bind wecom:douyin-ops;
 openclaw agents bind --agent bilibili-ops-assistant        --bind wecom:bilibili-ops;
 openclaw agents bind --agent zhihu-ops-assistant           --bind wecom:zhihu-ops;

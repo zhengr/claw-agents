@@ -67,6 +67,10 @@ baoyu-format-markdown -> 日报 / 拆解报告
 - 适合作为浏览器登录态数据入口补充，不替代现有平台专用技能
 - 写操作默认人工确认、小号测试、低频执行，不作为自动执行基线
 
+## 主智能体
+
+- 本渠道主智能体目录：`1-xiaohongshu-specialist`（若存在 `*-strategist` 目录，保持不重命名并作为该组最后扩展角色）。
+
 ## 智能体清单
 
 | 序号 | Agent id                      | 展示名           | 目录                               | 职责摘要 |
@@ -305,6 +309,131 @@ curl -fsSL https://skillhub-1251783334.cos.ap-guangzhou.myqcloud.com/install/ins
 - **Config 片段**：见仓库根目录 `config/openclaw-xiaohongshu-fragment.json`，可合并进主 openclaw 配置；使用前将 `<REPO_ROOT>` 替换为 openclaw-agents 实际路径。
 - **路由**：按渠道或用户身份将会话绑定到对应 agent id（见上方智能体清单）。
 
+## 主智能体委派配置（推荐）
+
+为确保 `xiaohongshu-specialist` 成为**唯一主智能体入口**，建议采用「全局禁用委派 + 主智能体单独放开 allow 列表」：
+
+- 全局 `tools.agentToAgent.enabled` 设为 `false`
+- 仅在 `agents.list[]` 的 `xiaohongshu-specialist` 条目配置 `subagents.allowAgents`
+- 其余 agent 不配置委派权限，避免跨渠道误委派
+
+示例（可直接按需合并）：
+
+```json
+{
+  "tools": {
+    "profile": "full",
+    "agentToAgent": { "enabled": false }
+  },
+  "agents": {
+    "list": [
+      {
+        "id": "xiaohongshu-specialist",
+        "default": true,
+        "name": "小红书主智能体",
+        "workspace": "~/.openclaw/workspace-xiaohongshu-specialist",
+        "agentDir": "~/.openclaw/agents/xiaohongshu-specialist/agent",
+        "subagents": {
+          "allowAgents": [
+            "xiaohongshu-specialist",
+            "xiaohongshu-hot-monitor",
+            "xiaohongshu-viral-breakdown",
+            "xiaohongshu-rewrite",
+            "xiaohongshu-write",
+            "xiaohongshu-publisher",
+            "xiaohongshu-data-assistant",
+            "xiaohongshu-comment-manager"
+          ]
+        }
+      }
+    ]
+  }
+}
+```
+
+委派配置优先级：
+
+| 配置位置 | 作用范围 |
+|------|------|
+| `tools.agentToAgent` | 全局默认，所有 Agent 继承 |
+| `agents.list[].subagents.allowAgents` | 仅该 Agent 生效（覆盖全局） |
+
+## 智能体创建文档规范（详细）
+
+为便于后续复制到其他渠道，建议所有 8 个智能体（主智能体 + 七件套）统一遵循以下文档结构。
+
+### 1. 目录与文件清单
+
+每个 agent 目录建议包含：
+
+- `AGENTS.md`：英文系统提示词主文档（角色、边界、启动、记忆、工具、心跳）
+- `IDENTITY.md`：英文“我是谁”短身份文案（首句开场固定）
+- `SOUL.md`：人格、语气、价值观、红线
+- `BOOTSTRAP.md`：首次配置引导（完成配置后可删除）
+- `TOOLS.md`：本地工具与路径约定（不存密钥）
+- `USER.md`：服务对象画像与协作偏好
+- `HEARTBEAT.md`：周期任务定义（空文件表示关闭）
+- `zh-CN/AGENTS.md`、`zh-CN/IDENTITY.md`、`zh-CN/SOUL.md`
+- `zh-CN/BOOTSTRAP.md`、`zh-CN/TOOLS.md`、`zh-CN/USER.md`、`zh-CN/HEARTBEAT.md`
+
+### 2. 各文档必填要点
+
+`AGENTS.md` / `zh-CN/AGENTS.md`
+
+- Role：角色边界（做什么/不做什么）
+- Startup：首次对话流程（先自我声明，再收任务）
+- Delegation：允许委派对象及触发时机
+- Output Contract：输出格式（日报、拆解、草稿、发布日志、反馈）
+- Red Lines：禁止行为（泄露密钥、绕过审批、伪造数据）
+
+`IDENTITY.md` / `zh-CN/IDENTITY.md`
+
+- 1~2 行固定身份语句
+- 与 `SOUL.md` 保持一致，不写流程细节
+
+`SOUL.md` / `zh-CN/SOUL.md`
+
+- 沟通风格（专业、简洁、可执行）
+- 决策原则（数据优先、可追踪、可复盘）
+- 价值观与底线（真实性、合规性、用户安全）
+
+`TOOLS.md` / `zh-CN/TOOLS.md`
+
+- 管线文档路径：`openclaw-agents/3、Content Ops/xiaohongshu/README.md`
+- 输入输出目录约定、字段约定、日志约定
+- 技能安装来源与命令引用
+- 明确声明：不存储 token/API key
+
+`USER.md` / `zh-CN/USER.md`
+
+- 用户称呼、协作时间、决策偏好、关注 KPI
+- 渠道注入用户信息的优先级与回填规则
+
+`BOOTSTRAP.md` / `zh-CN/BOOTSTRAP.md`
+
+- 首次运行时只做配置，不重新定义身份
+- 完成标准：路径可用、工具可用、交接字段可用
+
+`HEARTBEAT.md` / `zh-CN/HEARTBEAT.md`
+
+- 默认可空；若启用，仅放 1~3 条高价值周期检查
+- 输出需可执行（提醒、状态、下一步）
+
+### 3. 创建与验收流程（建议执行）
+
+1. 创建目录与 14 文件（英/中双语一致）
+2. 写入身份三件套（`AGENTS`/`IDENTITY`/`SOUL`）
+3. 写入运行四件套（`BOOTSTRAP`/`TOOLS`/`USER`/`HEARTBEAT`）
+4. 填充 `openclaw` 的 `agents.list[]`、workspace 与路由
+5. 执行一次端到端演练：监控 -> 拆解 -> 创作 -> 发布 -> 数据/评论反馈
+6. 验收文档完整性：字段不缺失、路径可达、命名一致、中文可读
+
+### 4. 与本仓库的命名对齐
+
+- 主智能体：`xiaohongshu-specialist`
+- 七件套：`xiaohongshu-hot-monitor`、`xiaohongshu-viral-breakdown`、`xiaohongshu-rewrite`、`xiaohongshu-write`、`xiaohongshu-publisher`、`xiaohongshu-data-assistant`、`xiaohongshu-comment-manager`
+- 委派 allow 列表必须包含主智能体自身与以上 7 个子智能体
+
 ## 初始化命令
 
 以下命令在 OpenClaw 配置已就绪的前提下执行；`--workspace` 使用本地路径（如 `~/.openclaw/workspace-<agent-id>`），需先将本仓库 `content-ops/xiaohongshu/1-...`～`content-ops/xiaohongshu/7-...` 复制或链接到对应 workspace 目录。
@@ -318,6 +447,7 @@ openclaw agents list
 ### 2. 添加小红书七件套（7 个，按执行链路顺序）
 
 ```bash
+openclaw agents add xiaohongshu-specialist       --workspace ~/.openclaw/workspace-xiaohongshu-specialist;
 openclaw agents add xiaohongshu-hot-monitor       --workspace ~/.openclaw/workspace-xiaohongshu-hot-monitor;
 openclaw agents add xiaohongshu-viral-breakdown   --workspace ~/.openclaw/workspace-xiaohongshu-viral-breakdown;
 openclaw agents add xiaohongshu-rewrite          --workspace ~/.openclaw/workspace-xiaohongshu-rewrite;
@@ -338,6 +468,7 @@ openclaw agents bindings
 将渠道会话路由到对应 agent；其他渠道将 `wecom` 替换为 `feishu`、`telegram`、`webchat` 等即可。
 
 ```bash
+openclaw agents bind --agent xiaohongshu-specialist       --bind wecom:xiaohongshu-specialist;
 openclaw agents bind --agent xiaohongshu-hot-monitor       --bind wecom:xiaohongshu-hot-monitor;
 openclaw agents bind --agent xiaohongshu-viral-breakdown   --bind wecom:xiaohongshu-viral-breakdown;
 openclaw agents bind --agent xiaohongshu-rewrite           --bind wecom:xiaohongshu-rewrite;
@@ -347,11 +478,12 @@ openclaw agents bind --agent xiaohongshu-data-assistant    --bind wecom:xiaohong
 openclaw agents bind --agent xiaohongshu-comment-manager   --bind wecom:xiaohongshu-comment-manager;
 ```
 
-### 5. 删除小红书七件套（7 个，按执行链路顺序）
+### 5. 删除小红书七件套（8 个，按执行链路顺序）
 
-从 OpenClaw 中移除上述 7 个 agent（需先解除各 agent 的渠道绑定，若有）。
+从 OpenClaw 中移除上述 8 个 agent（需先解除各 agent 的渠道绑定，若有）。
 
 ```bash
+openclaw agents remove xiaohongshu-specialist;
 openclaw agents remove xiaohongshu-hot-monitor;
 openclaw agents remove xiaohongshu-viral-breakdown;
 openclaw agents remove xiaohongshu-rewrite;

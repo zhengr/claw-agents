@@ -49,17 +49,21 @@ baoyu-format-markdown -> 日报 / 拆解报告
 
 七件套之外本管线可用上的补充能力（与 [SKILLS-EVALUATION.md §6.1](./SKILLS-EVALUATION.md) 一致）：评论/弹幕采集与回复、多语言与翻译、信息图/漫画风配图；推荐技能见 6.1 表。
 
+## 主智能体
+
+- 本渠道主智能体目录：`1-bilibili-specialist`（若存在 `*-strategist` 目录，保持不重命名并作为该组最后扩展角色）。
+
 ## 智能体清单
 
 | 序号 | Agent id                  | 展示名           | 目录                           | 职责摘要 |
 |------|---------------------------|------------------|--------------------------------|----------|
-| 1    | bilibili-hot-monitor      | B站热门监控      | 1-bilibili-hot-monitor         | 监控热门视频、UP 主更新，产出日报或结构化摘要，供内容与数据助手使用 |
-| 2    | bilibili-content-helper   | B站内容创作助手  | 2-bilibili-content-helper      | 标题/标签/简介优化、投稿策略、字幕总结与脚本辅助，产出草稿供发布 |
-| 3    | bilibili-video-publisher  | B站视频发布      | 3-bilibili-video-publisher     | 将已通过草稿在 B 站创作者平台发布，记录发布结果供数据助手分析 |
-| 4    | bilibili-data-assistant   | B站数据助手      | 4-bilibili-data-assistant      | 解析播放/互动数据、热门趋势，交叉验证后产出反馈给热门监控与内容助手 |
-| 5    | bilibili-viral-breakdown  | B站爆款拆解      | 5-bilibili-viral-breakdown     | 对监控/调研得到的热门视频做拆解（标题、钩子、结构、主题），产出拆解框架供内容助手与原创 |
-| 6    | bilibili-write            | B站原创          | 6-bilibili-write               | 强调原创：用户主图/选题+热点做原创视频脚本与配图方向，产出草稿供发布与数据助手 |
-| 7    | bilibili-comment-manager  | B站评论管理      | 7-bilibili-comment-manager     | 评论采集、起草回复、情感/弹幕分析；回复需审批/门禁后发布 |
+| 1    | bilibili-hot-monitor      | B站热门监控      | 2-bilibili-hot-monitor         | 监控热门视频、UP 主更新，产出日报或结构化摘要，供内容与数据助手使用 |
+| 2    | bilibili-content-helper   | B站内容创作助手  | 3-bilibili-content-helper      | 标题/标签/简介优化、投稿策略、字幕总结与脚本辅助，产出草稿供发布 |
+| 3    | bilibili-video-publisher  | B站视频发布      | 4-bilibili-video-publisher     | 将已通过草稿在 B 站创作者平台发布，记录发布结果供数据助手分析 |
+| 4    | bilibili-data-assistant   | B站数据助手      | 5-bilibili-data-assistant      | 解析播放/互动数据、热门趋势，交叉验证后产出反馈给热门监控与内容助手 |
+| 5    | bilibili-viral-breakdown  | B站爆款拆解      | 6-bilibili-viral-breakdown     | 对监控/调研得到的热门视频做拆解（标题、钩子、结构、主题），产出拆解框架供内容助手与原创 |
+| 6    | bilibili-write            | B站原创          | 7-bilibili-write               | 强调原创：用户主图/选题+热点做原创视频脚本与配图方向，产出草稿供发布与数据助手 |
+| 7    | bilibili-comment-manager  | B站评论管理      | 8-bilibili-comment-manager     | 评论采集、起草回复、情感/弹幕分析；回复需审批/门禁后发布 |
 
 **管线关系：** 热门监控 → 日报/摘要 → 爆款拆解 → 拆解框架 → 内容助手/原创 → 草稿 → 视频发布 → 发布日志 → 数据助手 + 评论管理 → 反馈至热门监控与爆款拆解。
 
@@ -153,7 +157,7 @@ npx skills remove baoyu-comic;
 
 ## 配置说明
 
-- **Workspace**：各智能体 workspace 指向本目录下对应子目录（如 `<REPO_ROOT>/openclaw-agents/bilibili/1-bilibili-hot-monitor`），或部署时复制/链接到 `~/.openclaw/workspace-bilibili-hot-monitor` 等。
+- **Workspace**：各智能体 workspace 指向本目录下对应子目录（如 `<REPO_ROOT>/openclaw-agents/bilibili/2-bilibili-hot-monitor`），或部署时复制/链接到 `~/.openclaw/workspace-bilibili-hot-monitor` 等。
 - **Config 片段**：见仓库 `config/openclaw-bilibili-fragment.json`，可合并进主 openclaw 配置；将 `<REPO_ROOT>` 替换为实际路径。
 - **路由**：按渠道或用户身份将会话绑定到对应 agent id。
 

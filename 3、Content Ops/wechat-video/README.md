@@ -43,17 +43,21 @@
 
 **管线关系：** 热门监控 → 日报/摘要 → 爆款拆解 → 拆解框架 → 二创/原创 → 草稿+配图 → 自动发布 → 发布日志 → 数据助手 + 评论管理 → 反馈至爆款拆解与热门监控。
 
+## 主智能体
+
+- 本渠道主智能体目录：`1-wechat-video-specialist`（若存在 `*-strategist` 目录，保持不重命名并作为该组最后扩展角色）。
+
 ## 智能体清单
 
 | 序号 | Agent id                     | 展示名           | 目录                               | 职责摘要 |
 |------|------------------------------|------------------|------------------------------------|----------|
-| 1    | wechat-video-hot-monitor     | 视频号热门监控   | 1-wechat-video-hot-monitor         | 每日/按需搜索视频号热点与爆款，产出日报或摘要 |
-| 2    | wechat-video-viral-breakdown | 视频号爆款拆解   | 2-wechat-video-viral-breakdown     | 对爆款短视频做拆解，产出结构化拆解框架 |
-| 3    | wechat-video-rewrite         | 视频号二创       | 3-wechat-video-rewrite             | 根据拆解框架与主题创作新文案与配图/封面 |
-| 4    | wechat-video-publisher       | 视频号自动发布   | 4-wechat-video-publisher           | 将已通过草稿发布到视频号并记录结果（需开放能力/浏览器） |
-| 5    | wechat-video-data-assistant  | 视频号数据助手   | 5-wechat-video-data-assistant      | 解析数据、交叉验证效果、反馈给爆款拆解 |
-| 6    | wechat-video-write           | 视频号原创       | 6-wechat-video-write               | 强调原创：用户主图/选题+热点做原创短视频内容，产出草稿 |
-| 7    | wechat-video-comment-manager | 视频号评论管理   | 7-wechat-video-comment-manager     | 评论采集、起草回复、情感分析；回复需审批/门禁后发布 |
+| 1    | wechat-video-hot-monitor     | 视频号热门监控   | 2-wechat-video-hot-monitor         | 每日/按需搜索视频号热点与爆款，产出日报或摘要 |
+| 2    | wechat-video-viral-breakdown | 视频号爆款拆解   | 3-wechat-video-viral-breakdown     | 对爆款短视频做拆解，产出结构化拆解框架 |
+| 3    | wechat-video-rewrite         | 视频号二创       | 4-wechat-video-rewrite             | 根据拆解框架与主题创作新文案与配图/封面 |
+| 4    | wechat-video-publisher       | 视频号自动发布   | 5-wechat-video-publisher           | 将已通过草稿发布到视频号并记录结果（需开放能力/浏览器） |
+| 5    | wechat-video-data-assistant  | 视频号数据助手   | 6-wechat-video-data-assistant      | 解析数据、交叉验证效果、反馈给爆款拆解 |
+| 6    | wechat-video-write           | 视频号原创       | 7-wechat-video-write               | 强调原创：用户主图/选题+热点做原创短视频内容，产出草稿 |
+| 7    | wechat-video-comment-manager | 视频号评论管理   | 8-wechat-video-comment-manager     | 评论采集、起草回复、情感分析；回复需审批/门禁后发布 |
 
 ## 智能工作执行链路
 

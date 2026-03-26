@@ -43,17 +43,21 @@
 
 **管线关系：** 热门监控 → 日报/摘要 → 爆款拆解 → 拆解框架 → 二创/原创 → 草稿+配图 → 自动发布 → 发布日志 → 数据助手 + 评论管理 → 反馈至爆款拆解与热门监控。
 
+## 主智能体
+
+- 本渠道主智能体目录：`1-toutiao-specialist`（若存在 `*-strategist` 目录，保持不重命名并作为该组最后扩展角色）。
+
 ## 智能体清单
 
 | 序号 | Agent id                 | 展示名           | 目录                               | 职责摘要 |
 |------|---------------------------|------------------|------------------------------------|----------|
-| 1    | toutiao-hot-monitor       | 头条号热门监控   | 1-toutiao-hot-monitor              | 每日/按需搜索头条号热点与爆款，产出日报或摘要 |
-| 2    | toutiao-viral-breakdown   | 头条号爆款拆解   | 2-toutiao-viral-breakdown          | 对爆款内容做拆解，产出结构化拆解框架 |
-| 3    | toutiao-rewrite           | 头条号二创       | 3-toutiao-rewrite                  | 根据拆解框架与主题创作新文案与配图 |
-| 4    | toutiao-publisher          | 头条号自动发布   | 4-toutiao-publisher                | 将已通过草稿发布到头条号并记录结果（需开放平台/浏览器） |
-| 5    | toutiao-data-assistant    | 头条号数据助手   | 5-toutiao-data-assistant           | 解析数据、交叉验证效果、反馈给爆款拆解 |
-| 6    | toutiao-write              | 头条号原创       | 6-toutiao-write                    | 强调原创：用户主图/选题+热点做原创内容，产出草稿 |
-| 7    | toutiao-comment-manager   | 头条号评论管理   | 7-toutiao-comment-manager          | 评论采集、起草回复、情感分析；回复需审批/门禁后发布 |
+| 1    | toutiao-hot-monitor       | 头条号热门监控   | 2-toutiao-hot-monitor              | 每日/按需搜索头条号热点与爆款，产出日报或摘要 |
+| 2    | toutiao-viral-breakdown   | 头条号爆款拆解   | 3-toutiao-viral-breakdown          | 对爆款内容做拆解，产出结构化拆解框架 |
+| 3    | toutiao-rewrite           | 头条号二创       | 4-toutiao-rewrite                  | 根据拆解框架与主题创作新文案与配图 |
+| 4    | toutiao-publisher          | 头条号自动发布   | 5-toutiao-publisher                | 将已通过草稿发布到头条号并记录结果（需开放平台/浏览器） |
+| 5    | toutiao-data-assistant    | 头条号数据助手   | 6-toutiao-data-assistant           | 解析数据、交叉验证效果、反馈给爆款拆解 |
+| 6    | toutiao-write              | 头条号原创       | 7-toutiao-write                    | 强调原创：用户主图/选题+热点做原创内容，产出草稿 |
+| 7    | toutiao-comment-manager   | 头条号评论管理   | 8-toutiao-comment-manager          | 评论采集、起草回复、情感分析；回复需审批/门禁后发布 |
 
 ## 智能工作执行链路
 

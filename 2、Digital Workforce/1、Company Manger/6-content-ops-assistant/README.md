@@ -198,13 +198,13 @@
         }
       },
       {
-        "id": "wechat-article-ops-assistant",
+        "id": "wechat-article-specialist",
         "name": "公众号运营助理",
-        "workspace": "~/.openclaw/workspace-wechat-article-ops-assistant",
-        "agentDir": "~/.openclaw/agents/wechat-article-ops-assistant/agent",
+        "workspace": "~/.openclaw/workspace-wechat-article-specialist",
+        "agentDir": "~/.openclaw/agents/wechat-article-specialist/agent",
         "subagents": {
           "allowAgents": [
-            "wechat-article-ops-assistant",
+            "wechat-article-specialist",
             "wechat-article-hot-monitor",
             "wechat-article-viral-breakdown",
             "wechat-article-rewrite",

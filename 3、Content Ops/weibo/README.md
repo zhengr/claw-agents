@@ -65,17 +65,21 @@ baoyu-format-markdown -> 日报 / 拆解报告
 
 **管线关系：** 热门监控 → 日报/摘要 → 爆款拆解 → 拆解框架 → 二创/原创 → 草稿+配图 → 自动发布 → 发布日志 → 数据助手 + 评论管理 → 反馈至爆款拆解与热门监控。
 
+## 主智能体
+
+- 本渠道主智能体目录：`1-weibo-specialist`（若存在 `*-strategist` 目录，保持不重命名并作为该组最后扩展角色）。
+
 ## 智能体清单
 
 | 序号 | Agent id               | 展示名         | 目录                           | 职责摘要 |
 |------|------------------------|----------------|--------------------------------|----------|
-| 1    | weibo-hot-monitor      | 微博热门监控   | 1-weibo-hot-monitor           | 每日/按需搜索微博热点与爆款博文/话题，产出日报或摘要 |
-| 2    | weibo-viral-breakdown  | 微博爆款拆解   | 2-weibo-viral-breakdown       | 对爆款博文做拆解，产出结构化拆解框架 |
-| 3    | weibo-rewrite          | 微博二创       | 3-weibo-rewrite               | 根据拆解框架与主题创作新文案与配图 |
-| 4    | weibo-publisher        | 微博自动发布   | 4-weibo-publisher             | 将已通过草稿发布到微博并记录结果 |
-| 5    | weibo-data-assistant   | 微博数据助手   | 5-weibo-data-assistant        | 解析数据、交叉验证效果、反馈给爆款拆解 |
-| 6    | weibo-write            | 微博原创       | 6-weibo-write                 | 强调原创：用户主图+热点/爆款做原创博文，产出草稿 |
-| 7    | weibo-comment-manager  | 微博评论管理   | 7-weibo-comment-manager       | 评论采集、起草回复、情感分析；回复需审批/门禁后发布 |
+| 2    | weibo-hot-monitor      | 微博热门监控   | 2-weibo-hot-monitor           | 每日/按需搜索微博热点与爆款博文/话题，产出日报或摘要 |
+| 3    | weibo-viral-breakdown  | 微博爆款拆解   | 3-weibo-viral-breakdown       | 对爆款博文做拆解，产出结构化拆解框架 |
+| 4    | weibo-rewrite          | 微博二创       | 4-weibo-rewrite               | 根据拆解框架与主题创作新文案与配图 |
+| 5    | weibo-publisher        | 微博自动发布   | 5-weibo-publisher             | 将已通过草稿发布到微博并记录结果 |
+| 6    | weibo-data-assistant   | 微博数据助手   | 6-weibo-data-assistant        | 解析数据、交叉验证效果、反馈给爆款拆解 |
+| 7    | weibo-write            | 微博原创       | 7-weibo-write                 | 强调原创：用户主图+热点/爆款做原创博文，产出草稿 |
+| 8    | weibo-comment-manager  | 微博评论管理   | 8-weibo-comment-manager       | 评论采集、起草回复、情感分析；回复需审批/门禁后发布 |
 
 ## 智能工作执行链路
 
@@ -101,13 +105,13 @@ baoyu-format-markdown -> 日报 / 拆解报告
 
 | 步骤 | Agent id               | 推荐技能 | 来源 | 说明 |
 |------|------------------------|----------|------|------|
-| 1 | weibo-hot-monitor      | weibo-fresh-posts；baoyu-url-to-markdown, baoyu-format-markdown | ClawHub/SkillHub；skills.sh | 关注流监控+每日 Markdown + 抓取+日报格式 |
-| 2 | weibo-viral-breakdown  | baoyu-url-to-markdown, baoyu-format-markdown；可选 weibo-fresh-posts | skills.sh；ClawHub/SkillHub | 抓取成文+拆解格式 |
-| 3a | weibo-rewrite          | baoyu-cover-image, baoyu-article-illustrator | skills.sh | 封面与配图 |
-| 3b | weibo-write            | baoyu-cover-image, baoyu-article-illustrator | skills.sh | 同 rewrite |
-| 4 | weibo-publisher        | weibo-manager；baoyu-compress-image；可选 baoyu-post-to-weibo / social-push | ClawHub/SkillHub；skills.sh | 管理/执行/发布/审查 + 压缩+发布 |
-| 5 | weibo-data-assistant   | baoyu-format-markdown；可选 weibo-fresh-posts | skills.sh；ClawHub/SkillHub | 报告格式 |
-| 6 | weibo-comment-manager  | weibo-manager（审查）；按需评论采集与回复技能 | ClawHub/SkillHub；skills.sh | 评论拉取、回复草稿、审查 |
+| 2 | weibo-hot-monitor      | weibo-fresh-posts；baoyu-url-to-markdown, baoyu-format-markdown | ClawHub/SkillHub；skills.sh | 关注流监控+每日 Markdown + 抓取+日报格式 |
+| 3 | weibo-viral-breakdown  | baoyu-url-to-markdown, baoyu-format-markdown；可选 weibo-fresh-posts | skills.sh；ClawHub/SkillHub | 抓取成文+拆解格式 |
+| 4a | weibo-rewrite          | baoyu-cover-image, baoyu-article-illustrator | skills.sh | 封面与配图 |
+| 4b | weibo-write            | baoyu-cover-image, baoyu-article-illustrator | skills.sh | 同 rewrite |
+| 5 | weibo-publisher        | weibo-manager；baoyu-compress-image；可选 baoyu-post-to-weibo / social-push | ClawHub/SkillHub；skills.sh | 管理/执行/发布/审查 + 压缩+发布 |
+| 6 | weibo-data-assistant   | baoyu-format-markdown；可选 weibo-fresh-posts | skills.sh；ClawHub/SkillHub | 报告格式 |
+| 7 | weibo-comment-manager  | weibo-manager（审查）；按需评论采集与回复技能 | ClawHub/SkillHub；skills.sh | 评论拉取、回复草稿、审查 |
 
 ### 七件套全部可使用的技能：全部安装 / 全部卸载命令
 
