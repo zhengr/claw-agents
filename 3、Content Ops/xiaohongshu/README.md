@@ -205,6 +205,9 @@ npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g;
 npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g;
 npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g;
 npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g;
+
+npx skills add jackwener/opencli
+npm install -g @jackwener/opencli
 ```
 
 **全部卸载命令（复制执行即可）**

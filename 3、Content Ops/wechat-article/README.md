@@ -155,6 +155,7 @@ npx skills add jimliu/baoyu-skills --skill baoyu-compress-image -y -g;
 npx skills add jimliu/baoyu-skills --skill baoyu-translate -y -g;
 npx skills add jimliu/baoyu-skills --skill baoyu-infographic -y -g;
 npx skills add jimliu/baoyu-skills --skill baoyu-comic -y -g;
+
 ```
 
 **全部卸载命令**
@@ -201,6 +202,7 @@ npx skills remove baoyu-comic;
 ### 添加七件套
 
 ```bash
+openclaw agents add wechat-article-specialist        --workspace ~/.openclaw/workspace-wechat-article-specialist;
 openclaw agents add wechat-article-hot-monitor       --workspace ~/.openclaw/workspace-wechat-article-hot-monitor;
 openclaw agents add wechat-article-viral-breakdown   --workspace ~/.openclaw/workspace-wechat-article-viral-breakdown;
 openclaw agents add wechat-article-rewrite            --workspace ~/.openclaw/workspace-wechat-article-rewrite;
@@ -213,6 +215,7 @@ openclaw agents add wechat-article-comment-manager   --workspace ~/.openclaw/wor
 ### 按渠道绑定（示例：wecom）
 
 ```bash
+openclaw agents bind --agent wechat-article-specialist       --bind wecom:wechat-article-specialist;
 openclaw agents bind --agent wechat-article-hot-monitor       --bind wecom:wechat-article-hot-monitor;
 openclaw agents bind --agent wechat-article-viral-breakdown   --bind wecom:wechat-article-viral-breakdown;
 openclaw agents bind --agent wechat-article-rewrite            --bind wecom:wechat-article-rewrite;

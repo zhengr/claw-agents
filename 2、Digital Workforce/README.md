@@ -82,33 +82,13 @@ openclaw agents bind --agent cs-specialist-xiaonuan --bind webchat:xiaonuan
 **添加 11 个渠道运营助理**（workspace 指向本仓库 `company/internal/6-content-ops-assistant/<id>/`，部署时复制或链接到 `~/.openclaw/workspace-<id>`）：
 
 ```bash
-openclaw agents add xiaohongshu-ops-assistant      --workspace ~/.openclaw/workspace-xiaohongshu-ops-assistant;
-openclaw agents add wechat-article-specialist  --workspace ~/.openclaw/workspace-wechat-article-specialist;
-openclaw agents add wechat-video-specialist    --workspace ~/.openclaw/workspace-wechat-video-specialist;
-openclaw agents add douyin-ops-assistant          --workspace ~/.openclaw/workspace-douyin-ops-assistant;
-openclaw agents add bilibili-ops-assistant        --workspace ~/.openclaw/workspace-bilibili-ops-assistant;
-openclaw agents add zhihu-ops-assistant           --workspace ~/.openclaw/workspace-zhihu-ops-assistant;
-openclaw agents add baijiahao-ops-assistant       --workspace ~/.openclaw/workspace-baijiahao-ops-assistant;
-openclaw agents add weibo-ops-assistant           --workspace ~/.openclaw/workspace-weibo-ops-assistant;
-openclaw agents add juejin-ops-assistant          --workspace ~/.openclaw/workspace-juejin-ops-assistant;
-openclaw agents add toutiao-ops-assistant         --workspace ~/.openclaw/workspace-toutiao-ops-assistant;
-openclaw agents add kuaishou-ops-assistant        --workspace ~/.openclaw/workspace-kuaishou-ops-assistant;
+openclaw agents add wechat-article-specialist      --workspace ~/.openclaw/workspace-wechat-article-specialist;
 ```
 
 **按渠道绑定运营助理（示例：企微 wecom）**：将对应渠道会话路由到该渠道运营助理。
 
 ```bash
-openclaw agents bind --agent xiaohongshu-ops-assistant     --bind wecom:xiaohongshu-ops;
-openclaw agents bind --agent wechat-article-specialist  --bind wecom:wechat-article-ops;
-openclaw agents bind --agent wechat-video-specialist   --bind wecom:wechat-video-ops;
-openclaw agents bind --agent douyin-ops-assistant          --bind wecom:douyin-ops;
-openclaw agents bind --agent bilibili-ops-assistant        --bind wecom:bilibili-ops;
-openclaw agents bind --agent zhihu-ops-assistant           --bind wecom:zhihu-ops;
-openclaw agents bind --agent baijiahao-ops-assistant       --bind wecom:baijiahao-ops;
-openclaw agents bind --agent weibo-ops-assistant           --bind wecom:weibo-ops;
-openclaw agents bind --agent juejin-ops-assistant          --bind wecom:juejin-ops;
-openclaw agents bind --agent toutiao-ops-assistant         --bind wecom:toutiao-ops;
-openclaw agents bind --agent kuaishou-ops-assistant        --bind wecom:kuaishou-ops;
+openclaw agents bind --agent wechat-article-specialist  --bind wecom:wechat-article-specialist;
 ```
 
 其他渠道将 `wecom` 替换为 `feishu`、`webchat` 等即可。委派配置（`tools.agentToAgent` 仅对上述运营助理开放）须在 `openclaw.json` 中按 [README.md](10、Company%20Manger/6-content-ops-assistant/README.md) 示例合并。
